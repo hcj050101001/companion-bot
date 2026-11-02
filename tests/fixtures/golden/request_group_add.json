@@ -1,0 +1,28 @@
+{
+  "id": "request_group_add",
+  "category": "request",
+  "description": "入群申请（sub_type=add）：N3 起入事件子链处置（落库处置状态机、默认人工）",
+  "payload": {
+    "time": 1767225600,
+    "self_id": "900000001",
+    "post_type": "request",
+    "request_type": "group",
+    "sub_type": "add",
+    "group_id": 80001,
+    "user_id": "90001",
+    "comment": "fake request",
+    "flag": "fake-flag-add-1"
+  },
+  "raw_body": null,
+  "send_twice": false,
+  "followup_payload": null,
+  "expected": {
+    "http_status": 204,
+    "disposition": "disposed",
+    "sends": 0,
+    "log_event_type": "request"
+  },
+  "known_difference": null,
+  "difference_note": null,
+  "note": null
+}

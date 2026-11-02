@@ -1,0 +1,517 @@
+{
+ "source": "方案 §2.3 入站事件登记 × 调研报告 §4 事件表 × 本机 bundle 事件词表证据（tests/fixtures/napcat/bundle_registry_snapshot.json 的 event_string_evidence）",
+ "extracted_on": "2026-10-31",
+ "dispositions": {
+  "chain_private": "入链（私聊链）",
+  "chain_group": "入链（群聊子链）",
+  "chain_event": "入链（事件子链）",
+  "log_only": "登记（结构化落日志/指标，不触发业务）"
+ },
+ "rows": [
+  {
+   "post_type": "message",
+   "type": "private",
+   "sub_type": "friend",
+   "direction": "inbound",
+   "sources": [
+    "report",
+    "bundle",
+    "plan"
+   ],
+   "disposition": "chain_private",
+   "verification": "confirmed",
+   "notes": "现行行为不变",
+   "implemented": true,
+   "behavior_verified": true
+  },
+  {
+   "post_type": "message",
+   "type": "private",
+   "sub_type": "group_temp",
+   "direction": "inbound",
+   "sources": [
+    "report",
+    "bundle",
+    "plan"
+   ],
+   "disposition": "chain_private",
+   "verification": "confirmed",
+   "notes": "报告记 sub_type=group + temp_source；bundle 代码证实 group_temp；单列 chat_type 不并入普通私聊",
+   "implemented": true,
+   "behavior_verified": true
+  },
+  {
+   "post_type": "message",
+   "type": "group",
+   "sub_type": "normal",
+   "direction": "inbound",
+   "sources": [
+    "report",
+    "bundle",
+    "plan"
+   ],
+   "disposition": "chain_group",
+   "verification": "confirmed",
+   "notes": "群聊子链；默认产品行为=不回复（能力接入、开关控制）",
+   "implemented": true,
+   "behavior_verified": true
+  },
+  {
+   "post_type": "message",
+   "type": "group",
+   "sub_type": "anonymous",
+   "direction": "inbound",
+   "sources": [
+    "report",
+    "bundle",
+    "plan"
+   ],
+   "disposition": "log_only",
+   "verification": "confirmed",
+   "notes": "匿名无稳定 user_id，不进业务链",
+   "implemented": true,
+   "behavior_verified": true
+  },
+  {
+   "post_type": "message",
+   "type": "group",
+   "sub_type": "notice",
+   "direction": "inbound",
+   "sources": [
+    "report",
+    "bundle",
+    "plan"
+   ],
+   "disposition": "log_only",
+   "verification": "confirmed",
+   "notes": "系统提示型消息",
+   "implemented": true,
+   "behavior_verified": true
+  },
+  {
+   "post_type": "message_sent",
+   "type": "",
+   "sub_type": "",
+   "direction": "self_echo",
+   "sources": [
+    "report",
+    "bundle",
+    "plan"
+   ],
+   "disposition": "log_only",
+   "verification": "confirmed",
+   "notes": "方向契约：只入观测与投递关联路径，永不进对话 claim 键空间、永不触发 Brain；需开 reportSelfMessage，默认不开",
+   "implemented": true,
+   "behavior_verified": true
+  },
+  {
+   "post_type": "notice",
+   "type": "group_upload",
+   "sub_type": "",
+   "direction": "inbound",
+   "sources": [
+    "report",
+    "bundle",
+    "plan"
+   ],
+   "disposition": "log_only",
+   "verification": "confirmed",
+   "notes": "群文件动态",
+   "implemented": true,
+   "behavior_verified": true
+  },
+  {
+   "post_type": "notice",
+   "type": "group_admin",
+   "sub_type": "set/unset",
+   "direction": "inbound",
+   "sources": [
+    "report",
+    "bundle",
+    "plan"
+   ],
+   "disposition": "log_only",
+   "verification": "confirmed",
+   "notes": "",
+   "implemented": true,
+   "behavior_verified": true
+  },
+  {
+   "post_type": "notice",
+   "type": "group_decrease",
+   "sub_type": "leave/kick/kick_me",
+   "direction": "inbound",
+   "sources": [
+    "report",
+    "bundle",
+    "plan"
+   ],
+   "disposition": "log_only",
+   "verification": "confirmed",
+   "notes": "kick_me（机器人被踢）升为运维告警（observer）",
+   "implemented": true,
+   "behavior_verified": true
+  },
+  {
+   "post_type": "notice",
+   "type": "group_increase",
+   "sub_type": "approve/invite",
+   "direction": "inbound",
+   "sources": [
+    "report",
+    "bundle",
+    "plan"
+   ],
+   "disposition": "log_only",
+   "verification": "confirmed",
+   "notes": "",
+   "implemented": true,
+   "behavior_verified": true
+  },
+  {
+   "post_type": "notice",
+   "type": "group_ban",
+   "sub_type": "ban/lift_ban",
+   "direction": "inbound",
+   "sources": [
+    "report",
+    "bundle",
+    "plan"
+   ],
+   "disposition": "log_only",
+   "verification": "confirmed",
+   "notes": "机器人被禁言升为运维告警",
+   "implemented": true,
+   "behavior_verified": true
+  },
+  {
+   "post_type": "notice",
+   "type": "friend_add",
+   "sub_type": "",
+   "direction": "inbound",
+   "sources": [
+    "report",
+    "bundle",
+    "plan"
+   ],
+   "disposition": "log_only",
+   "verification": "confirmed",
+   "notes": "",
+   "implemented": true,
+   "behavior_verified": true
+  },
+  {
+   "post_type": "notice",
+   "type": "group_recall",
+   "sub_type": "",
+   "direction": "inbound",
+   "sources": [
+    "report",
+    "bundle",
+    "plan"
+   ],
+   "disposition": "log_only",
+   "verification": "confirmed",
+   "notes": "只记元数据，不尝试取回内容",
+   "implemented": true,
+   "behavior_verified": true
+  },
+  {
+   "post_type": "notice",
+   "type": "friend_recall",
+   "sub_type": "",
+   "direction": "inbound",
+   "sources": [
+    "report",
+    "bundle",
+    "plan"
+   ],
+   "disposition": "log_only",
+   "verification": "confirmed",
+   "notes": "同 group_recall",
+   "implemented": true,
+   "behavior_verified": true
+  },
+  {
+   "post_type": "notice",
+   "type": "group_card",
+   "sub_type": "",
+   "direction": "inbound",
+   "sources": [
+    "report",
+    "bundle",
+    "plan"
+   ],
+   "disposition": "log_only",
+   "verification": "confirmed",
+   "notes": "NapCat 特有",
+   "implemented": true,
+   "behavior_verified": true
+  },
+  {
+   "post_type": "notice",
+   "type": "group_msg_emoji_like",
+   "sub_type": "",
+   "direction": "inbound",
+   "sources": [
+    "report",
+    "bundle",
+    "plan"
+   ],
+   "disposition": "log_only",
+   "verification": "confirmed",
+   "notes": "L1 互动的数据面",
+   "implemented": true,
+   "behavior_verified": true
+  },
+  {
+   "post_type": "notice",
+   "type": "essence",
+   "sub_type": "add/delete",
+   "direction": "inbound",
+   "sources": [
+    "report",
+    "bundle",
+    "plan"
+   ],
+   "disposition": "log_only",
+   "verification": "confirmed",
+   "notes": "",
+   "implemented": true,
+   "behavior_verified": true
+  },
+  {
+   "post_type": "notice",
+   "type": "online_file_receive",
+   "sub_type": "",
+   "direction": "inbound",
+   "sources": [
+    "bundle",
+    "plan"
+   ],
+   "disposition": "log_only",
+   "verification": "bundle_only",
+   "notes": "bundle 独有补登记：notice_type 强证据（见 bundle 快照 event_string_evidence，含 sub_type=cancel）；与在线文件族对应",
+   "implemented": true,
+   "behavior_verified": true
+  },
+  {
+   "post_type": "notice",
+   "type": "online_file_send",
+   "sub_type": "",
+   "direction": "inbound",
+   "sources": [
+    "bundle",
+    "plan"
+   ],
+   "disposition": "log_only",
+   "verification": "bundle_only",
+   "notes": "bundle 独有补登记：notice_type 强证据；与在线文件族对应",
+   "implemented": true,
+   "behavior_verified": true
+  },
+  {
+   "post_type": "notice",
+   "type": "notify",
+   "sub_type": "poke",
+   "direction": "inbound",
+   "sources": [
+    "report",
+    "bundle",
+    "plan"
+   ],
+   "disposition": "chain_event",
+   "verification": "confirmed",
+   "notes": "可触发轻互动响应（产品开关默认关）",
+   "implemented": true,
+   "behavior_verified": true
+  },
+  {
+   "post_type": "notice",
+   "type": "notify",
+   "sub_type": "lucky_king",
+   "direction": "inbound",
+   "sources": [
+    "report"
+   ],
+   "disposition": "log_only",
+   "verification": "single_source_doubtful",
+   "notes": "单源存疑：仅调研报告/官方事件表列出；bundle 全文出现 0 次，无事件证据。红包运气王只作事件存在——无发红包接口",
+   "implemented": true,
+   "behavior_verified": true
+  },
+  {
+   "post_type": "notice",
+   "type": "notify",
+   "sub_type": "honor",
+   "direction": "inbound",
+   "sources": [
+    "report"
+   ],
+   "disposition": "log_only",
+   "verification": "single_source_doubtful",
+   "notes": "单源存疑：bundle 无 notice/sub_type 事件证据（子串仅 honorlist URL 与 get_group_honor_info 动作名）",
+   "implemented": true,
+   "behavior_verified": true
+  },
+  {
+   "post_type": "notice",
+   "type": "notify",
+   "sub_type": "title",
+   "direction": "inbound",
+   "sources": [
+    "report",
+    "bundle",
+    "plan"
+   ],
+   "disposition": "log_only",
+   "verification": "confirmed",
+   "notes": "头衔变更",
+   "implemented": true,
+   "behavior_verified": true
+  },
+  {
+   "post_type": "notice",
+   "type": "notify",
+   "sub_type": "profile_like",
+   "direction": "inbound",
+   "sources": [
+    "report",
+    "bundle",
+    "plan"
+   ],
+   "disposition": "log_only",
+   "verification": "bundle_confirmed",
+   "notes": "N0 升级：原第三方 SDK 索引，bundle 有 sub_type 事件证据（快照 event_string_evidence）",
+   "implemented": true,
+   "behavior_verified": true
+  },
+  {
+   "post_type": "notice",
+   "type": "notify",
+   "sub_type": "input_status",
+   "direction": "inbound",
+   "sources": [
+    "report",
+    "bundle",
+    "plan"
+   ],
+   "disposition": "log_only",
+   "verification": "bundle_confirmed",
+   "notes": "N0 升级：原第三方 SDK 索引，bundle 有 sub_type 事件证据",
+   "implemented": true,
+   "behavior_verified": true
+  },
+  {
+   "post_type": "notice",
+   "type": "notify",
+   "sub_type": "gray_tip",
+   "direction": "inbound",
+   "sources": [
+    "bundle",
+    "plan"
+   ],
+   "disposition": "log_only",
+   "verification": "bundle_only",
+   "notes": "bundle 独有补登记：sub_type 强证据",
+   "implemented": true,
+   "behavior_verified": true
+  },
+  {
+   "post_type": "notice",
+   "type": "notify",
+   "sub_type": "group_name",
+   "direction": "inbound",
+   "sources": [
+    "bundle",
+    "plan"
+   ],
+   "disposition": "log_only",
+   "verification": "bundle_only",
+   "notes": "bundle 独有补登记：sub_type 事件证据 1 处（其余 22 处子串为字段/模式/赋值）",
+   "implemented": true,
+   "behavior_verified": true
+  },
+  {
+   "post_type": "notice",
+   "type": "bot_offline",
+   "sub_type": "",
+   "direction": "inbound",
+   "sources": [
+    "report",
+    "bundle",
+    "plan"
+   ],
+   "disposition": "log_only",
+   "verification": "confirmed",
+   "notes": "登记 + 运维告警，与连接健康模块对账",
+   "implemented": true,
+   "behavior_verified": true
+  },
+  {
+   "post_type": "request",
+   "type": "friend",
+   "sub_type": "",
+   "direction": "inbound",
+   "sources": [
+    "report",
+    "bundle",
+    "plan"
+   ],
+   "disposition": "chain_event",
+   "verification": "confirmed",
+   "notes": "与 set_friend_add_request 配套；处置默认人工/策略关",
+   "implemented": true,
+   "behavior_verified": true
+  },
+  {
+   "post_type": "request",
+   "type": "group",
+   "sub_type": "add/invite",
+   "direction": "inbound",
+   "sources": [
+    "report",
+    "bundle",
+    "plan"
+   ],
+   "disposition": "chain_event",
+   "verification": "confirmed",
+   "notes": "与 set_group_add_request 配套",
+   "implemented": true,
+   "behavior_verified": true
+  },
+  {
+   "post_type": "meta_event",
+   "type": "lifecycle",
+   "sub_type": "",
+   "direction": "inbound",
+   "sources": [
+    "report",
+    "bundle",
+    "plan"
+   ],
+   "disposition": "log_only",
+   "verification": "confirmed",
+   "notes": "",
+   "implemented": true,
+   "behavior_verified": true
+  },
+  {
+   "post_type": "meta_event",
+   "type": "heartbeat",
+   "sub_type": "",
+   "direction": "inbound",
+   "sources": [
+    "report",
+    "bundle",
+    "plan"
+   ],
+   "disposition": "log_only",
+   "verification": "confirmed",
+   "notes": "与健康探针口径对账：现行以 get_status 轮询为准，heartbeat 只作冗余信号",
+   "implemented": true,
+   "behavior_verified": true
+  }
+ ],
+ "n3_implementation": "N3（2026-10-31）入站事件面已落地：本表每行处置均已实现并经行为测试验证（implemented/behavior_verified=true）——私聊入私聊链、群消息入群聊子链观察登记、notice 登记（含同键合并与运维升级 ops_alert）、request 入事件子链并经落库处置状态机、meta/message_sent 只登记。lucky_king/honor 两行处理已落地，但其 verification 仍为 single_source_doubtful：平台存在性未证实，不因本字段改判。"
+}

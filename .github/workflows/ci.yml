@@ -1,0 +1,56 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    name: test (python ${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          # 锁版：与维护环境实测版本一致，避免 latest 漂移导致口径不一致。
+          version: "0.13.6"
+      - run: uv sync --locked --python ${{ matrix.python-version }}
+      - run: uv run --python ${{ matrix.python-version }} ruff check .
+      # 与 scripts/test.sh 同口径：--timeout=10。
+      - run: uv run --python ${{ matrix.python-version }} pytest -q --timeout=10
+      # 覆盖率门槛在 pyproject [tool.coverage.report] fail_under 中定义；
+      # 仅主版本腿产出数字与工件，避免双份报告口径打架。
+      - name: coverage
+        if: matrix.python-version == '3.12'
+        run: uv run --python ${{ matrix.python-version }} pytest -q --timeout=10 --cov=companion --cov-report=term --cov-report=xml
+      - name: upload coverage report
+        if: matrix.python-version == '3.12'
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-xml
+          path: coverage.xml
+          if-no-files-found: ignore
+
+  secrets-scan:
+    name: gitleaks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  docker:
+    name: docker build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # 只验证镜像可构建；不在 CI 中启动整套服务（NapCat 登录需人工扫码，
+      # 不属于自动化验证范围）。
+      - run: docker build -t companion-bot:ci .

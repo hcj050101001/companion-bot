@@ -1,0 +1,28 @@
+{
+  "id": "notice_group_ban_self",
+  "category": "notice",
+  "description": "机器人被禁言通知（group_ban 且 user_id=self_id）：notice 登记之后追加运维告警 ops_alert（reason_code=bot_muted）",
+  "payload": {
+    "time": 1767225600,
+    "self_id": "900000001",
+    "post_type": "notice",
+    "notice_type": "group_ban",
+    "group_id": 80001,
+    "operator_id": "90002",
+    "user_id": "900000001",
+    "duration": 1800,
+    "sub_type": "ban"
+  },
+  "raw_body": null,
+  "send_twice": false,
+  "followup_payload": null,
+  "expected": {
+    "http_status": 204,
+    "disposition": "registered",
+    "sends": 0,
+    "log_event_type": "ops_alert"
+  },
+  "known_difference": null,
+  "difference_note": null,
+  "note": null
+}

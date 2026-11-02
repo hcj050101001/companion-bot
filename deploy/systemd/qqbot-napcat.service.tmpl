@@ -1,0 +1,18 @@
+[Unit]
+Description=QQBot NapCat process watchdog
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+WorkingDirectory=@BASE@
+ExecStart=/usr/bin/python3 @RUNTIME@/napcat-watchdog.py
+Restart=always
+RestartSec=0.1
+KillMode=process
+UMask=0077
+StandardOutput=null
+StandardError=null
+
+[Install]
+WantedBy=default.target multi-user.target

@@ -1,0 +1,30 @@
+scenarios:
+  - id: tool_budget_caps_at_three_calls
+    group: tools
+    kind: tool_budget
+    description: 模型在一轮内诱导发起 5 次工具调用时，实际执行被截断为至多 3 次，随后强制进入合成且合成回答不超限。
+    user_id: "10001"
+    message: "请反复查一下 hello"
+    induced_calls: 5
+    expect_tool_calls: 3
+    synthesis_reply: "合成回答完成。"
+    max_reply_chars: 5000
+  - id: weather_deterministic_direct_with_attribution
+    group: tools
+    kind: weather_direct
+    description: 天气问法经工具直出确定性结果，带 Open-Meteo 署名，模型只发起一次工具调用、不做合成，工具轮次不写记忆。
+    user_id: "10001"
+    message: "Testville weather"
+    city: "Testville"
+    expect_send_count: 1
+    expect_model_requests: 1
+    expect_provider_requests: 2
+  - id: time_deterministic_direct_no_model
+    group: tools
+    kind: time_direct
+    description: 精确时间问法由系统时钟确定性直出，零模型参与，工具轮次不写记忆。
+    user_id: "10001"
+    message: "现在几点"
+    expected_reply: "2026-10-30 Friday 12:34:56 (afternoon, Asia/Shanghai, UTC+08:00)"
+    expect_llm_calls: 0
+    expect_send_count: 1

@@ -1,0 +1,27 @@
+{
+  "id": "notice_group_decrease_kick_me",
+  "category": "notice",
+  "description": "机器人被踢出群通知（kick_me 且 user_id=self_id）：notice 登记之后追加运维告警 ops_alert（reason_code=bot_kicked）",
+  "payload": {
+    "time": 1767225600,
+    "self_id": "900000001",
+    "post_type": "notice",
+    "notice_type": "group_decrease",
+    "group_id": 80001,
+    "operator_id": "90002",
+    "user_id": "900000001",
+    "sub_type": "kick_me"
+  },
+  "raw_body": null,
+  "send_twice": false,
+  "followup_payload": null,
+  "expected": {
+    "http_status": 204,
+    "disposition": "registered",
+    "sends": 0,
+    "log_event_type": "ops_alert"
+  },
+  "known_difference": null,
+  "difference_note": null,
+  "note": null
+}

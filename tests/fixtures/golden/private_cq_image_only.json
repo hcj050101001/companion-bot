@@ -1,0 +1,35 @@
+{
+  "id": "private_cq_image_only",
+  "category": "private",
+  "description": "字符串 CQ 码纯图片：CQ 被剥离后无文本，走媒体回复",
+  "payload": {
+    "time": 1767225600,
+    "self_id": "900000001",
+    "post_type": "message",
+    "message_type": "private",
+    "sub_type": "friend",
+    "message_id": "golden-p05",
+    "user_id": "90001",
+    "message": "[CQ:image,file=fake.jpg]",
+    "raw_message": "[CQ:image,file=fake.jpg]",
+    "sender": {
+      "user_id": 90001,
+      "nickname": "fake-user"
+    },
+    "font": 0
+  },
+  "raw_body": null,
+  "send_twice": false,
+  "followup_payload": null,
+  "expected": {
+    "http_status": 204,
+    "disposition": "accepted",
+    "sends": 2,
+    "reply_contains": "无法处理图片",
+    "expected_text": "",
+    "expected_recipient": 90001
+  },
+  "known_difference": null,
+  "difference_note": null,
+  "note": "改判注记（2026-10-31 接缝修复）：CQ 字符串报文现已与段数组同口径解析图片段并填充图片引用；本夹具的 CQ 只有 file= 而无 url=，属不可取引用，纯图片仍回原固定回复（与段数组仅 file 形态同口径），期望不变。此前注记所称「CQ 不解析图片段」已作废。依据：用户 2026-10-31 真机不触发缺陷修复。"
+}

@@ -1,0 +1,34 @@
+{
+  "id": "message_sent_private",
+  "category": "message_sent",
+  "description": "自身私聊回流（post_type=message_sent）：方向契约——只登记为 message_sent，永不进对话 claim 键空间、永不触发回复",
+  "payload": {
+    "time": 1767225600,
+    "self_id": "900000001",
+    "post_type": "message_sent",
+    "message_type": "private",
+    "sub_type": "friend",
+    "message_id": "golden-ms01",
+    "user_id": "900000001",
+    "target_id": 90001,
+    "message": "机器人自己发出的私聊",
+    "raw_message": "机器人自己发出的私聊",
+    "sender": {
+      "user_id": 900000001,
+      "nickname": "fake-bot"
+    },
+    "font": 0
+  },
+  "raw_body": null,
+  "send_twice": false,
+  "followup_payload": null,
+  "expected": {
+    "http_status": 204,
+    "disposition": "registered",
+    "sends": 0,
+    "log_event_type": "message_sent"
+  },
+  "known_difference": null,
+  "difference_note": null,
+  "note": null
+}

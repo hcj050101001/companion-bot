@@ -1,0 +1,26 @@
+scenarios:
+  - id: multibubble_explicit_short_unpunctuated
+    group: multibubble
+    kind: multibubble
+    description: 用户明确要求逐条发送时，无标点短句逐行各成一泡（第七轮契约：现网 09b621c，切现网时平价移植；上限 MAX_ONE_BY_ONE_BUBBLES=10 行），泡间节奏参数为 0.8–1.5 秒（以记录到的节奏断言，不真睡）。
+    user_id: "10001"
+    message: "你一条一条发给我好不好"
+    explicit: true
+    llm_text: "嗨，你来啦\n今天过得怎么样\n我刚好想到你\n想听你说说话\n不着急慢慢讲\n晚上吃了什么呀？"
+    expected_bubbles:
+      - "嗨，你来啦"
+      - "今天过得怎么样"
+      - "我刚好想到你"
+      - "想听你说说话"
+      - "不着急慢慢讲"
+      - "晚上吃了什么呀？"
+  - id: multibubble_without_request_stays_single
+    group: multibubble
+    kind: multibubble
+    description: 无明确逐条要求时，同一形态的单换行短句保持单条发送，不拆分。
+    user_id: "10001"
+    message: "今天聊点什么"
+    explicit: false
+    llm_text: "嗨，你来啦\n今天过得怎么样\n我刚好想到你\n想听你说说话\n不着急慢慢讲\n晚上吃了什么呀？"
+    expected_bubbles:
+      - "嗨，你来啦\n今天过得怎么样\n我刚好想到你\n想听你说说话\n不着急慢慢讲\n晚上吃了什么呀？"

@@ -1,0 +1,33 @@
+{
+  "id": "private_empty_text",
+  "category": "private",
+  "description": "文本为空字符串：现行仍走普通回复链（宽容行为存档）",
+  "payload": {
+    "time": 1767225600,
+    "self_id": "900000001",
+    "post_type": "message",
+    "message_type": "private",
+    "sub_type": "friend",
+    "message_id": "golden-p09",
+    "user_id": "90001",
+    "message": "",
+    "raw_message": "",
+    "sender": {
+      "user_id": 90001,
+      "nickname": "fake-user"
+    },
+    "font": 0
+  },
+  "raw_body": null,
+  "send_twice": false,
+  "followup_payload": null,
+  "expected": {
+    "http_status": 204,
+    "disposition": "accepted",
+    "sends": 2,
+    "reply_contains": "测试回复"
+  },
+  "known_difference": null,
+  "difference_note": null,
+  "note": null
+}

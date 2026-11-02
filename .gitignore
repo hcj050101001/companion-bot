@@ -1,0 +1,38 @@
+.env
+data/
+logs/
+*.db
+.venv/
+.uv-cache/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.codex/
+.aws/
+.agents/
+config.yaml
+/.env.runtime
+qq-relay.env
+# --- opensource-prep sanitization additions (2026-11-01) ---
+*.png
+/*.log
+*.jsonl
+.env.*
+!.env.example
+.onebot_secret
+*.db-wal
+*.db-shm
+*backup*/
+config/*.yaml
+!config/*.example.yaml
+# 例外：以下三个是随仓发布的默认配置（内容即模板/产品默认，运行时必需），
+# 不得被上面的通配忽略——发布演练（2026-11-01）实测：快照落仓时
+# git add -A 会因通配规则静默吞掉它们，导致全新 clone 缺文件、测试
+# 收集即失败。其余 config/*.yaml 仍按本地覆盖文件忽略。
+!config/safety.yaml
+!config/persona.yaml
+!config/persona.profile.yaml
+# --- coverage artifacts (stage-3 coverage wiring, 2026-11-01) ---
+.coverage
+coverage.xml
+htmlcov/

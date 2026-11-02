@@ -1,0 +1,190 @@
+{
+ "source": "方案 §2.2 消息段登记 × 调研报告段清单 × 框架现行段模型（Text/Image/Audio/At/Raw）",
+ "extracted_on": "2026-10-31",
+ "rows": [
+  {
+   "type": "text",
+   "direction": "both",
+   "current_model": "TextSegment",
+   "disposition": "first_class",
+   "verification": "confirmed",
+   "notes": "不变"
+  },
+  {
+   "type": "at",
+   "direction": "both",
+   "current_model": "AtSegment",
+   "disposition": "first_class",
+   "verification": "confirmed",
+   "notes": "补 @全体（qq=all）语义"
+  },
+  {
+   "type": "reply",
+   "direction": "both",
+   "current_model": "Raw",
+   "disposition": "first_class",
+   "verification": "confirmed",
+   "notes": "提为一等段（引用回复是群聊基本形态）"
+  },
+  {
+   "type": "face",
+   "direction": "both",
+   "current_model": "Raw",
+   "disposition": "first_class",
+   "verification": "confirmed",
+   "notes": "提为一等段"
+  },
+  {
+   "type": "mface",
+   "direction": "both",
+   "current_model": "Raw",
+   "disposition": "first_class",
+   "verification": "confirmed",
+   "notes": "商城表情，含 super-emoji 字段"
+  },
+  {
+   "type": "image",
+   "direction": "both",
+   "current_model": "ImageSegment",
+   "disposition": "first_class",
+   "verification": "confirmed",
+   "notes": "补 summary/sub_type 字段口径"
+  },
+  {
+   "type": "record",
+   "direction": "both",
+   "current_model": "AudioSegment",
+   "disposition": "first_class",
+   "verification": "confirmed",
+   "notes": "不变"
+  },
+  {
+   "type": "video",
+   "direction": "both",
+   "current_model": "Raw",
+   "disposition": "first_class",
+   "verification": "confirmed",
+   "notes": "提为一等段（含 thumb）"
+  },
+  {
+   "type": "file",
+   "direction": "both",
+   "current_model": "Raw",
+   "disposition": "first_class",
+   "verification": "confirmed",
+   "notes": "提为一等段（与文件域接口配套）"
+  },
+  {
+   "type": "poke",
+   "direction": "both",
+   "current_model": "Raw",
+   "disposition": "first_class",
+   "verification": "confirmed",
+   "notes": "提为一等段（互动形态）"
+  },
+  {
+   "type": "dice",
+   "direction": "both",
+   "current_model": "Raw",
+   "disposition": "first_class",
+   "verification": "confirmed",
+   "notes": "提为一等段"
+  },
+  {
+   "type": "rps",
+   "direction": "both",
+   "current_model": "Raw",
+   "disposition": "first_class",
+   "verification": "confirmed",
+   "notes": "提为一等段"
+  },
+  {
+   "type": "forward",
+   "direction": "outbound_primary",
+   "current_model": "Raw",
+   "disposition": "structured",
+   "verification": "confirmed",
+   "notes": "提为结构化段：节点树有嵌套结构，出站走 segment 数组报文，不用 CQ 拼接"
+  },
+  {
+   "type": "node",
+   "direction": "outbound_primary",
+   "current_model": "Raw",
+   "disposition": "structured",
+   "verification": "confirmed",
+   "notes": "同 forward"
+  },
+  {
+   "type": "json",
+   "direction": "both",
+   "current_model": "Raw",
+   "disposition": "raw_with_fields",
+   "verification": "confirmed",
+   "notes": "保持 Raw 级别但登记字段口径（Ark 卡走 json）；出站须过递归复核"
+  },
+  {
+   "type": "xml",
+   "direction": "both",
+   "current_model": "Raw",
+   "disposition": "raw_with_fields",
+   "verification": "confirmed",
+   "notes": "保持 Raw 级别但登记字段口径"
+  },
+  {
+   "type": "music",
+   "direction": "both",
+   "current_model": "Raw",
+   "disposition": "known_raw",
+   "verification": "confirmed",
+   "notes": "登记为已知段，构造经 Raw + 令牌校验路径"
+  },
+  {
+   "type": "contact",
+   "direction": "both",
+   "current_model": "Raw",
+   "disposition": "known_raw",
+   "verification": "confirmed",
+   "notes": "同 music"
+  },
+  {
+   "type": "location",
+   "direction": "both",
+   "current_model": "Raw",
+   "disposition": "known_raw",
+   "verification": "confirmed",
+   "notes": "同 music"
+  },
+  {
+   "type": "markdown",
+   "direction": "both",
+   "current_model": "Raw",
+   "disposition": "known_raw",
+   "verification": "confirmed",
+   "notes": "同 music"
+  },
+  {
+   "type": "miniapp",
+   "direction": "both",
+   "current_model": "Raw",
+   "disposition": "known_raw",
+   "verification": "confirmed",
+   "notes": "同 music"
+  },
+  {
+   "type": "flashtransfer",
+   "direction": "inbound",
+   "current_model": "Raw",
+   "disposition": "receive_only",
+   "verification": "bundle_confirmed",
+   "notes": "N5 定稿（bundle 证据 docs/napcat-schema-evidence-n5.md §6）：data 仅 fileSetId 必填；可收（入站 RawSegment+关键字段校验）不可发（NapCat ob11→raw 转换器为空实现，原文注释「不需要支持发送」，出站序列化明确拒绝）"
+  },
+  {
+   "type": "onlinefile",
+   "direction": "inbound",
+   "current_model": "Raw",
+   "disposition": "receive_only",
+   "verification": "bundle_confirmed",
+   "notes": "N5 正名：平台段字面量为 onlinefile（无下划线），online_file 在 bundle 中无段证据、仅见于动作名/事件名；data 五字段全必填 msgId/elementId/fileName/fileSize/isDir；可收不可发（同 flashtransfer，ob11→raw 空实现）"
+  }
+ ]
+}

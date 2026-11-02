@@ -1,0 +1,43 @@
+# Sanitized copy of the production config shape as of 2026-10-31.
+# The only production identifier (the known-user QQ ID) is replaced by
+# the synthetic ID 10001. The application config contains no secrets;
+# every other key, nesting level, and value mirrors production,
+# including read-only policies that omit rate_limit/window_seconds
+# and therefore rely on the loader defaults.
+allowed_private_user_ids:
+  - "10001"
+requests_per_minute: 6
+response_delay_seconds:
+  min: 1
+  max: 4
+sqlite_path: data/memory.db
+logs_dir: logs
+persona_file: config/persona.md
+persona_profile_file: config/persona.yaml
+safety_file: config/safety.yaml
+llm:
+  provider: deepseek
+  display_name: DeepSeek
+tools:
+  alert_private_msg:
+    enabled: false
+    dry_run: true
+    rate_limit: 2
+  qzone:
+    enabled: false
+  friend_management:
+    enabled: false
+read_only_tools:
+  enabled: true
+  policies:
+    current_time:
+      enabled: true
+    weather_lookup:
+      enabled: true
+    web_search:
+      enabled: true
+      content_extraction_enabled: true
+connection_health:
+  enabled: true
+proactive_care:
+  enabled: false

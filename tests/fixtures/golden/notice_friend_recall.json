@@ -1,0 +1,25 @@
+{
+  "id": "notice_friend_recall",
+  "category": "notice",
+  "description": "好友消息撤回通知：N3 起只登记元数据为 notice，不取回内容",
+  "payload": {
+    "time": 1767225600,
+    "self_id": "900000001",
+    "post_type": "notice",
+    "notice_type": "friend_recall",
+    "user_id": "90001",
+    "message_id": "golden-rc02"
+  },
+  "raw_body": null,
+  "send_twice": false,
+  "followup_payload": null,
+  "expected": {
+    "http_status": 204,
+    "disposition": "registered",
+    "sends": 0,
+    "log_event_type": "notice"
+  },
+  "known_difference": null,
+  "difference_note": null,
+  "note": null
+}

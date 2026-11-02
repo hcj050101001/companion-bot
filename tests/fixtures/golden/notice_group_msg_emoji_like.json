@@ -1,0 +1,32 @@
+{
+  "id": "notice_group_msg_emoji_like",
+  "category": "notice",
+  "description": "群消息表情点赞通知：N3 起登记为 notice",
+  "payload": {
+    "time": 1767225600,
+    "self_id": "900000001",
+    "post_type": "notice",
+    "notice_type": "group_msg_emoji_like",
+    "group_id": 80001,
+    "user_id": "90001",
+    "message_id": "golden-like01",
+    "likes": [
+      {
+        "emoji_id": "76",
+        "count": 1
+      }
+    ]
+  },
+  "raw_body": null,
+  "send_twice": false,
+  "followup_payload": null,
+  "expected": {
+    "http_status": 204,
+    "disposition": "registered",
+    "sends": 0,
+    "log_event_type": "notice"
+  },
+  "known_difference": null,
+  "difference_note": null,
+  "note": null
+}

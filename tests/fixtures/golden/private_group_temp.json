@@ -1,0 +1,36 @@
+{
+  "id": "private_group_temp",
+  "category": "private",
+  "description": "群临时会话私聊（sub_type=group_temp + temp_source）：单列 chat_type，仍入私聊链正常回复",
+  "payload": {
+    "time": 1767225600,
+    "self_id": "900000001",
+    "post_type": "message",
+    "message_type": "private",
+    "sub_type": "group_temp",
+    "message_id": "golden-pt01",
+    "group_id": 80001,
+    "user_id": "90001",
+    "temp_source": 0,
+    "message": "临时会话你好",
+    "raw_message": "临时会话你好",
+    "sender": {
+      "user_id": 90001,
+      "nickname": "fake-user"
+    },
+    "font": 0
+  },
+  "raw_body": null,
+  "send_twice": false,
+  "followup_payload": null,
+  "expected": {
+    "http_status": 204,
+    "disposition": "accepted",
+    "sends": 2,
+    "reply_contains": "测试回复",
+    "expected_recipient": 90001
+  },
+  "known_difference": null,
+  "difference_note": null,
+  "note": null
+}

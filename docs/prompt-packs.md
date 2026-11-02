@@ -1,0 +1,7 @@
+# Prompt packs
+
+The existing configured persona is always the default. In a private chat, send `聊天风格` to list styles and synthetic example lines, `切换风格 friend`, `切换风格 reflective`, or `切换风格 conversational` to choose one, and `恢复默认风格` (or `切换风格 default`) to return. Selection is explicit and never based on a personal attribute. Invalid choices return to the default; unavailable, removed, unapproved or damaged packs also resolve to the current default. Forgetting clears the selection as well as short-term messages. These commands run after the existing crisis check, except forget, whose existing routing is unchanged.
+
+`config/prompt_packs/registry.json` records source, revision, contributor, license, review status and a SHA-256 digest of each unchanged external prompt's UTF-8 bytes. The conversational entry's public contributor handle is `moviesmence`; the pinned CSV identifies that contributor by an email address, which is intentionally not stored here. The source variables remain unchanged. The fixed wrapper preserves AI identity and processing disclosure, existing political boundaries, crisis handoff, and content limits; the existing fixed crisis response and onboarding are unchanged. The registry and prompt files are local and no network access is used to load them.
+
+The three external styles have not undergone the planned offline quality or full safety evaluation. Selection does not establish that a model will follow the prompt or wrapper, and the existing input safety gateway is not a general output safety filter.

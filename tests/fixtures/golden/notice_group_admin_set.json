@@ -1,0 +1,26 @@
+{
+  "id": "notice_group_admin_set",
+  "category": "notice",
+  "description": "群管理员设置通知：N3 起登记为 notice",
+  "payload": {
+    "time": 1767225600,
+    "self_id": "900000001",
+    "post_type": "notice",
+    "notice_type": "group_admin",
+    "group_id": 80001,
+    "user_id": "90001",
+    "sub_type": "set"
+  },
+  "raw_body": null,
+  "send_twice": false,
+  "followup_payload": null,
+  "expected": {
+    "http_status": 204,
+    "disposition": "registered",
+    "sends": 0,
+    "log_event_type": "notice"
+  },
+  "known_difference": null,
+  "difference_note": null,
+  "note": null
+}

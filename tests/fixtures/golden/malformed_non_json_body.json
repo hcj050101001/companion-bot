@@ -1,0 +1,16 @@
+{
+  "id": "malformed_non_json_body",
+  "category": "malformed",
+  "description": "非 JSON 请求体：v4 应走 Ignore(malformed) 路径（单一接受边界内、非 401 一律 204）",
+  "payload": null,
+  "raw_body": "{not json at all",
+  "send_twice": false,
+  "followup_payload": null,
+  "expected": {
+    "http_status": 204,
+    "disposition": "ignored",
+    "sends": 0,
+    "log_event_type": "ignored"
+  },
+  "note": null
+}

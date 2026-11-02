@@ -1,0 +1,27 @@
+{
+  "id": "notice_notify_honor",
+  "category": "notice",
+  "description": "群荣誉变更通知：N3 起登记为 notice",
+  "payload": {
+    "time": 1767225600,
+    "self_id": "900000001",
+    "post_type": "notice",
+    "notice_type": "notify",
+    "group_id": 80001,
+    "user_id": "90001",
+    "honor_type": "talkative",
+    "sub_type": "honor"
+  },
+  "raw_body": null,
+  "send_twice": false,
+  "followup_payload": null,
+  "expected": {
+    "http_status": 204,
+    "disposition": "registered",
+    "sends": 0,
+    "log_event_type": "notice"
+  },
+  "known_difference": null,
+  "difference_note": null,
+  "note": "单源存疑——仅官方事件表来源、本机 bundle 无事件证据；报文形状按官方事件表构造，本用例只断言本框架的登记处置、不断言平台必发此事件。"
+}

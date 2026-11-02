@@ -1,0 +1,28 @@
+{
+  "id": "meta_heartbeat",
+  "category": "meta_event",
+  "description": "心跳元事件（无 message_id）：N3 起登记为 meta_event（冗余信号，健康以 get_status 探针为准），重复到达不产生 claim 残留",
+  "payload": {
+    "time": 1767225600,
+    "self_id": "900000001",
+    "post_type": "meta_event",
+    "meta_event_type": "heartbeat",
+    "status": {
+      "online": true,
+      "good": true
+    },
+    "interval": 5000
+  },
+  "raw_body": null,
+  "send_twice": true,
+  "followup_payload": null,
+  "expected": {
+    "http_status": 204,
+    "disposition": "registered",
+    "sends": 0,
+    "log_event_type": "meta_event"
+  },
+  "known_difference": null,
+  "difference_note": null,
+  "note": "N3 改判：NapCat 方案 C1/C3/C7，原期望为 Ignore 丢弃。"
+}

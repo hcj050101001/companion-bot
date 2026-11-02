@@ -1,0 +1,35 @@
+{
+  "id": "group_text",
+  "category": "group",
+  "description": "群聊消息：N3 起走群聊子链观察登记（不回复、不进私聊链、不读私聊记忆）",
+  "payload": {
+    "time": 1767225600,
+    "self_id": "900000001",
+    "post_type": "message",
+    "message_type": "group",
+    "sub_type": "normal",
+    "message_id": "golden-g01",
+    "group_id": 80001,
+    "user_id": "90001",
+    "message": "群里的话",
+    "raw_message": "群里的话",
+    "sender": {
+      "user_id": 90001,
+      "nickname": "fake-user",
+      "card": ""
+    },
+    "font": 0
+  },
+  "raw_body": null,
+  "send_twice": false,
+  "followup_payload": null,
+  "expected": {
+    "http_status": 204,
+    "disposition": "registered",
+    "sends": 0,
+    "log_event_type": "group_message"
+  },
+  "known_difference": null,
+  "difference_note": null,
+  "note": "N3 改判：NapCat 方案 C1/C3/C7，原期望为 Ignore 丢弃。"
+}

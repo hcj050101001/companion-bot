@@ -1,0 +1,41 @@
+{
+  "id": "group_message_id_poisons_private",
+  "category": "group",
+  "description": "群聊带 message_id 被忽略后，同 message_id 的私聊应正常处理（v4：不合格事件不建 claim）",
+  "payload": {
+    "time": 1767225600,
+    "self_id": "900000001",
+    "post_type": "message",
+    "message_type": "group",
+    "message_id": "golden-g02",
+    "group_id": 80001,
+    "user_id": "90001",
+    "message": "群里的话",
+    "raw_message": "群里的话"
+  },
+  "raw_body": null,
+  "send_twice": false,
+  "followup_payload": {
+    "time": 1767225600,
+    "self_id": "900000001",
+    "post_type": "message",
+    "message_type": "private",
+    "sub_type": "friend",
+    "message_id": "golden-g02",
+    "user_id": "90001",
+    "message": "私聊的话",
+    "raw_message": "私聊的话",
+    "sender": {
+      "user_id": 90001,
+      "nickname": "fake-user"
+    },
+    "font": 0
+  },
+  "expected": {
+    "http_status": 204,
+    "disposition": "accepted",
+    "sends": 2,
+    "reply_contains": "测试回复"
+  },
+  "note": null
+}

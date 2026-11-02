@@ -1,0 +1,59 @@
+[build-system]
+requires = ["hatchling>=1.24,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "companion-bot"
+# 演练占位版本：首发版本号待负责人拍板（决策 D7：v0.10.0 延续 / v1.0.0 首发即正式版）。
+version = "0.10.0"
+description = "Safety-first QQ companion bot and lightweight framework on NapCat / OneBot v11: all 167 canonical actions behind a tiered authorization gateway, crisis replies that are never LLM-generated, and delivery semantics owned by a dedicated service."
+# 演练占位：与仓库现行 LICENSE（MIT）一致；许可证最终口径待负责人拍板（决策 D3）。
+license = { text = "MIT" }
+keywords = ["qq", "napcat", "onebot", "chatbot", "companion", "llm"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Communications :: Chat",
+]
+requires-python = ">=3.12,<3.14"
+dependencies = [
+  "fastapi>=0.110,<1",
+  "uvicorn[standard]>=0.27,<1",
+  "PyYAML>=6,<7",
+  "httpx>=0.27,<1",
+  "python-dotenv>=1,<2",
+  "pydantic>=2,<3",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["companion"]
+
+[dependency-groups]
+dev = [
+  "pytest>=8,<9",
+  "pytest-cov>=7.1.0",
+  "pytest-timeout>=2.3,<3",
+  "ruff>=0.8,<1",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+
+[tool.ruff]
+line-length = 100
+
+# Coverage: measured with pytest-cov (`uv run pytest --cov=companion`).
+# 开源化阶段三（2026-11-01）实测总覆盖率 89%（含分支），门槛先设 85%
+# 留出平台差异缓冲；后续每次抬升门槛须记入 CHANGELOG.md。
+[tool.coverage.run]
+source = ["companion"]
+branch = true
+
+[tool.coverage.report]
+fail_under = 85

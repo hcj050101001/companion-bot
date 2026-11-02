@@ -1,0 +1,25 @@
+{
+  "id": "notice_bot_offline",
+  "category": "notice",
+  "description": "机器人离线通知：notice 登记之后追加运维告警 ops_alert（reason_code=bot_offline），与连接健康探针（为准）对账",
+  "payload": {
+    "time": 1767225600,
+    "self_id": "900000001",
+    "post_type": "notice",
+    "notice_type": "bot_offline",
+    "user_id": "900000001",
+    "tag": "fake-offline"
+  },
+  "raw_body": null,
+  "send_twice": false,
+  "followup_payload": null,
+  "expected": {
+    "http_status": 204,
+    "disposition": "registered",
+    "sends": 0,
+    "log_event_type": "ops_alert"
+  },
+  "known_difference": null,
+  "difference_note": null,
+  "note": null
+}

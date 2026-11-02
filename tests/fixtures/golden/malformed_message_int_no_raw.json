@@ -1,0 +1,26 @@
+{
+  "id": "malformed_message_int_no_raw",
+  "category": "malformed",
+  "description": "message 为整数且无 raw_message：无法解析为文本，忽略",
+  "payload": {
+    "time": 1767225600,
+    "self_id": "900000001",
+    "post_type": "message",
+    "message_type": "private",
+    "message_id": "golden-m05",
+    "user_id": "90001",
+    "message": 12345
+  },
+  "raw_body": null,
+  "send_twice": false,
+  "followup_payload": null,
+  "expected": {
+    "http_status": 204,
+    "disposition": "ignored",
+    "sends": 0,
+    "log_event_type": "ignored"
+  },
+  "known_difference": null,
+  "difference_note": null,
+  "note": null
+}

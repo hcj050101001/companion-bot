@@ -1,0 +1,13 @@
+.env
+config.yaml
+config/
+.git
+.venv
+data
+logs
+__pycache__
+.pytest_cache
+.ruff_cache
+.codex
+.aws
+.agents

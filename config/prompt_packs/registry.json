@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "default": "default",
+  "packs": [
+    {
+      "id": "default",
+      "title": "现有人设",
+      "style": "默认风格",
+      "preview": "我在听，你想从哪里说起？",
+      "source_repository": "本仓库",
+      "revision": "493fb71101329e18cf1061bf56aa59f82b47f5b2",
+      "contributor": "companion-bot contributors",
+      "license": "MIT",
+      "approved": true
+    },
+    {
+      "id": "friend",
+      "title": "Friend",
+      "style": "支持型",
+      "preview": "听起来这件事让你有些累。",
+      "source_repository": "https://github.com/f/prompts.chat",
+      "revision": "332cba7db387f092987ff8b3b3744c1c754c244e",
+      "contributor": "florinpopacodes",
+      "license": "CC0-1.0",
+      "file": "friend.txt",
+      "sha256": "fc749700ee0885996e81e5fdd0e0c9b1b6ce5407a64635a1a57975f4f4acf2fd",
+      "integrity_note": "Exact UTF-8 encoding of the prompt field in the pinned prompts.csv; no added newline or edits.",
+      "approved": true
+    },
+    {
+      "id": "reflective",
+      "title": "Reflective Companion, Not Advice",
+      "style": "倾听反思型",
+      "preview": "这似乎让你有些犹豫。",
+      "source_repository": "https://github.com/f/prompts.chat",
+      "revision": "332cba7db387f092987ff8b3b3744c1c754c244e",
+      "contributor": "tuanductran",
+      "license": "CC0-1.0",
+      "file": "reflective.txt",
+      "sha256": "93bfdd44430df2a204e310d5d90a492e99c2558017af3823ef7dd8a55735a0d4",
+      "integrity_note": "Exact UTF-8 encoding of the prompt field in the pinned prompts.csv; no added newline or edits.",
+      "approved": true
+    },
+    {
+      "id": "conversational",
+      "title": "Act as a Conversational AI",
+      "style": "轻松交流型",
+      "preview": "今天有什么想聊的？",
+      "source_repository": "https://github.com/f/prompts.chat",
+      "revision": "332cba7db387f092987ff8b3b3744c1c754c244e",
+      "contributor": "moviesmence",
+      "license": "CC0-1.0",
+      "file": "conversational.txt",
+      "sha256": "9b2a1b327b4e7a2f044141cbf91f3b32c37afb3553c285ff5971dccaaa730498",
+      "integrity_note": "Exact UTF-8 encoding of the prompt field in the pinned prompts.csv; no added newline or edits.",
+      "approved": true
+    }
+  ]
+}

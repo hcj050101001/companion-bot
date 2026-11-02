@@ -1,0 +1,34 @@
+scenarios:
+  - id: identity_ordinary_weak_ai_assistant
+    group: identity
+    kind: identity_multipart
+    description: 普通（多气泡 JSON）路由中，模型只答「我是 AI 助手」，未答全身份三项却被现行披露检查放行。
+    user_id: "10001"
+    message: "你是谁"
+    llm_reply: "我是 AI 助手"
+    expect_send_count: 1
+  - id: identity_tool_weak_ai_assistant
+    group: identity
+    kind: identity_tool
+    description: 工具路由中，模型只答「我是 AI 助手」，未答全身份三项却被现行披露检查放行。
+    user_id: "10001"
+    message: "你是谁"
+    llm_reply: "我是 AI 助手"
+    expect_send_count: 1
+  - id: identity_tool_uncovered_question_secret
+    group: identity
+    kind: identity_tool
+    description: 工具路由中，问法「你背后用的是什么模型」未被现行身份问题匹配覆盖，模型答「这是秘密」未披露三项却被放行。
+    user_id: "10001"
+    message: "你背后用的是什么模型"
+    llm_reply: "这是秘密"
+    expect_send_count: 1
+  - id: identity_ordinary_denial_fallback
+    group: identity
+    kind: identity_multipart
+    description: 普通路由中，模型否认 AI 身份（自称真人）时被拦截，回退固定披露文案且答全三项。
+    user_id: "10001"
+    message: "你是谁"
+    llm_reply: "我是真人，不是人工智能。"
+    expect_fallback: true
+    expect_send_count: 1

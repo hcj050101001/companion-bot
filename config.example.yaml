@@ -1,0 +1,131 @@
+allowed_private_user_ids: [] # 必填：填入自己的 QQ 号
+requests_per_minute: 6
+response_delay_seconds:
+  min: 1
+  max: 4
+sqlite_path: data/memory.db
+logs_dir: logs
+persona_file: config/persona.md
+persona_profile_file: config/persona.yaml
+safety_file: config/safety.yaml
+napcat_base_url: http://127.0.0.1:3000
+llm:
+  provider: deepseek # deepseek | openai_compatible | codex
+  display_name: DeepSeek # 对外告知用的模型名；换模型时同步改
+  tool_loop: # 工具循环上限（方案 §5.4 状态机）
+    max_tool_rounds: 2 # 工具轮次上限，其后一轮只做合成
+    max_tool_calls: 3 # 实际工具调用总数上限，超出部分回不可用
+tools:
+  send_private_msg:
+    enabled: true
+    dry_run: false
+    rate_limit: 18
+    window_seconds: 60
+  alert_private_msg:
+    enabled: false
+    dry_run: true
+    rate_limit: 2
+    window_seconds: 60
+  group_chat:
+    enabled: false
+    dry_run: true
+    rate_limit: 6
+    window_seconds: 60
+    reply_enabled: false
+    # 群回复准入名单的值域：*_persons 填 person 类别
+    # （"system" 机器人自身 / "owner" 名单内用户 / "stranger"
+    # 其余群员），不是 QQ 号；*_roles 填群内角色（"owner" /
+    # "admin" / "member" / "unknown"）。reply_blocked_persons
+    # 恒含 "system"（删除即配置校验失败）。
+    reply_blocked_persons: ["system"]
+    reply_allowed_persons: null
+    reply_allowed_roles: null
+  qzone:
+    enabled: false
+    dry_run: true
+    rate_limit: 2
+    window_seconds: 60
+  friend_management:
+    enabled: false
+    dry_run: true
+    rate_limit: 2
+    window_seconds: 60
+
+# The global switch and the individual policy must both be enabled.
+read_only_tools:
+  enabled: false
+  policies:
+    current_time:
+      enabled: false
+      rate_limit: 6
+      window_seconds: 60
+    weather_lookup:
+      enabled: false
+      rate_limit: 6
+      window_seconds: 60
+    web_search:
+      enabled: false
+      content_extraction_enabled: false
+      rate_limit: 6
+      window_seconds: 60
+    date_countdown:
+      enabled: false
+      rate_limit: 6
+      window_seconds: 60
+      anniversaries: []
+
+# Read-only local monitoring; disabled until explicitly enabled.
+connection_health:
+  enabled: false
+
+# Proactive care (P6 wiring): opt-in only and disabled by default. The
+# send gate, care scheduler and chat control commands are wired in code,
+# but nothing is sent while enabled is false. To assemble the consent
+# store, set store_path to an operator-owned SQLite path outside the
+# repository; without it the care command surface does not exist.
+proactive_care:
+  enabled: false
+  store_path:
+  check_interval_seconds: 900
+
+# NapCat action overrides (plan C11): per-action enabled/dry_run overrides
+# merged into the sender policies at startup, e.g.
+#   overrides: {get_group_list: {enabled: true}}
+# Changing action switches requires a restart (not hot-reloadable).
+actions:
+  overrides: {}
+  # L3 受控解锁名单（默认空 = 全部硬禁）：逐动作显式列名，变更须重启。
+  l3_unlock: []
+
+# Private-chat image understanding via the DeepSeek vision model.
+# Disabling vision restores the previous behavior verbatim: the fixed
+# reply for image-only messages, plain text generation for text+image.
+media:
+  vision:
+    enabled: true
+    model: deepseek-flash
+    max_images: 3
+    max_image_bytes: 10485760
+    timeout_seconds: 30
+    napcat_timeout_seconds: 8
+    image_local_roots: []
+
+# Request handling (friend requests / group requests & invites):
+# manual = leave for human handling; allowlist = auto-approve only
+# listed user IDs (optionally scoped by approve_group_ids for groups);
+# approve_all = auto-approve everyone — friend only, group does not
+# offer approve_all. Changing these requires a restart.
+requests:
+  friend: manual
+  group: manual
+  approve_user_ids: []
+  approve_group_ids: []
+
+# Reconnect catch-up: after a disconnect/recovery, pull messages missed
+# while offline and answer them once per conversation. Disabled by
+# default; enabling is a separate deployment decision (requires D1
+# verification of history message_id fidelity). Restart to change.
+reconnect_catchup:
+  enabled: false
+  prefix_enabled: true
+  prefix_text: （刚信号不好，才看到你之前的消息）

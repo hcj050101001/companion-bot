@@ -1,0 +1,43 @@
+{
+  "id": "private_segments_image_only",
+  "category": "private",
+  "description": "消息段纯图片无文本：夹具环境无 DeepSeek 凭证、视觉不可用，按失败口径回退固定媒体回复",
+  "payload": {
+    "time": 1767225600,
+    "self_id": "900000001",
+    "post_type": "message",
+    "message_type": "private",
+    "sub_type": "friend",
+    "message_id": "golden-p04",
+    "user_id": "90001",
+    "message": [
+      {
+        "type": "image",
+        "data": {
+          "file": "fake.jpg",
+          "url": "http://example.invalid/fake.jpg"
+        }
+      }
+    ],
+    "raw_message": "[CQ:image,file=fake.jpg]",
+    "sender": {
+      "user_id": 90001,
+      "nickname": "fake-user"
+    },
+    "font": 0
+  },
+  "raw_body": null,
+  "send_twice": false,
+  "followup_payload": null,
+  "expected": {
+    "http_status": 204,
+    "disposition": "accepted",
+    "sends": 2,
+    "reply_contains": "无法处理图片",
+    "expected_text": "",
+    "expected_recipient": 90001
+  },
+  "known_difference": null,
+  "difference_note": null,
+  "note": "行为改判注记（2026-10-31）：用户指令接入 DeepSeek 视觉（deepseek-flash）后，生产环境（media.vision 开启且有凭证）下本报文走视觉理解回复，不再固定拒绝；本夹具的运行环境无凭证，视觉不可用，期望保持固定回复，属失败回退口径而非旧行为存续。依据：用户 2026-10-31 指令 + 官方文档 api-docs.deepseek.com/zh-cn/guides/vision/。"
+}

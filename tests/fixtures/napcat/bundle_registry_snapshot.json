@@ -1,0 +1,811 @@
+{
+ "source": {
+  "napcat_version": "4.18.41",
+  "qq_build": "3.2.34-53644",
+  "bundle_file": "napcat.mjs",
+  "bundle_md5": "7fdb4903c8867e7db0b3345ad226c805",
+  "bundle_size_bytes": 3134858,
+  "registry_variable": "re",
+  "extracted_on": "2026-10-31",
+  "method": "tests/scripts_n0/extract_bundle_registry.py（定位 const re = {...} 注册表对象、大括号配对截取、逐行解析；独立双路抽取结果一致）",
+  "note": "在册 = 未注释条目，证明动作存在，不证明参数 schema 与行为；schema 走方案 §7.3 第 2 级核对。"
+ },
+ "active": [
+  {
+   "key": "TestAutoRegister01",
+   "action": "test_auto_register_01"
+  },
+  {
+   "key": "TestAutoRegister02",
+   "action": "test_auto_register_02"
+  },
+  {
+   "key": "CleanStreamTempFile",
+   "action": "clean_stream_temp_file"
+  },
+  {
+   "key": "TestDownloadStream",
+   "action": "test_download_stream"
+  },
+  {
+   "key": "UploadFileStream",
+   "action": "upload_file_stream"
+  },
+  {
+   "key": "DownloadFileStream",
+   "action": "download_file_stream"
+  },
+  {
+   "key": "DownloadFileRecordStream",
+   "action": "download_file_record_stream"
+  },
+  {
+   "key": "DownloadFileImageStream",
+   "action": "download_file_image_stream"
+  },
+  {
+   "key": "DelGroupAlbumMedia",
+   "action": "del_group_album_media"
+  },
+  {
+   "key": "SetGroupAlbumMediaLike",
+   "action": "set_group_album_media_like"
+  },
+  {
+   "key": "CancelGroupAlbumMediaLike",
+   "action": "cancel_group_album_media_like"
+  },
+  {
+   "key": "DoGroupAlbumComment",
+   "action": "do_group_album_comment"
+  },
+  {
+   "key": "GetGroupAlbumMediaList",
+   "action": "get_group_album_media_list"
+  },
+  {
+   "key": "UploadImageToQunAlbum",
+   "action": "upload_image_to_qun_album"
+  },
+  {
+   "key": "UploadImagesToQunAlbum",
+   "action": "upload_images_to_qun_album"
+  },
+  {
+   "key": "UploadVideoToQunAlbum",
+   "action": "upload_video_to_qun_album"
+  },
+  {
+   "key": "GetQunAlbumList",
+   "action": "get_qun_album_list"
+  },
+  {
+   "key": "SetGroupTodo",
+   "action": "set_group_todo"
+  },
+  {
+   "key": "CompleteGroupTodo",
+   "action": "complete_group_todo"
+  },
+  {
+   "key": "CancelGroupTodo",
+   "action": "cancel_group_todo"
+  },
+  {
+   "key": "SetGroupKickMembers",
+   "action": "set_group_kick_members"
+  },
+  {
+   "key": "SetGroupRobotAddOption",
+   "action": "set_group_robot_add_option"
+  },
+  {
+   "key": "SetGroupAddOption",
+   "action": "set_group_add_option"
+  },
+  {
+   "key": "SetGroupSearch",
+   "action": "set_group_search"
+  },
+  {
+   "key": "GetDoubtFriendsAddRequest",
+   "action": "get_doubt_friends_add_request"
+  },
+  {
+   "key": "SetDoubtFriendsAddRequest",
+   "action": "set_doubt_friends_add_request"
+  },
+  {
+   "key": "GetRkeyEx",
+   "action": "get_rkey"
+  },
+  {
+   "key": "GetRkeyServer",
+   "action": "get_rkey_server"
+  },
+  {
+   "key": "SetGroupRemark",
+   "action": "set_group_remark"
+  },
+  {
+   "key": "SetGroupMemberInvitePolicy",
+   "action": "set_group_member_invite_policy"
+  },
+  {
+   "key": "SetGroupMemberPermissions",
+   "action": "set_group_member_permissions"
+  },
+  {
+   "key": "SetGroupNewMemberHistoryVisibility",
+   "action": "set_group_new_member_history_visibility"
+  },
+  {
+   "key": "NapCat_GetPrivateFileUrl",
+   "action": "get_private_file_url"
+  },
+  {
+   "key": "ClickInlineKeyboardButton",
+   "action": "click_inline_keyboard_button"
+  },
+  {
+   "key": "GetUnidirectionalFriendList",
+   "action": "get_unidirectional_friend_list"
+  },
+  {
+   "key": "SendPrivateMsg",
+   "action": "send_private_msg"
+  },
+  {
+   "key": "SendGroupMsg",
+   "action": "send_group_msg"
+  },
+  {
+   "key": "SendMsg",
+   "action": "send_msg"
+  },
+  {
+   "key": "DeleteMsg",
+   "action": "delete_msg"
+  },
+  {
+   "key": "GetMsg",
+   "action": "get_msg"
+  },
+  {
+   "key": "GoCQHTTP_GetForwardMsg",
+   "action": "get_forward_msg"
+  },
+  {
+   "key": "SendLike",
+   "action": "send_like"
+  },
+  {
+   "key": "SetGroupKick",
+   "action": "set_group_kick"
+  },
+  {
+   "key": "SetGroupBan",
+   "action": "set_group_ban"
+  },
+  {
+   "key": "SetGroupWholeBan",
+   "action": "set_group_whole_ban"
+  },
+  {
+   "key": "SetGroupAdmin",
+   "action": "set_group_admin"
+  },
+  {
+   "key": "SetGroupCard",
+   "action": "set_group_card"
+  },
+  {
+   "key": "SetGroupName",
+   "action": "set_group_name"
+  },
+  {
+   "key": "SetGroupLeave",
+   "action": "set_group_leave"
+  },
+  {
+   "key": "SetSpecialTitle",
+   "action": "set_group_special_title"
+  },
+  {
+   "key": "SetFriendAddRequest",
+   "action": "set_friend_add_request"
+  },
+  {
+   "key": "SetFriendRemark",
+   "action": "set_friend_remark"
+  },
+  {
+   "key": "SetGroupAddRequest",
+   "action": "set_group_add_request"
+  },
+  {
+   "key": "GetLoginInfo",
+   "action": "get_login_info"
+  },
+  {
+   "key": "GoCQHTTP_GetStrangerInfo",
+   "action": "get_stranger_info"
+  },
+  {
+   "key": "GetFriendList",
+   "action": "get_friend_list"
+  },
+  {
+   "key": "GetGroupInfo",
+   "action": "get_group_info"
+  },
+  {
+   "key": "GetGroupList",
+   "action": "get_group_list"
+  },
+  {
+   "key": "GetGroupMemberInfo",
+   "action": "get_group_member_info"
+  },
+  {
+   "key": "GetGroupMemberList",
+   "action": "get_group_member_list"
+  },
+  {
+   "key": "GetGroupHonorInfo",
+   "action": "get_group_honor_info"
+  },
+  {
+   "key": "GetCookies",
+   "action": "get_cookies"
+  },
+  {
+   "key": "GetCSRF",
+   "action": "get_csrf_token"
+  },
+  {
+   "key": "GetCredentials",
+   "action": "get_credentials"
+  },
+  {
+   "key": "GetRecord",
+   "action": "get_record"
+  },
+  {
+   "key": "GetImage",
+   "action": "get_image"
+  },
+  {
+   "key": "CanSendImage",
+   "action": "can_send_image"
+  },
+  {
+   "key": "CanSendRecord",
+   "action": "can_send_record"
+  },
+  {
+   "key": "GetStatus",
+   "action": "get_status"
+  },
+  {
+   "key": "GetVersionInfo",
+   "action": "get_version_info"
+  },
+  {
+   "key": "Reboot",
+   "action": "set_restart"
+  },
+  {
+   "key": "CleanCache",
+   "action": "clean_cache"
+  },
+  {
+   "key": "Exit",
+   "action": "bot_exit"
+  },
+  {
+   "key": "SetQQProfile",
+   "action": "set_qq_profile"
+  },
+  {
+   "key": "GoCQHTTP_GetModelShow",
+   "action": "_get_model_show"
+  },
+  {
+   "key": "GoCQHTTP_SetModelShow",
+   "action": "_set_model_show"
+  },
+  {
+   "key": "GetOnlineClient",
+   "action": "get_online_clients"
+  },
+  {
+   "key": "GoCQHTTP_DeleteFriend",
+   "action": "delete_friend"
+  },
+  {
+   "key": "GoCQHTTP_MarkMsgAsRead",
+   "action": "mark_msg_as_read"
+  },
+  {
+   "key": "GoCQHTTP_SendGroupForwardMsg",
+   "action": "send_group_forward_msg"
+  },
+  {
+   "key": "GoCQHTTP_SendPrivateForwardMsg",
+   "action": "send_private_forward_msg"
+  },
+  {
+   "key": "GoCQHTTP_GetGroupMsgHistory",
+   "action": "get_group_msg_history"
+  },
+  {
+   "key": "OCRImage",
+   "action": "ocr_image"
+  },
+  {
+   "key": "IOCRImage",
+   "action": ".ocr_image"
+  },
+  {
+   "key": "GetGroupSystemMsg",
+   "action": "get_group_system_msg"
+  },
+  {
+   "key": "GoCQHTTP_GetEssenceMsg",
+   "action": "get_essence_msg_list"
+  },
+  {
+   "key": "GoCQHTTP_GetGroupAtAllRemain",
+   "action": "get_group_at_all_remain"
+  },
+  {
+   "key": "SetGroupPortrait",
+   "action": "set_group_portrait"
+  },
+  {
+   "key": "SetEssenceMsg",
+   "action": "set_essence_msg"
+  },
+  {
+   "key": "DelEssenceMsg",
+   "action": "delete_essence_msg"
+  },
+  {
+   "key": "GoCQHTTP_SendGroupNotice",
+   "action": "_send_group_notice"
+  },
+  {
+   "key": "GoCQHTTP_GetGroupNotice",
+   "action": "_get_group_notice"
+  },
+  {
+   "key": "GoCQHTTP_UploadGroupFile",
+   "action": "upload_group_file"
+  },
+  {
+   "key": "GOCQHTTP_DeleteGroupFile",
+   "action": "delete_group_file"
+  },
+  {
+   "key": "GoCQHTTP_CreateGroupFileFolder",
+   "action": "create_group_file_folder"
+  },
+  {
+   "key": "GoCQHTTP_DeleteGroupFileFolder",
+   "action": "delete_group_folder"
+  },
+  {
+   "key": "GoCQHTTP_GetGroupFileSystemInfo",
+   "action": "get_group_file_system_info"
+  },
+  {
+   "key": "GoCQHTTP_GetGroupRootFiles",
+   "action": "get_group_root_files"
+  },
+  {
+   "key": "GoCQHTTP_GetGroupFilesByFolder",
+   "action": "get_group_files_by_folder"
+  },
+  {
+   "key": "GOCQHTTP_GetGroupFileUrl",
+   "action": "get_group_file_url"
+  },
+  {
+   "key": "GOCQHTTP_UploadPrivateFile",
+   "action": "upload_private_file"
+  },
+  {
+   "key": "GoCQHTTP_DownloadFile",
+   "action": "download_file"
+  },
+  {
+   "key": "GoCQHTTP_CheckUrlSafely",
+   "action": "check_url_safely"
+  },
+  {
+   "key": "GoCQHTTP_GetWordSlices",
+   "action": ".get_word_slices"
+  },
+  {
+   "key": "GoCQHTTP_HandleQuickAction",
+   "action": ".handle_quick_operation"
+  },
+  {
+   "key": "Unknown",
+   "action": "unknown"
+  },
+  {
+   "key": "SetDiyOnlineStatus",
+   "action": "set_diy_online_status"
+  },
+  {
+   "key": "SharePeer",
+   "action": "ArkSharePeer"
+  },
+  {
+   "key": "ShareGroupEx",
+   "action": "ArkShareGroup"
+  },
+  {
+   "key": "SendGroupArkShare",
+   "action": "send_group_ark_share"
+  },
+  {
+   "key": "SendArkShare",
+   "action": "send_ark_share"
+  },
+  {
+   "key": "GetRobotUinRange",
+   "action": "get_robot_uin_range"
+  },
+  {
+   "key": "SetOnlineStatus",
+   "action": "set_online_status"
+  },
+  {
+   "key": "GetFriendsWithCategory",
+   "action": "get_friends_with_category"
+  },
+  {
+   "key": "SetQQAvatar",
+   "action": "set_qq_avatar"
+  },
+  {
+   "key": "GetFile",
+   "action": "get_file"
+  },
+  {
+   "key": "ForwardFriendSingleMsg",
+   "action": "forward_friend_single_msg"
+  },
+  {
+   "key": "ForwardGroupSingleMsg",
+   "action": "forward_group_single_msg"
+  },
+  {
+   "key": "TranslateEnWordToZn",
+   "action": "translate_en2zh"
+  },
+  {
+   "key": "FetchPttText",
+   "action": "fetch_ptt_text"
+  },
+  {
+   "key": "SetMsgEmojiLike",
+   "action": "set_msg_emoji_like"
+  },
+  {
+   "key": "GoCQHTTP_SendForwardMsg",
+   "action": "send_forward_msg"
+  },
+  {
+   "key": "MarkPrivateMsgAsRead",
+   "action": "mark_private_msg_as_read"
+  },
+  {
+   "key": "MarkGroupMsgAsRead",
+   "action": "mark_group_msg_as_read"
+  },
+  {
+   "key": "GetFriendMsgHistory",
+   "action": "get_friend_msg_history"
+  },
+  {
+   "key": "CreateCollection",
+   "action": "create_collection"
+  },
+  {
+   "key": "GetCollectionList",
+   "action": "get_collection_list"
+  },
+  {
+   "key": "SetLongNick",
+   "action": "set_self_longnick"
+  },
+  {
+   "key": "GetRecentContact",
+   "action": "get_recent_contact"
+  },
+  {
+   "key": "_MarkAllMsgAsRead",
+   "action": "_mark_all_as_read"
+  },
+  {
+   "key": "GetProfileLike",
+   "action": "get_profile_like"
+  },
+  {
+   "key": "FetchCustomFace",
+   "action": "fetch_custom_face"
+  },
+  {
+   "key": "FetchCustomFaceDetail",
+   "action": "fetch_custom_face_detail"
+  },
+  {
+   "key": "AddCustomFace",
+   "action": "add_custom_face"
+  },
+  {
+   "key": "DeleteCustomFace",
+   "action": "delete_custom_face"
+  },
+  {
+   "key": "SetCustomFaceDesc",
+   "action": "set_custom_face_desc"
+  },
+  {
+   "key": "FetchEmojiLike",
+   "action": "fetch_emoji_like"
+  },
+  {
+   "key": "GetEmojiLikes",
+   "action": "get_emoji_likes"
+  },
+  {
+   "key": "SetInputStatus",
+   "action": "set_input_status"
+  },
+  {
+   "key": "GetGroupInfoEx",
+   "action": "get_group_info_ex"
+  },
+  {
+   "key": "GetGroupShareLink",
+   "action": "get_group_share_link"
+  },
+  {
+   "key": "GetGroupDetailInfo",
+   "action": "get_group_detail_info"
+  },
+  {
+   "key": "GetGroupIgnoreAddRequest",
+   "action": "get_group_ignore_add_request"
+  },
+  {
+   "key": "DelGroupNotice",
+   "action": "_del_group_notice"
+  },
+  {
+   "key": "FriendPoke",
+   "action": "friend_poke"
+  },
+  {
+   "key": "GroupPoke",
+   "action": "group_poke"
+  },
+  {
+   "key": "GetPacketStatus",
+   "action": "nc_get_packet_status"
+  },
+  {
+   "key": "GetUserStatus",
+   "action": "nc_get_user_status"
+  },
+  {
+   "key": "GetRkey",
+   "action": "nc_get_rkey"
+  },
+  {
+   "key": "GetGroupShutList",
+   "action": "get_group_shut_list"
+  },
+  {
+   "key": "MoveGroupFile",
+   "action": "move_group_file"
+  },
+  {
+   "key": "TransGroupFile",
+   "action": "trans_group_file"
+  },
+  {
+   "key": "RenameGroupFile",
+   "action": "rename_group_file"
+  },
+  {
+   "key": "GetGuildList",
+   "action": "get_guild_list"
+  },
+  {
+   "key": "GetGuildProfile",
+   "action": "get_guild_service_profile"
+  },
+  {
+   "key": "GetGroupIgnoredNotifies",
+   "action": "get_group_ignored_notifies"
+  },
+  {
+   "key": "SetGroupSign",
+   "action": "set_group_sign"
+  },
+  {
+   "key": "SendGroupSign",
+   "action": "send_group_sign"
+  },
+  {
+   "key": "SendPacket",
+   "action": "send_packet"
+  },
+  {
+   "key": "GetMiniAppArk",
+   "action": "get_mini_app_ark"
+  },
+  {
+   "key": "GetAiRecord",
+   "action": "get_ai_record"
+  },
+  {
+   "key": "GetAiCharacters",
+   "action": "get_ai_characters"
+  },
+  {
+   "key": "SendGroupAiRecord",
+   "action": "send_group_ai_record"
+  },
+  {
+   "key": "GetClientkey",
+   "action": "get_clientkey"
+  },
+  {
+   "key": "SendPoke",
+   "action": "send_poke"
+  },
+  {
+   "key": "CreateFlashTask",
+   "action": "create_flash_task"
+  },
+  {
+   "key": "SendFlashMsg",
+   "action": "send_flash_msg"
+  },
+  {
+   "key": "GetShareLink",
+   "action": "get_share_link"
+  },
+  {
+   "key": "DownloadFileset",
+   "action": "download_fileset"
+  },
+  {
+   "key": "GetFilesetInfo",
+   "action": "get_fileset_info"
+  },
+  {
+   "key": "GetFlashFileList",
+   "action": "get_flash_file_list"
+  },
+  {
+   "key": "GetFlashFileUrl",
+   "action": "get_flash_file_url"
+  },
+  {
+   "key": "GetFilesetId",
+   "action": "get_fileset_id"
+  },
+  {
+   "key": "SendOnlineFile",
+   "action": "send_online_file"
+  },
+  {
+   "key": "SendOnlineFolder",
+   "action": "send_online_folder"
+  },
+  {
+   "key": "GetOnlineFileMessages",
+   "action": "get_online_file_msg"
+  },
+  {
+   "key": "ReceiveOnlineFile",
+   "action": "receive_online_file"
+  },
+  {
+   "key": "RefuseOnlineFile",
+   "action": "refuse_online_file"
+  },
+  {
+   "key": "CancelOnlineFile",
+   "action": "cancel_online_file"
+  },
+  {
+   "key": "GetGroupSignedList",
+   "action": "get_group_signed_list"
+  },
+  {
+   "key": "SendQzoneMsg",
+   "action": "send_qzone_msg"
+  },
+  {
+   "key": "DeleteQzoneMsg",
+   "action": "delete_qzone_msg"
+  }
+ ],
+ "commented": [
+  {
+   "key": "SetGroupAnoymousBan",
+   "action": "set_group_anonymous_ban"
+  },
+  {
+   "key": "SetGroupAnoymous",
+   "action": "set_group_anonymous"
+  },
+  {
+   "key": "QidianGetAccountInfo",
+   "action": "qidian_get_account_info"
+  },
+  {
+   "key": "GetUnidirectionalFriendList",
+   "action": "get_unidirectional_friend_list"
+  },
+  {
+   "key": "DeleteUnidirectionalFriendList",
+   "action": "delete_unidirectional_friend"
+  },
+  {
+   "key": "GOCQHTTP_ReloadEventFilter",
+   "action": "reload_event_filter"
+  },
+  {
+   "key": "RebootNormal",
+   "action": "reboot_normal"
+  },
+  {
+   "key": "UploadForwardMsg",
+   "action": "upload_forward_msg"
+  }
+ ],
+ "event_string_evidence": {
+  "lucky_king": {
+   "occurrences": 0,
+   "verdict": "bundle 无任何出现，无事件证据"
+  },
+  "honor": {
+   "occurrences_substring": 2,
+   "verdict": "无 notice/sub_type 事件证据（2 处子串为 honorlist URL 与动作 get_group_honor_info）"
+  },
+  "online_file_receive": {
+   "occurrences": 1,
+   "verdict": "notice_type = \"online_file_receive\" 强证据（sub_type=cancel）"
+  },
+  "online_file_send": {
+   "occurrences": 1,
+   "verdict": "notice_type = \"online_file_send\" 强证据"
+  },
+  "gray_tip": {
+   "occurrences": 1,
+   "verdict": "notice_type=\"notify\", sub_type=\"gray_tip\" 强证据"
+  },
+  "group_name": {
+   "occurrences_substring": 23,
+   "verdict": "其中 1 处为 notice_type=\"notify\", sub_type=\"group_name\" 事件证据，其余为字段/模式/赋值"
+  },
+  "profile_like": {
+   "occurrences": 2,
+   "verdict": "1 处动作 get_profile_like + 1 处 notice_type=\"notify\", sub_type=\"profile_like\" 事件证据"
+  },
+  "input_status": {
+   "occurrences": 2,
+   "verdict": "1 处动作 set_input_status + 1 处 notice_type=\"notify\", sub_type=\"input_status\" 事件证据"
+  }
+ }
+}

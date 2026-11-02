@@ -1,0 +1,27 @@
+{
+  "id": "notice_notify_poke",
+  "category": "notice",
+  "description": "戳一戳通知（带 group_id、target 为机器人）：N3 起登记为 notice（轻互动产品开关默认关）",
+  "payload": {
+    "time": 1767225600,
+    "self_id": "900000001",
+    "post_type": "notice",
+    "notice_type": "notify",
+    "group_id": 80001,
+    "user_id": "90001",
+    "target_id": "900000001",
+    "sub_type": "poke"
+  },
+  "raw_body": null,
+  "send_twice": false,
+  "followup_payload": null,
+  "expected": {
+    "http_status": 204,
+    "disposition": "registered",
+    "sends": 0,
+    "log_event_type": "notice"
+  },
+  "known_difference": null,
+  "difference_note": null,
+  "note": null
+}

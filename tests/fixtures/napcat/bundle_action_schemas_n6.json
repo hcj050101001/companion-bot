@@ -1,0 +1,1104 @@
+{
+ "source": {
+  "napcat_version": "4.18.41",
+  "bundle_file": "napcat.mjs",
+  "bundle_md5": "7fdb4903c8867e7db0b3345ad226c805",
+  "bundle_size_bytes": 3134858,
+  "registry_variable": "re",
+  "n0_snapshot_bundle_md5": "7fdb4903c8867e7db0b3345ad226c805",
+  "md5_matches_n0_snapshot": true,
+  "method": "tests/scripts_n6/extract_bundle_schemas.py（引擎同 N5）：注册表反查键名、actionName 定位动作类、类内/父类链 schema 赋值、TypeBox 表达式递归解析、_handle 字段访问摘录",
+  "note": "字段级证据来自 bundle 内 TypeBox payloadSchema/returnSchema 定义原文；抽不到的动作 found=false 并注明原因，不补造。"
+ },
+ "actions": {
+  "get_cookies": {
+   "action": "get_cookies",
+   "found": true,
+   "registry_key": "GetCookies",
+   "action_name_occurrences": 1,
+   "class_name": "Kve",
+   "class_extends": "ue",
+   "class_offset": 2717039,
+   "action_summary": "获取 Cookies",
+   "action_description": "获取指定域名的 Cookies",
+   "payload_schema": {
+    "source_expr": "Wve",
+    "schema_var": "Wve",
+    "schema_var_defined_at": 2716845,
+    "type": "Object",
+    "description": null,
+    "fields": [
+     {
+      "name": "domain",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "需要获取 cookies 的域名"
+     }
+    ]
+   },
+   "payload_fields": [
+    {
+     "name": "domain",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "需要获取 cookies 的域名"
+    }
+   ],
+   "return_schema": {
+    "source_expr": "zve",
+    "schema_var": "zve",
+    "schema_var_defined_at": 2716922,
+    "type": "Object",
+    "description": null,
+    "fields": [
+     {
+      "name": "cookies",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "Cookies"
+     },
+     {
+      "name": "bkn",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "CSRF Token"
+     }
+    ]
+   },
+   "return_fields": [
+    {
+     "name": "cookies",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "Cookies"
+    },
+    {
+     "name": "bkn",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "CSRF Token"
+    }
+   ],
+   "return_description": null,
+   "payload_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{ domain: \"qun.qq.com\" }",
+    "keys": [
+     "domain"
+    ]
+   },
+   "return_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{ cookies: \"uin=o123456789; skey=@abc12345;\", bkn: \"123456789\" }",
+    "keys": [
+     "cookies",
+     "bkn"
+    ]
+   },
+   "handler_field_accesses": [
+    "domain"
+   ],
+   "notes": []
+  },
+  "get_csrf_token": {
+   "action": "get_csrf_token",
+   "found": true,
+   "registry_key": "GetCSRF",
+   "action_name_occurrences": 1,
+   "class_name": "Gxe",
+   "class_extends": "ue",
+   "class_offset": 2762767,
+   "action_summary": "获取 CSRF Token",
+   "action_description": "获取 CSRF Token",
+   "payload_schema": {
+    "source_expr": "p.Object({})",
+    "schema_var": null,
+    "type": "Object",
+    "description": null,
+    "fields": []
+   },
+   "payload_fields": [],
+   "return_schema": {
+    "source_expr": "Qxe",
+    "schema_var": "Qxe",
+    "schema_var_defined_at": 2762697,
+    "type": "Object",
+    "description": null,
+    "fields": [
+     {
+      "name": "token",
+      "type": "Number",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "CSRF Token"
+     }
+    ]
+   },
+   "return_fields": [
+    {
+     "name": "token",
+     "type": "Number",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "CSRF Token"
+    }
+   ],
+   "return_description": null,
+   "payload_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{}",
+    "keys": []
+   },
+   "return_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{ token: 123456789 }",
+    "keys": [
+     "token"
+    ]
+   },
+   "handler_field_accesses": [],
+   "notes": []
+  },
+  "get_credentials": {
+   "action": "get_credentials",
+   "found": true,
+   "registry_key": "GetCredentials",
+   "action_name_occurrences": 1,
+   "class_name": "jwe",
+   "class_extends": "ue",
+   "class_offset": 2779371,
+   "action_summary": "获取登录凭证",
+   "action_description": "获取登录凭证",
+   "payload_schema": {
+    "source_expr": "Uwe",
+    "schema_var": "Uwe",
+    "schema_var_defined_at": 2779175,
+    "type": "Object",
+    "description": null,
+    "fields": [
+     {
+      "name": "domain",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "需要获取 cookies 的域名"
+     }
+    ]
+   },
+   "payload_fields": [
+    {
+     "name": "domain",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "需要获取 cookies 的域名"
+    }
+   ],
+   "return_schema": {
+    "source_expr": "Lwe",
+    "schema_var": "Lwe",
+    "schema_var_defined_at": 2779252,
+    "type": "Object",
+    "description": null,
+    "fields": [
+     {
+      "name": "cookies",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "Cookies"
+     },
+     {
+      "name": "token",
+      "type": "Number",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "CSRF Token"
+     }
+    ]
+   },
+   "return_fields": [
+    {
+     "name": "cookies",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "Cookies"
+    },
+    {
+     "name": "token",
+     "type": "Number",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "CSRF Token"
+    }
+   ],
+   "return_description": null,
+   "payload_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{ domain: \"qun.qq.com\" }",
+    "keys": [
+     "domain"
+    ]
+   },
+   "return_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{ cookies: \"uin=o123456789; skey=@abc12345;\", token: 123456789 }",
+    "keys": [
+     "cookies",
+     "token"
+    ]
+   },
+   "handler_field_accesses": [
+    "domain"
+   ],
+   "notes": []
+  },
+  "get_clientkey": {
+   "action": "get_clientkey",
+   "found": true,
+   "registry_key": "GetClientkey",
+   "action_name_occurrences": 1,
+   "class_name": "vSe",
+   "class_extends": "ue",
+   "class_offset": 2792961,
+   "action_summary": "获取ClientKey",
+   "action_description": "获取当前登录帐号的ClientKey",
+   "payload_schema": {
+    "source_expr": "p.Object({})",
+    "schema_var": null,
+    "type": "Object",
+    "description": null,
+    "fields": []
+   },
+   "payload_fields": [],
+   "return_schema": {
+    "source_expr": "ySe",
+    "schema_var": "ySe",
+    "schema_var_defined_at": 2792845,
+    "type": "Object",
+    "description": "获取ClientKey结果",
+    "fields": [
+     {
+      "name": "clientkey",
+      "type": "String",
+      "optional": true,
+      "has_default": false,
+      "default": null,
+      "description": "客户端Key"
+     }
+    ]
+   },
+   "return_fields": [
+    {
+     "name": "clientkey",
+     "type": "String",
+     "optional": true,
+     "has_default": false,
+     "default": null,
+     "description": "客户端Key"
+    }
+   ],
+   "return_description": "获取ClientKey结果",
+   "payload_example": {
+    "present": true,
+    "kind": "reference",
+    "ref": "In.GetClientkey.payload"
+   },
+   "return_example": {
+    "present": true,
+    "kind": "reference",
+    "ref": "In.GetClientkey.response"
+   },
+   "handler_field_accesses": [],
+   "notes": []
+  },
+  "nc_get_rkey": {
+   "action": "nc_get_rkey",
+   "found": true,
+   "registry_key": "GetRkey",
+   "action_name_occurrences": 1,
+   "class_name": "Awe",
+   "class_extends": "tr",
+   "class_offset": 2775403,
+   "action_summary": "获取 RKey",
+   "action_description": null,
+   "payload_schema": {
+    "source_expr": "p.Object({})",
+    "schema_var": null,
+    "type": "Object",
+    "description": null,
+    "fields": []
+   },
+   "payload_fields": [],
+   "return_schema": {
+    "source_expr": "Ewe",
+    "schema_var": "Ewe",
+    "schema_var_defined_at": 2775352,
+    "type": "Array",
+    "description": "Rkey列表",
+    "item_type": "Any"
+   },
+   "return_fields": [],
+   "return_description": "Rkey列表",
+   "payload_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{}",
+    "keys": []
+   },
+   "return_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "[ { key: \"rkey_value\", expired: 1734567890 } ]",
+    "keys": []
+   },
+   "handler_field_accesses": [],
+   "notes": []
+  },
+  "get_rkey": {
+   "action": "get_rkey",
+   "found": true,
+   "registry_key": "GetRkeyEx",
+   "action_name_occurrences": 1,
+   "class_name": "a_e",
+   "class_extends": "tr",
+   "class_offset": 2809799,
+   "action_summary": "获取扩展 RKey",
+   "action_description": null,
+   "payload_schema": {
+    "source_expr": "p.Object({})",
+    "schema_var": null,
+    "type": "Object",
+    "description": null,
+    "fields": []
+   },
+   "payload_fields": [],
+   "return_schema": {
+    "source_expr": "s_e",
+    "schema_var": "s_e",
+    "schema_var_defined_at": 2809552,
+    "type": "Array",
+    "description": "RKey 列表",
+    "item_type": "Object",
+    "item_fields": [
+     {
+      "name": "type",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "类型 (private/group)"
+     },
+     {
+      "name": "rkey",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "RKey"
+     },
+     {
+      "name": "created_at",
+      "type": "Number",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "创建时间"
+     },
+     {
+      "name": "ttl",
+      "type": "Number",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "有效期"
+     }
+    ]
+   },
+   "return_fields": [],
+   "return_description": "RKey 列表",
+   "payload_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{}",
+    "keys": []
+   },
+   "return_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "[ { type: \"private\", rkey: \"rkey_123\", created_at: 1734567890, ttl: 3600 } ]",
+    "keys": []
+   },
+   "handler_field_accesses": [],
+   "notes": []
+  },
+  "get_rkey_server": {
+   "action": "get_rkey_server",
+   "found": true,
+   "registry_key": "GetRkeyServer",
+   "action_name_occurrences": 1,
+   "class_name": "o_e",
+   "class_extends": "tr",
+   "class_offset": 2808580,
+   "action_summary": "获取 RKey 服务器",
+   "action_description": null,
+   "payload_schema": {
+    "source_expr": "p.Object({})",
+    "schema_var": null,
+    "type": "Object",
+    "description": null,
+    "fields": []
+   },
+   "payload_fields": [],
+   "return_schema": {
+    "source_expr": "i_e",
+    "schema_var": "i_e",
+    "schema_var_defined_at": 2808326,
+    "type": "Object",
+    "description": null,
+    "fields": [
+     {
+      "name": "private_rkey",
+      "type": "String",
+      "optional": true,
+      "has_default": false,
+      "default": null,
+      "description": "私聊 RKey"
+     },
+     {
+      "name": "group_rkey",
+      "type": "String",
+      "optional": true,
+      "has_default": false,
+      "default": null,
+      "description": "群聊 RKey"
+     },
+     {
+      "name": "expired_time",
+      "type": "Number",
+      "optional": true,
+      "has_default": false,
+      "default": null,
+      "description": "过期时间"
+     },
+     {
+      "name": "name",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "名称"
+     }
+    ]
+   },
+   "return_fields": [
+    {
+     "name": "private_rkey",
+     "type": "String",
+     "optional": true,
+     "has_default": false,
+     "default": null,
+     "description": "私聊 RKey"
+    },
+    {
+     "name": "group_rkey",
+     "type": "String",
+     "optional": true,
+     "has_default": false,
+     "default": null,
+     "description": "群聊 RKey"
+    },
+    {
+     "name": "expired_time",
+     "type": "Number",
+     "optional": true,
+     "has_default": false,
+     "default": null,
+     "description": "过期时间"
+    },
+    {
+     "name": "name",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "名称"
+    }
+   ],
+   "return_description": null,
+   "payload_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{}",
+    "keys": []
+   },
+   "return_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{ private_rkey: \"&rkey=123456789\", group_rkey: \"&rkey=123456789\", expired_time: 169456e4, name: \"NapCat 4\" }",
+    "keys": [
+     "private_rkey",
+     "group_rkey",
+     "expired_time",
+     "name"
+    ]
+   },
+   "handler_field_accesses": [],
+   "notes": []
+  },
+  "send_packet": {
+   "action": "send_packet",
+   "found": true,
+   "registry_key": "SendPacket",
+   "action_name_occurrences": 1,
+   "class_name": "wSe",
+   "class_extends": "tr",
+   "class_offset": 2793667,
+   "action_summary": "发送原始数据包",
+   "action_description": null,
+   "payload_schema": {
+    "source_expr": "bSe",
+    "schema_var": "bSe",
+    "schema_var_defined_at": 2793382,
+    "type": "Object",
+    "description": null,
+    "fields": [
+     {
+      "name": "cmd",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "命令字"
+     },
+     {
+      "name": "data",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "十六进制数据"
+     },
+     {
+      "name": "rsp",
+      "type": "Union",
+      "optional": false,
+      "has_default": true,
+      "default": "!0",
+      "description": "是否等待响应",
+      "member_types": [
+       "String",
+       "Boolean"
+      ],
+      "members": [
+       {
+        "type": "String",
+        "optional": false,
+        "has_default": false,
+        "default": null,
+        "description": null
+       },
+       {
+        "type": "Boolean",
+        "optional": false,
+        "has_default": false,
+        "default": null,
+        "description": null
+       }
+      ]
+     }
+    ]
+   },
+   "payload_fields": [
+    {
+     "name": "cmd",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "命令字"
+    },
+    {
+     "name": "data",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "十六进制数据"
+    },
+    {
+     "name": "rsp",
+     "type": "Union",
+     "optional": false,
+     "has_default": true,
+     "default": "!0",
+     "description": "是否等待响应",
+     "member_types": [
+      "String",
+      "Boolean"
+     ],
+     "members": [
+      {
+       "type": "String",
+       "optional": false,
+       "has_default": false,
+       "default": null,
+       "description": null
+      },
+      {
+       "type": "Boolean",
+       "optional": false,
+       "has_default": false,
+       "default": null,
+       "description": null
+      }
+     ]
+    }
+   ],
+   "return_schema": {
+    "source_expr": "xSe",
+    "schema_var": "xSe",
+    "schema_var_defined_at": 2793571,
+    "type": "Union",
+    "description": "发包结果",
+    "member_types": [
+     "String",
+     "Undefined"
+    ]
+   },
+   "return_fields": [],
+   "return_description": "发包结果",
+   "payload_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{ cmd: \"Example.Cmd\", data: \"123456\", rsp: !0 }",
+    "keys": [
+     "cmd",
+     "data",
+     "rsp"
+    ]
+   },
+   "return_example": {
+    "present": true,
+    "kind": "expression",
+    "raw": "\"123456\""
+   },
+   "handler_field_accesses": [
+    "rsp",
+    "data",
+    "cmd"
+   ],
+   "notes": []
+  },
+  "get_share_link": {
+   "action": "get_share_link",
+   "found": true,
+   "registry_key": "GetShareLink",
+   "action_name_occurrences": 1,
+   "class_name": "TEe",
+   "class_extends": "ue",
+   "class_offset": 2851226,
+   "action_summary": "获取文件分享链接",
+   "action_description": null,
+   "payload_schema": {
+    "source_expr": "CEe",
+    "schema_var": "CEe",
+    "schema_var_defined_at": 2851155,
+    "type": "Object",
+    "description": null,
+    "fields": [
+     {
+      "name": "fileset_id",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "文件集 ID"
+     }
+    ]
+   },
+   "payload_fields": [
+    {
+     "name": "fileset_id",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "文件集 ID"
+    }
+   ],
+   "return_schema": {
+    "source_expr": "p.Any({ description: \"分享链接\" })",
+    "schema_var": null,
+    "type": "Any",
+    "description": "分享链接"
+   },
+   "return_fields": [],
+   "return_description": "分享链接",
+   "payload_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{ fileset_id: \"set_123\" }",
+    "keys": [
+     "fileset_id"
+    ]
+   },
+   "return_example": {
+    "present": true,
+    "kind": "expression",
+    "raw": "\"http://example.com/share\""
+   },
+   "handler_field_accesses": [
+    "fileset_id"
+   ],
+   "notes": []
+  },
+  ".get_word_slices": {
+   "action": ".get_word_slices",
+   "found": false,
+   "registry_key": "GoCQHTTP_GetWordSlices",
+   "reason": "注册表有键 GoCQHTTP_GetWordSlices 但未找到 actionName = re.GoCQHTTP_GetWordSlices 的动作类"
+  },
+  "get_unidirectional_friend_list": {
+   "action": "get_unidirectional_friend_list",
+   "found": true,
+   "registry_key": "GetUnidirectionalFriendList",
+   "action_name_occurrences": 1,
+   "class_name": "HSe",
+   "class_extends": "ue",
+   "class_offset": 2803600,
+   "action_summary": "获取单向好友列表",
+   "action_description": null,
+   "payload_schema": {
+    "source_expr": "p.Object({})",
+    "schema_var": null,
+    "type": "Object",
+    "description": null,
+    "fields": []
+   },
+   "payload_fields": [],
+   "return_schema": {
+    "source_expr": "qSe",
+    "schema_var": "qSe",
+    "schema_var_defined_at": 2803313,
+    "type": "Array",
+    "description": "单向好友列表",
+    "item_type": "Object",
+    "item_fields": [
+     {
+      "name": "uin",
+      "type": "Number",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "QQ号"
+     },
+     {
+      "name": "uid",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "用户UID"
+     },
+     {
+      "name": "nick_name",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "昵称"
+     },
+     {
+      "name": "age",
+      "type": "Number",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "年龄"
+     },
+     {
+      "name": "source",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "来源"
+     }
+    ]
+   },
+   "return_fields": [],
+   "return_description": "单向好友列表",
+   "payload_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{}",
+    "keys": []
+   },
+   "return_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "[ { uin: 123456789, uid: \"u_123\", nick_name: \"单向好友\", age: 20, source: \"来源\" } ]",
+    "keys": []
+   },
+   "handler_field_accesses": [],
+   "notes": []
+  },
+  "bot_exit": {
+   "action": "bot_exit",
+   "found": true,
+   "registry_key": "Exit",
+   "action_name_occurrences": 1,
+   "class_name": "kSe",
+   "class_extends": "ue",
+   "class_offset": 2796390,
+   "action_summary": "退出登录",
+   "action_description": null,
+   "payload_schema": {
+    "source_expr": "p.Object({})",
+    "schema_var": null,
+    "type": "Object",
+    "description": null,
+    "fields": []
+   },
+   "payload_fields": [],
+   "return_schema": {
+    "source_expr": "p.Object({})",
+    "schema_var": null,
+    "type": "Object",
+    "description": null,
+    "fields": []
+   },
+   "return_fields": [],
+   "return_description": null,
+   "payload_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{}",
+    "keys": []
+   },
+   "return_example": {
+    "present": true,
+    "kind": "null",
+    "value": null
+   },
+   "handler_field_accesses": [],
+   "notes": []
+  },
+  "set_restart": {
+   "action": "set_restart",
+   "found": true,
+   "registry_key": "Reboot",
+   "action_name_occurrences": 1,
+   "class_name": "Qwe",
+   "class_extends": "ue",
+   "class_offset": 2779958,
+   "action_summary": "重启服务",
+   "action_description": "重启服务",
+   "payload_schema": {
+    "source_expr": "p.Object({})",
+    "schema_var": null,
+    "type": "Object",
+    "description": null,
+    "fields": []
+   },
+   "payload_fields": [],
+   "return_schema": {
+    "source_expr": "p.Null()",
+    "schema_var": null,
+    "type": "Null",
+    "description": null
+   },
+   "return_fields": [],
+   "return_description": null,
+   "payload_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{}",
+    "keys": []
+   },
+   "return_example": {
+    "present": true,
+    "kind": "null",
+    "value": null
+   },
+   "handler_field_accesses": [],
+   "notes": []
+  },
+  "get_group_todo": {
+   "action": "get_group_todo",
+   "found": false,
+   "registry_key": null,
+   "reason": "动作名不在 bundle 注册表 const re 中"
+  }
+ },
+ "segment_evidence": {
+  "note": "段类型以 bundle 的 ze 枚举与段 schema $id 为准；任务口径的 online_file 在 bundle 中无此字面量段类型，实际段类型为 onlinefile（无下划线），online_file 仅出现在动作名/事件名中。",
+  "ze_enum": {
+   "flashtransfer": "t.flashtransfer = \"flashtransfer\"",
+   "onlinefile": "t.onlinefile = \"onlinefile\""
+  },
+  "online_file_literal_found": false,
+  "flashtransfer": {
+   "segment_type": "flashtransfer",
+   "schema_id": "OB11MessageFlashTransfer",
+   "found": true,
+   "schema_id_in_bundle": "OB11MessageFlashTransfer",
+   "data_fields": [
+    {
+     "name": "fileSetId",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "文件集ID"
+    }
+   ]
+  },
+  "online_file": {
+   "requested_name": "online_file",
+   "found_as_literal_segment_type": false,
+   "actual_segment_type": "onlinefile",
+   "evidence": {
+    "segment_type": "onlinefile",
+    "schema_id": "OB11MessageOnlineFile",
+    "found": true,
+    "schema_id_in_bundle": "OB11MessageOnlineFile",
+    "data_fields": [
+     {
+      "name": "msgId",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "消息ID"
+     },
+     {
+      "name": "elementId",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "元素ID"
+     },
+     {
+      "name": "fileName",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "文件名"
+     },
+     {
+      "name": "fileSize",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "文件大小"
+     },
+     {
+      "name": "isDir",
+      "type": "Boolean",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "是否为目录"
+     }
+    ]
+   }
+  },
+  "onlinefile": {
+   "segment_type": "onlinefile",
+   "schema_id": "OB11MessageOnlineFile",
+   "found": true,
+   "schema_id_in_bundle": "OB11MessageOnlineFile",
+   "data_fields": [
+    {
+     "name": "msgId",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "消息ID"
+    },
+    {
+     "name": "elementId",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "元素ID"
+    },
+    {
+     "name": "fileName",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "文件名"
+    },
+    {
+     "name": "fileSize",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "文件大小"
+    },
+    {
+     "name": "isDir",
+     "type": "Boolean",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "是否为目录"
+    }
+   ]
+  },
+  "raw_to_ob11_converters": {
+   "flashtransfer_raw_to_ob11": "ist )), a; }, arkElement: async (e) => ({ type: ze.json, data: { data: e.bytesData } }), markdownElement: async (e) => e?.mdExtInfo?.flashTransferInfo?.filesetId ? { type: ze.flashtransfer, data: { fileSetId: e.mdExtInfo.flashTransferInfo.filesetId } } : { type: ze.markdown, data: { content: e.content } } }; ob11ToRawConverter",
+   "onlinefile_raw_to_ob11": "his.core.context.logger.logError(\"获取图片url失败\", o.stack), null; } }, fileElement: async (e, n, r, { disableGetUrl: i }) => { if (+r.elementType == 23 || +r.elementType == 30) return { type: ze.onlinefile, data: { msgId: n.msgId, elementId: r.elementId, fileName: e.fileName, fileSize: e.fileSize, isDir: r.elementType === 30 } }; const o = { chatType: n.chatType, peerUid: n.peerUid, gu"
+  },
+  "ob11_to_raw_converters": {
+   "onlinefile": "e: ze.json }, r); } }, // 不需要支持发送 [ze.onlinefile]: async () => { }",
+   "flashtransfer": "// 不需要支持发送 [ze.onlinefile]: async () => { }, [ze.flashtransfer]: async () => { }"
+  }
+ },
+ "summary": {
+  "requested": 14,
+  "found": 12,
+  "not_found": [
+   ".get_word_slices",
+   "get_group_todo"
+  ],
+  "with_payload_fields": 4
+ }
+}

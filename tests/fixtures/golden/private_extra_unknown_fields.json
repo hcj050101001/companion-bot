@@ -1,0 +1,41 @@
+{
+  "id": "private_extra_unknown_fields",
+  "category": "private",
+  "description": "含未知扩展字段：现行忽略未知字段、正常处理（宽容行为存档）",
+  "payload": {
+    "time": 1767225600,
+    "self_id": "900000001",
+    "post_type": "message",
+    "message_type": "private",
+    "sub_type": "friend",
+    "message_id": "golden-p08",
+    "user_id": "90001",
+    "message": "你好，今天有点累",
+    "raw_message": "你好，今天有点累",
+    "sender": {
+      "user_id": 90001,
+      "nickname": "fake-user"
+    },
+    "font": 0,
+    "echo": {
+      "k": 1
+    },
+    "future_field": [
+      1,
+      2,
+      3
+    ]
+  },
+  "raw_body": null,
+  "send_twice": false,
+  "followup_payload": null,
+  "expected": {
+    "http_status": 204,
+    "disposition": "accepted",
+    "sends": 2,
+    "reply_contains": "测试回复"
+  },
+  "known_difference": null,
+  "difference_note": null,
+  "note": null
+}

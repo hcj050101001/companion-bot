@@ -1,0 +1,4824 @@
+{
+ "source": {
+  "napcat_version": "4.18.41",
+  "bundle_file": "napcat.mjs",
+  "bundle_md5": "7fdb4903c8867e7db0b3345ad226c805",
+  "bundle_size_bytes": 3134858,
+  "registry_variable": "re",
+  "n0_snapshot_bundle_md5": "7fdb4903c8867e7db0b3345ad226c805",
+  "md5_matches_n0_snapshot": true,
+  "method": "tests/scripts_n5/extract_bundle_schemas.py：注册表反查键名、actionName 定位动作类、类内/父类链 schema 赋值、TypeBox 表达式递归解析、_handle 字段访问摘录",
+  "note": "字段级证据来自 bundle 内 TypeBox payloadSchema/returnSchema 定义原文；抽不到的动作 found=false 并注明原因，不补造。"
+ },
+ "actions": {
+  "upload_private_file": {
+   "action": "upload_private_file",
+   "found": true,
+   "registry_key": "GOCQHTTP_UploadPrivateFile",
+   "action_name_occurrences": 1,
+   "class_name": "Pxe",
+   "class_extends": "ue",
+   "class_offset": 2756701,
+   "action_summary": "上传私聊文件",
+   "action_description": "上传本地文件到指定私聊会话中",
+   "payload_schema": {
+    "source_expr": "kxe",
+    "schema_var": "kxe",
+    "schema_var_defined_at": 2756389,
+    "type": "Object",
+    "description": null,
+    "fields": [
+     {
+      "name": "user_id",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "用户 QQ"
+     },
+     {
+      "name": "file",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "资源路径或URL"
+     },
+     {
+      "name": "name",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "文件名"
+     },
+     {
+      "name": "upload_file",
+      "type": "Boolean",
+      "optional": false,
+      "has_default": true,
+      "default": "!0",
+      "description": "是否执行上传"
+     }
+    ]
+   },
+   "payload_fields": [
+    {
+     "name": "user_id",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "用户 QQ"
+    },
+    {
+     "name": "file",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "资源路径或URL"
+    },
+    {
+     "name": "name",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "文件名"
+    },
+    {
+     "name": "upload_file",
+     "type": "Boolean",
+     "optional": false,
+     "has_default": true,
+     "default": "!0",
+     "description": "是否执行上传"
+    }
+   ],
+   "return_schema": {
+    "source_expr": "Nxe",
+    "schema_var": "Nxe",
+    "schema_var_defined_at": 2756611,
+    "type": "Object",
+    "description": null,
+    "fields": [
+     {
+      "name": "file_id",
+      "type": "Union",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "文件 ID",
+      "member_types": [
+       "String",
+       "Null"
+      ],
+      "members": [
+       {
+        "type": "String",
+        "optional": false,
+        "has_default": false,
+        "default": null,
+        "description": null
+       },
+       {
+        "type": "Null",
+        "optional": false,
+        "has_default": false,
+        "default": null,
+        "description": null
+       }
+      ]
+     }
+    ]
+   },
+   "return_fields": [
+    {
+     "name": "file_id",
+     "type": "Union",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "文件 ID",
+     "member_types": [
+      "String",
+      "Null"
+     ],
+     "members": [
+      {
+       "type": "String",
+       "optional": false,
+       "has_default": false,
+       "default": null,
+       "description": null
+      },
+      {
+       "type": "Null",
+       "optional": false,
+       "has_default": false,
+       "default": null,
+       "description": null
+      }
+     ]
+    }
+   ],
+   "return_description": null,
+   "payload_example": {
+    "present": true,
+    "kind": "reference",
+    "ref": "et.UploadPrivateFile.payload"
+   },
+   "return_example": {
+    "present": true,
+    "kind": "reference",
+    "ref": "et.UploadPrivateFile.response"
+   },
+   "handler_field_accesses": [
+    "file",
+    "user_id",
+    "name",
+    "upload_file"
+   ],
+   "notes": []
+  },
+  "download_file": {
+   "action": "download_file",
+   "found": true,
+   "registry_key": "GoCQHTTP_DownloadFile",
+   "action_name_occurrences": 1,
+   "class_name": "Bve",
+   "class_extends": "ue",
+   "class_offset": 2708117,
+   "action_summary": "下载文件",
+   "action_description": "下载网络文件到本地临时目录",
+   "payload_schema": {
+    "source_expr": "Ove",
+    "schema_var": "Ove",
+    "schema_var_defined_at": 2707749,
+    "type": "Object",
+    "description": null,
+    "fields": [
+     {
+      "name": "url",
+      "type": "String",
+      "optional": true,
+      "has_default": false,
+      "default": null,
+      "description": "下载链接"
+     },
+     {
+      "name": "base64",
+      "type": "String",
+      "optional": true,
+      "has_default": false,
+      "default": null,
+      "description": "base64数据"
+     },
+     {
+      "name": "name",
+      "type": "String",
+      "optional": true,
+      "has_default": false,
+      "default": null,
+      "description": "文件名"
+     },
+     {
+      "name": "headers",
+      "type": "Union",
+      "optional": true,
+      "has_default": false,
+      "default": null,
+      "description": "请求头",
+      "member_types": [
+       "String",
+       "Array"
+      ],
+      "members": [
+       {
+        "type": "String",
+        "optional": false,
+        "has_default": false,
+        "default": null,
+        "description": null
+       },
+       {
+        "type": "Array",
+        "optional": false,
+        "has_default": false,
+        "default": null,
+        "description": null,
+        "item_type": "String"
+       }
+      ]
+     }
+    ]
+   },
+   "payload_fields": [
+    {
+     "name": "url",
+     "type": "String",
+     "optional": true,
+     "has_default": false,
+     "default": null,
+     "description": "下载链接"
+    },
+    {
+     "name": "base64",
+     "type": "String",
+     "optional": true,
+     "has_default": false,
+     "default": null,
+     "description": "base64数据"
+    },
+    {
+     "name": "name",
+     "type": "String",
+     "optional": true,
+     "has_default": false,
+     "default": null,
+     "description": "文件名"
+    },
+    {
+     "name": "headers",
+     "type": "Union",
+     "optional": true,
+     "has_default": false,
+     "default": null,
+     "description": "请求头",
+     "member_types": [
+      "String",
+      "Array"
+     ],
+     "members": [
+      {
+       "type": "String",
+       "optional": false,
+       "has_default": false,
+       "default": null,
+       "description": null
+      },
+      {
+       "type": "Array",
+       "optional": false,
+       "has_default": false,
+       "default": null,
+       "description": null,
+       "item_type": "String"
+      }
+     ]
+    }
+   ],
+   "return_schema": {
+    "source_expr": "Mve",
+    "schema_var": "Mve",
+    "schema_var_defined_at": 2708029,
+    "type": "Object",
+    "description": "下载结果",
+    "fields": [
+     {
+      "name": "file",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "文件路径"
+     }
+    ]
+   },
+   "return_fields": [
+    {
+     "name": "file",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "文件路径"
+    }
+   ],
+   "return_description": "下载结果",
+   "payload_example": {
+    "present": true,
+    "kind": "reference",
+    "ref": "et.DownloadFile.payload"
+   },
+   "return_example": {
+    "present": true,
+    "kind": "reference",
+    "ref": "et.DownloadFile.response"
+   },
+   "handler_field_accesses": [
+    "name",
+    "base64",
+    "url",
+    "headers"
+   ],
+   "notes": []
+  },
+  "upload_group_file": {
+   "action": "upload_group_file",
+   "found": true,
+   "registry_key": "GoCQHTTP_UploadGroupFile",
+   "action_name_occurrences": 1,
+   "class_name": "Nve",
+   "class_extends": "ue",
+   "class_offset": 2704410,
+   "action_summary": "上传群文件",
+   "action_description": "上传资源路径或URL指定的文件到指定群聊的文件系统中",
+   "payload_schema": {
+    "source_expr": "Tve",
+    "schema_var": "Tve",
+    "schema_var_defined_at": 2703961,
+    "type": "Object",
+    "description": null,
+    "fields": [
+     {
+      "name": "group_id",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "群号"
+     },
+     {
+      "name": "file",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "资源路径或URL"
+     },
+     {
+      "name": "name",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "文件名"
+     },
+     {
+      "name": "folder",
+      "type": "String",
+      "optional": true,
+      "has_default": false,
+      "default": null,
+      "description": "父目录 ID"
+     },
+     {
+      "name": "folder_id",
+      "type": "String",
+      "optional": true,
+      "has_default": false,
+      "default": null,
+      "description": "父目录 ID (兼容性字段)"
+     },
+     {
+      "name": "upload_file",
+      "type": "Boolean",
+      "optional": false,
+      "has_default": true,
+      "default": "!0",
+      "description": "是否执行上传"
+     }
+    ]
+   },
+   "payload_fields": [
+    {
+     "name": "group_id",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "群号"
+    },
+    {
+     "name": "file",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "资源路径或URL"
+    },
+    {
+     "name": "name",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "文件名"
+    },
+    {
+     "name": "folder",
+     "type": "String",
+     "optional": true,
+     "has_default": false,
+     "default": null,
+     "description": "父目录 ID"
+    },
+    {
+     "name": "folder_id",
+     "type": "String",
+     "optional": true,
+     "has_default": false,
+     "default": null,
+     "description": "父目录 ID (兼容性字段)"
+    },
+    {
+     "name": "upload_file",
+     "type": "Boolean",
+     "optional": false,
+     "has_default": true,
+     "default": "!0",
+     "description": "是否执行上传"
+    }
+   ],
+   "return_schema": {
+    "source_expr": "kve",
+    "schema_var": "kve",
+    "schema_var_defined_at": 2704320,
+    "type": "Object",
+    "description": null,
+    "fields": [
+     {
+      "name": "file_id",
+      "type": "Union",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "文件 ID",
+      "member_types": [
+       "String",
+       "Null"
+      ],
+      "members": [
+       {
+        "type": "String",
+        "optional": false,
+        "has_default": false,
+        "default": null,
+        "description": null
+       },
+       {
+        "type": "Null",
+        "optional": false,
+        "has_default": false,
+        "default": null,
+        "description": null
+       }
+      ]
+     }
+    ]
+   },
+   "return_fields": [
+    {
+     "name": "file_id",
+     "type": "Union",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "文件 ID",
+     "member_types": [
+      "String",
+      "Null"
+     ],
+     "members": [
+      {
+       "type": "String",
+       "optional": false,
+       "has_default": false,
+       "default": null,
+       "description": null
+      },
+      {
+       "type": "Null",
+       "optional": false,
+       "has_default": false,
+       "default": null,
+       "description": null
+      }
+     ]
+    }
+   ],
+   "return_description": null,
+   "payload_example": {
+    "present": true,
+    "kind": "reference",
+    "ref": "et.UploadGroupFile.payload"
+   },
+   "return_example": {
+    "present": true,
+    "kind": "reference",
+    "ref": "et.UploadGroupFile.response"
+   },
+   "handler_field_accesses": [
+    "file",
+    "group_id",
+    "name",
+    "folder",
+    "folder_id",
+    "upload_file"
+   ],
+   "notes": []
+  },
+  "delete_group_file": {
+   "action": "delete_group_file",
+   "found": true,
+   "registry_key": "GOCQHTTP_DeleteGroupFile",
+   "action_name_occurrences": 1,
+   "class_name": "ewe",
+   "class_extends": "ue",
+   "class_offset": 2766096,
+   "action_summary": "删除群文件",
+   "action_description": "在群文件系统中删除指定的文件",
+   "payload_schema": {
+    "source_expr": "Jxe",
+    "schema_var": "Jxe",
+    "schema_var_defined_at": 2765705,
+    "type": "Object",
+    "description": null,
+    "fields": [
+     {
+      "name": "group_id",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "群号"
+     },
+     {
+      "name": "file_id",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "文件ID"
+     },
+     {
+      "name": "bus_id",
+      "type": "Number",
+      "optional": true,
+      "has_default": false,
+      "default": null,
+      "description": "文件业务ID，默认使用文件列表中的 busid"
+     },
+     {
+      "name": "busid",
+      "type": "Number",
+      "optional": true,
+      "has_default": false,
+      "default": null,
+      "description": "文件业务ID，兼容 busid 字段"
+     }
+    ]
+   },
+   "payload_fields": [
+    {
+     "name": "group_id",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "群号"
+    },
+    {
+     "name": "file_id",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "文件ID"
+    },
+    {
+     "name": "bus_id",
+     "type": "Number",
+     "optional": true,
+     "has_default": false,
+     "default": null,
+     "description": "文件业务ID，默认使用文件列表中的 busid"
+    },
+    {
+     "name": "busid",
+     "type": "Number",
+     "optional": true,
+     "has_default": false,
+     "default": null,
+     "description": "文件业务ID，兼容 busid 字段"
+    }
+   ],
+   "return_schema": {
+    "source_expr": "Zxe",
+    "schema_var": "Zxe",
+    "schema_var_defined_at": 2766058,
+    "type": "Any",
+    "description": "删除结果"
+   },
+   "return_fields": [],
+   "return_description": "删除结果",
+   "payload_example": {
+    "present": true,
+    "kind": "reference",
+    "ref": "et.DeleteGroupFile.payload"
+   },
+   "return_example": {
+    "present": true,
+    "kind": "reference",
+    "ref": "et.DeleteGroupFile.response"
+   },
+   "handler_field_accesses": [
+    "file_id",
+    "group_id",
+    "bus_id",
+    "busid"
+   ],
+   "notes": []
+  },
+  "create_group_file_folder": {
+   "action": "create_group_file_folder",
+   "found": true,
+   "registry_key": "GoCQHTTP_CreateGroupFileFolder",
+   "action_name_occurrences": 1,
+   "class_name": "rwe",
+   "class_extends": "ue",
+   "class_offset": 2767302,
+   "action_summary": "创建群文件目录",
+   "action_description": "在群文件系统中创建新的文件夹",
+   "payload_schema": {
+    "source_expr": "twe",
+    "schema_var": "twe",
+    "schema_var_defined_at": 2766934,
+    "type": "Object",
+    "description": null,
+    "fields": [
+     {
+      "name": "group_id",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "群号"
+     },
+     {
+      "name": "folder_name",
+      "type": "String",
+      "optional": true,
+      "has_default": false,
+      "default": null,
+      "description": "文件夹名称"
+     },
+     {
+      "name": "name",
+      "type": "String",
+      "optional": true,
+      "has_default": false,
+      "default": null,
+      "description": "文件夹名称"
+     }
+    ]
+   },
+   "payload_fields": [
+    {
+     "name": "group_id",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "群号"
+    },
+    {
+     "name": "folder_name",
+     "type": "String",
+     "optional": true,
+     "has_default": false,
+     "default": null,
+     "description": "文件夹名称"
+    },
+    {
+     "name": "name",
+     "type": "String",
+     "optional": true,
+     "has_default": false,
+     "default": null,
+     "description": "文件夹名称"
+    }
+   ],
+   "return_schema": {
+    "source_expr": "nwe",
+    "schema_var": "nwe",
+    "schema_var_defined_at": 2767167,
+    "type": "Object",
+    "description": "创建文件夹结果",
+    "fields": [
+     {
+      "name": "result",
+      "type": "Any",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "操作结果"
+     },
+     {
+      "name": "groupItem",
+      "type": "Any",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "群项信息"
+     }
+    ]
+   },
+   "return_fields": [
+    {
+     "name": "result",
+     "type": "Any",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "操作结果"
+    },
+    {
+     "name": "groupItem",
+     "type": "Any",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "群项信息"
+    }
+   ],
+   "return_description": "创建文件夹结果",
+   "payload_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{ group_id: \"123456789\", folder_name: \"新建文件夹\" }",
+    "keys": [
+     "group_id",
+     "folder_name"
+    ]
+   },
+   "return_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{ result: {}, groupItem: {} }",
+    "keys": [
+     "result",
+     "groupItem"
+    ]
+   },
+   "handler_field_accesses": [
+    "folder_name",
+    "name",
+    "group_id"
+   ],
+   "notes": [
+    "payloadExample 未覆盖字段：['name']"
+   ]
+  },
+  "delete_group_folder": {
+   "action": "delete_group_folder",
+   "found": true,
+   "registry_key": "GoCQHTTP_DeleteGroupFileFolder",
+   "action_name_occurrences": 1,
+   "class_name": "swe",
+   "class_extends": "ue",
+   "class_offset": 2768061,
+   "action_summary": "删除群文件目录",
+   "action_description": "在群文件系统中删除指定的文件夹",
+   "payload_schema": {
+    "source_expr": "iwe",
+    "schema_var": "iwe",
+    "schema_var_defined_at": 2767839,
+    "type": "Object",
+    "description": null,
+    "fields": [
+     {
+      "name": "group_id",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "群号"
+     },
+     {
+      "name": "folder_id",
+      "type": "String",
+      "optional": true,
+      "has_default": false,
+      "default": null,
+      "description": "文件夹ID"
+     },
+     {
+      "name": "folder",
+      "type": "String",
+      "optional": true,
+      "has_default": false,
+      "default": null,
+      "description": "文件夹ID"
+     }
+    ]
+   },
+   "payload_fields": [
+    {
+     "name": "group_id",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "群号"
+    },
+    {
+     "name": "folder_id",
+     "type": "String",
+     "optional": true,
+     "has_default": false,
+     "default": null,
+     "description": "文件夹ID"
+    },
+    {
+     "name": "folder",
+     "type": "String",
+     "optional": true,
+     "has_default": false,
+     "default": null,
+     "description": "文件夹ID"
+    }
+   ],
+   "return_schema": {
+    "source_expr": "owe",
+    "schema_var": "owe",
+    "schema_var_defined_at": 2768023,
+    "type": "Any",
+    "description": "删除结果"
+   },
+   "return_fields": [],
+   "return_description": "删除结果",
+   "payload_example": {
+    "present": true,
+    "kind": "reference",
+    "ref": "et.DeleteGroupFileFolder.payload"
+   },
+   "return_example": {
+    "present": true,
+    "kind": "reference",
+    "ref": "et.DeleteGroupFileFolder.response"
+   },
+   "handler_field_accesses": [
+    "group_id",
+    "folder",
+    "folder_id"
+   ],
+   "notes": []
+  },
+  "trans_group_file": {
+   "action": "trans_group_file",
+   "found": true,
+   "registry_key": "TransGroupFile",
+   "action_name_occurrences": 1,
+   "class_name": "e_e",
+   "class_extends": "tr",
+   "class_offset": 2806647,
+   "action_summary": "传输群文件",
+   "action_description": null,
+   "payload_schema": {
+    "source_expr": "JSe",
+    "schema_var": "JSe",
+    "schema_var_defined_at": 2806447,
+    "type": "Object",
+    "description": null,
+    "fields": [
+     {
+      "name": "group_id",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "群号"
+     },
+     {
+      "name": "file_id",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "文件ID"
+     }
+    ]
+   },
+   "payload_fields": [
+    {
+     "name": "group_id",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "群号"
+    },
+    {
+     "name": "file_id",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "文件ID"
+    }
+   ],
+   "return_schema": {
+    "source_expr": "ZSe",
+    "schema_var": "ZSe",
+    "schema_var_defined_at": 2806558,
+    "type": "Object",
+    "description": "转发文件结果",
+    "fields": [
+     {
+      "name": "ok",
+      "type": "Boolean",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "是否成功"
+     }
+    ]
+   },
+   "return_fields": [
+    {
+     "name": "ok",
+     "type": "Boolean",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "是否成功"
+    }
+   ],
+   "return_description": "转发文件结果",
+   "payload_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{ group_id: \"123456\", file_id: \"/file_id\" }",
+    "keys": [
+     "group_id",
+     "file_id"
+    ]
+   },
+   "return_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{ ok: !0 }",
+    "keys": [
+     "ok"
+    ]
+   },
+   "handler_field_accesses": [
+    "file_id",
+    "group_id"
+   ],
+   "notes": []
+  },
+  "move_group_file": {
+   "action": "move_group_file",
+   "found": true,
+   "registry_key": "MoveGroupFile",
+   "action_name_occurrences": 1,
+   "class_name": "XSe",
+   "class_extends": "tr",
+   "class_offset": 2805733,
+   "action_summary": "移动群文件",
+   "action_description": null,
+   "payload_schema": {
+    "source_expr": "VSe",
+    "schema_var": "VSe",
+    "schema_var_defined_at": 2805406,
+    "type": "Object",
+    "description": null,
+    "fields": [
+     {
+      "name": "group_id",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "群号"
+     },
+     {
+      "name": "file_id",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "文件ID"
+     },
+     {
+      "name": "current_parent_directory",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "当前父目录"
+     },
+     {
+      "name": "target_parent_directory",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "目标父目录"
+     }
+    ]
+   },
+   "payload_fields": [
+    {
+     "name": "group_id",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "群号"
+    },
+    {
+     "name": "file_id",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "文件ID"
+    },
+    {
+     "name": "current_parent_directory",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "当前父目录"
+    },
+    {
+     "name": "target_parent_directory",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "目标父目录"
+    }
+   ],
+   "return_schema": {
+    "source_expr": "YSe",
+    "schema_var": "YSe",
+    "schema_var_defined_at": 2805644,
+    "type": "Object",
+    "description": "移动文件结果",
+    "fields": [
+     {
+      "name": "ok",
+      "type": "Boolean",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "是否成功"
+     }
+    ]
+   },
+   "return_fields": [
+    {
+     "name": "ok",
+     "type": "Boolean",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "是否成功"
+    }
+   ],
+   "return_description": "移动文件结果",
+   "payload_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{ group_id: \"123456\", file_id: \"/file_id\", current_parent_directory: \"/current_folder_id\", target_parent_directory: \"/target_folder_id\" }",
+    "keys": [
+     "group_id",
+     "file_id",
+     "current_parent_directory",
+     "target_parent_directory"
+    ]
+   },
+   "return_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{ ok: !0 }",
+    "keys": [
+     "ok"
+    ]
+   },
+   "handler_field_accesses": [
+    "file_id",
+    "group_id",
+    "current_parent_directory",
+    "target_parent_directory"
+   ],
+   "notes": []
+  },
+  "rename_group_file": {
+   "action": "rename_group_file",
+   "found": true,
+   "registry_key": "RenameGroupFile",
+   "action_name_occurrences": 1,
+   "class_name": "r_e",
+   "class_extends": "tr",
+   "class_offset": 2807659,
+   "action_summary": "重命名群文件",
+   "action_description": null,
+   "payload_schema": {
+    "source_expr": "t_e",
+    "schema_var": "t_e",
+    "schema_var_defined_at": 2807347,
+    "type": "Object",
+    "description": null,
+    "fields": [
+     {
+      "name": "group_id",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "群号"
+     },
+     {
+      "name": "file_id",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "文件ID"
+     },
+     {
+      "name": "current_parent_directory",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "当前父目录"
+     },
+     {
+      "name": "new_name",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "新文件名"
+     }
+    ]
+   },
+   "payload_fields": [
+    {
+     "name": "group_id",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "群号"
+    },
+    {
+     "name": "file_id",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "文件ID"
+    },
+    {
+     "name": "current_parent_directory",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "当前父目录"
+    },
+    {
+     "name": "new_name",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "新文件名"
+    }
+   ],
+   "return_schema": {
+    "source_expr": "n_e",
+    "schema_var": "n_e",
+    "schema_var_defined_at": 2807569,
+    "type": "Object",
+    "description": "重命名文件结果",
+    "fields": [
+     {
+      "name": "ok",
+      "type": "Boolean",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "是否成功"
+     }
+    ]
+   },
+   "return_fields": [
+    {
+     "name": "ok",
+     "type": "Boolean",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "是否成功"
+    }
+   ],
+   "return_description": "重命名文件结果",
+   "payload_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{ group_id: \"123456\", file_id: \"/file_id\", current_parent_directory: \"/\", new_name: \"new_name.jpg\" }",
+    "keys": [
+     "group_id",
+     "file_id",
+     "current_parent_directory",
+     "new_name"
+    ]
+   },
+   "return_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{ ok: !0 }",
+    "keys": [
+     "ok"
+    ]
+   },
+   "handler_field_accesses": [
+    "file_id",
+    "group_id",
+    "current_parent_directory",
+    "new_name"
+   ],
+   "notes": []
+  },
+  "get_group_file_url": {
+   "action": "get_group_file_url",
+   "found": true,
+   "registry_key": "GOCQHTTP_GetGroupFileUrl",
+   "action_name_occurrences": 1,
+   "class_name": "Rwe",
+   "class_extends": "tr",
+   "class_offset": 2778583,
+   "action_summary": "获取群文件URL",
+   "action_description": "获取指定群文件的下载链接",
+   "payload_schema": {
+    "source_expr": "Mwe",
+    "schema_var": "Mwe",
+    "schema_var_defined_at": 2778367,
+    "type": "Object",
+    "description": null,
+    "fields": [
+     {
+      "name": "group_id",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "群号"
+     },
+     {
+      "name": "file_id",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "文件ID"
+     }
+    ]
+   },
+   "payload_fields": [
+    {
+     "name": "group_id",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "群号"
+    },
+    {
+     "name": "file_id",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "文件ID"
+    }
+   ],
+   "return_schema": {
+    "source_expr": "Bwe",
+    "schema_var": "Bwe",
+    "schema_var_defined_at": 2778478,
+    "type": "Object",
+    "description": "群文件URL信息",
+    "fields": [
+     {
+      "name": "url",
+      "type": "String",
+      "optional": true,
+      "has_default": false,
+      "default": null,
+      "description": "文件下载链接"
+     }
+    ]
+   },
+   "return_fields": [
+    {
+     "name": "url",
+     "type": "String",
+     "optional": true,
+     "has_default": false,
+     "default": null,
+     "description": "文件下载链接"
+    }
+   ],
+   "return_description": "群文件URL信息",
+   "payload_example": {
+    "present": true,
+    "kind": "reference",
+    "ref": "Qo.GetGroupFileUrl.payload"
+   },
+   "return_example": {
+    "present": true,
+    "kind": "reference",
+    "ref": "Qo.GetGroupFileUrl.response"
+   },
+   "handler_field_accesses": [
+    "file_id",
+    "group_id"
+   ],
+   "notes": []
+  },
+  "create_flash_task": {
+   "action": "create_flash_task",
+   "found": true,
+   "registry_key": "CreateFlashTask",
+   "action_name_occurrences": 1,
+   "class_name": "xEe",
+   "class_extends": "ue",
+   "class_offset": 2847762,
+   "action_summary": "创建闪传任务",
+   "action_description": null,
+   "payload_schema": {
+    "source_expr": "bEe",
+    "schema_var": "bEe",
+    "schema_var_defined_at": 2847398,
+    "type": "Object",
+    "description": null,
+    "fields": [
+     {
+      "name": "files",
+      "type": "Union",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "文件列表或单个文件路径",
+      "member_types": [
+       "Array",
+       "String"
+      ],
+      "members": [
+       {
+        "type": "Array",
+        "optional": false,
+        "has_default": false,
+        "default": null,
+        "description": null,
+        "item_type": "String"
+       },
+       {
+        "type": "String",
+        "optional": false,
+        "has_default": false,
+        "default": null,
+        "description": null
+       }
+      ]
+     },
+     {
+      "name": "name",
+      "type": "String",
+      "optional": true,
+      "has_default": false,
+      "default": null,
+      "description": "任务名称"
+     },
+     {
+      "name": "thumb_path",
+      "type": "String",
+      "optional": true,
+      "has_default": false,
+      "default": null,
+      "description": "缩略图路径"
+     },
+     {
+      "name": "validitySeconds",
+      "type": "Number",
+      "optional": true,
+      "has_default": false,
+      "default": null,
+      "description": "文件集有效期（秒），可选 14 天 1209600 / 90 天 7776000 / 180 天 15552000，默认 1209600"
+     }
+    ]
+   },
+   "payload_fields": [
+    {
+     "name": "files",
+     "type": "Union",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "文件列表或单个文件路径",
+     "member_types": [
+      "Array",
+      "String"
+     ],
+     "members": [
+      {
+       "type": "Array",
+       "optional": false,
+       "has_default": false,
+       "default": null,
+       "description": null,
+       "item_type": "String"
+      },
+      {
+       "type": "String",
+       "optional": false,
+       "has_default": false,
+       "default": null,
+       "description": null
+      }
+     ]
+    },
+    {
+     "name": "name",
+     "type": "String",
+     "optional": true,
+     "has_default": false,
+     "default": null,
+     "description": "任务名称"
+    },
+    {
+     "name": "thumb_path",
+     "type": "String",
+     "optional": true,
+     "has_default": false,
+     "default": null,
+     "description": "缩略图路径"
+    },
+    {
+     "name": "validitySeconds",
+     "type": "Number",
+     "optional": true,
+     "has_default": false,
+     "default": null,
+     "description": "文件集有效期（秒），可选 14 天 1209600 / 90 天 7776000 / 180 天 15552000，默认 1209600"
+    }
+   ],
+   "return_schema": {
+    "source_expr": "p.Any({ description: \"任务创建结果\" })",
+    "schema_var": null,
+    "type": "Any",
+    "description": "任务创建结果"
+   },
+   "return_fields": [],
+   "return_description": "任务创建结果",
+   "payload_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{ files: \"C:\\\\test.jpg\", name: \"test_task\", validitySeconds: cS }",
+    "keys": [
+     "files",
+     "name",
+     "validitySeconds"
+    ]
+   },
+   "return_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{ task_id: \"task_123\" }",
+    "keys": [
+     "task_id"
+    ]
+   },
+   "handler_field_accesses": [
+    "files",
+    "thumb_path",
+    "validitySeconds",
+    "name"
+   ],
+   "notes": [
+    "payloadExample 未覆盖字段：['thumb_path']"
+   ]
+  },
+  "send_flash_msg": {
+   "action": "send_flash_msg",
+   "found": true,
+   "registry_key": "SendFlashMsg",
+   "action_name_occurrences": 1,
+   "class_name": "SEe",
+   "class_extends": "ue",
+   "class_offset": 2849090,
+   "action_summary": "发送闪传消息",
+   "action_description": null,
+   "payload_schema": {
+    "source_expr": "wEe",
+    "schema_var": "wEe",
+    "schema_var_defined_at": 2848903,
+    "type": "Object",
+    "description": null,
+    "fields": [
+     {
+      "name": "fileset_id",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "文件集 ID"
+     },
+     {
+      "name": "user_id",
+      "type": "String",
+      "optional": true,
+      "has_default": false,
+      "default": null,
+      "description": "用户 QQ"
+     },
+     {
+      "name": "group_id",
+      "type": "String",
+      "optional": true,
+      "has_default": false,
+      "default": null,
+      "description": "群号"
+     }
+    ]
+   },
+   "payload_fields": [
+    {
+     "name": "fileset_id",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "文件集 ID"
+    },
+    {
+     "name": "user_id",
+     "type": "String",
+     "optional": true,
+     "has_default": false,
+     "default": null,
+     "description": "用户 QQ"
+    },
+    {
+     "name": "group_id",
+     "type": "String",
+     "optional": true,
+     "has_default": false,
+     "default": null,
+     "description": "群号"
+    }
+   ],
+   "return_schema": {
+    "source_expr": "p.Any({ description: \"发送结果\" })",
+    "schema_var": null,
+    "type": "Any",
+    "description": "发送结果"
+   },
+   "return_fields": [],
+   "return_description": "发送结果",
+   "payload_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{ fileset_id: \"set_123\", user_id: \"123456789\" }",
+    "keys": [
+     "fileset_id",
+     "user_id"
+    ]
+   },
+   "return_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{ message_id: 123456 }",
+    "keys": [
+     "message_id"
+    ]
+   },
+   "handler_field_accesses": [
+    "group_id",
+    "user_id",
+    "fileset_id"
+   ],
+   "notes": [
+    "payloadExample 未覆盖字段：['group_id']"
+   ]
+  },
+  "download_fileset": {
+   "action": "download_fileset",
+   "found": true,
+   "registry_key": "DownloadFileset",
+   "action_name_occurrences": 1,
+   "class_name": "DEe",
+   "class_extends": "ue",
+   "class_offset": 2852174,
+   "action_summary": "下载文件集",
+   "action_description": null,
+   "payload_schema": {
+    "source_expr": "PEe",
+    "schema_var": "PEe",
+    "schema_var_defined_at": 2852103,
+    "type": "Object",
+    "description": null,
+    "fields": [
+     {
+      "name": "fileset_id",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "文件集 ID"
+     }
+    ]
+   },
+   "payload_fields": [
+    {
+     "name": "fileset_id",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "文件集 ID"
+    }
+   ],
+   "return_schema": {
+    "source_expr": "p.Any({ description: \"下载结果\" })",
+    "schema_var": null,
+    "type": "Any",
+    "description": "下载结果"
+   },
+   "return_fields": [],
+   "return_description": "下载结果",
+   "payload_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{ fileset_id: \"set_123\" }",
+    "keys": [
+     "fileset_id"
+    ]
+   },
+   "return_example": {
+    "present": true,
+    "kind": "null",
+    "value": null
+   },
+   "handler_field_accesses": [
+    "fileset_id"
+   ],
+   "notes": []
+  },
+  "get_flash_file_list": {
+   "action": "get_flash_file_list",
+   "found": true,
+   "registry_key": "GetFlashFileList",
+   "action_name_occurrences": 1,
+   "class_name": "EEe",
+   "class_extends": "ue",
+   "class_offset": 2850058,
+   "action_summary": "获取闪传文件列表",
+   "action_description": null,
+   "payload_schema": {
+    "source_expr": "_Ee",
+    "schema_var": "_Ee",
+    "schema_var_defined_at": 2849987,
+    "type": "Object",
+    "description": null,
+    "fields": [
+     {
+      "name": "fileset_id",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "文件集 ID"
+     }
+    ]
+   },
+   "payload_fields": [
+    {
+     "name": "fileset_id",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "文件集 ID"
+    }
+   ],
+   "return_schema": {
+    "source_expr": "p.Any({ description: \"文件列表\" })",
+    "schema_var": null,
+    "type": "Any",
+    "description": "文件列表"
+   },
+   "return_fields": [],
+   "return_description": "文件列表",
+   "payload_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{ fileset_id: \"set_123\" }",
+    "keys": [
+     "fileset_id"
+    ]
+   },
+   "return_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "[ { file_name: \"test.jpg\", size: 1024 } ]",
+    "keys": []
+   },
+   "handler_field_accesses": [
+    "fileset_id"
+   ],
+   "notes": []
+  },
+  "get_flash_file_url": {
+   "action": "get_flash_file_url",
+   "found": true,
+   "registry_key": "GetFlashFileUrl",
+   "action_name_occurrences": 1,
+   "class_name": "IEe",
+   "class_extends": "ue",
+   "class_offset": 2850678,
+   "action_summary": "获取闪传文件链接",
+   "action_description": null,
+   "payload_schema": {
+    "source_expr": "AEe",
+    "schema_var": "AEe",
+    "schema_var_defined_at": 2850487,
+    "type": "Object",
+    "description": null,
+    "fields": [
+     {
+      "name": "fileset_id",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "文件集 ID"
+     },
+     {
+      "name": "file_name",
+      "type": "String",
+      "optional": true,
+      "has_default": false,
+      "default": null,
+      "description": "文件名"
+     },
+     {
+      "name": "file_index",
+      "type": "Number",
+      "optional": true,
+      "has_default": false,
+      "default": null,
+      "description": "文件索引"
+     }
+    ]
+   },
+   "payload_fields": [
+    {
+     "name": "fileset_id",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "文件集 ID"
+    },
+    {
+     "name": "file_name",
+     "type": "String",
+     "optional": true,
+     "has_default": false,
+     "default": null,
+     "description": "文件名"
+    },
+    {
+     "name": "file_index",
+     "type": "Number",
+     "optional": true,
+     "has_default": false,
+     "default": null,
+     "description": "文件索引"
+    }
+   ],
+   "return_schema": {
+    "source_expr": "p.Any({ description: \"文件下载链接\" })",
+    "schema_var": null,
+    "type": "Any",
+    "description": "文件下载链接"
+   },
+   "return_fields": [],
+   "return_description": "文件下载链接",
+   "payload_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{ fileset_id: \"set_123\" }",
+    "keys": [
+     "fileset_id"
+    ]
+   },
+   "return_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{ url: \"http://example.com/flash.jpg\" }",
+    "keys": [
+     "url"
+    ]
+   },
+   "handler_field_accesses": [
+    "fileset_id",
+    "file_name",
+    "file_index"
+   ],
+   "notes": [
+    "payloadExample 未覆盖字段：['file_name', 'file_index']"
+   ]
+  },
+  "get_fileset_info": {
+   "action": "get_fileset_info",
+   "found": true,
+   "registry_key": "GetFilesetInfo",
+   "action_name_occurrences": 1,
+   "class_name": "NEe",
+   "class_extends": "ue",
+   "class_offset": 2851686,
+   "action_summary": "获取文件集信息",
+   "action_description": null,
+   "payload_schema": {
+    "source_expr": "kEe",
+    "schema_var": "kEe",
+    "schema_var_defined_at": 2851615,
+    "type": "Object",
+    "description": null,
+    "fields": [
+     {
+      "name": "fileset_id",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "文件集 ID"
+     }
+    ]
+   },
+   "payload_fields": [
+    {
+     "name": "fileset_id",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "文件集 ID"
+    }
+   ],
+   "return_schema": {
+    "source_expr": "p.Any({ description: \"文件集信息\" })",
+    "schema_var": null,
+    "type": "Any",
+    "description": "文件集信息"
+   },
+   "return_fields": [],
+   "return_description": "文件集信息",
+   "payload_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{ fileset_id: \"set_123\" }",
+    "keys": [
+     "fileset_id"
+    ]
+   },
+   "return_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{ fileset_id: \"set_123\", file_list: [] }",
+    "keys": [
+     "fileset_id",
+     "file_list"
+    ]
+   },
+   "handler_field_accesses": [
+    "fileset_id"
+   ],
+   "notes": []
+  },
+  "get_fileset_id": {
+   "action": "get_fileset_id",
+   "found": true,
+   "registry_key": "GetFilesetId",
+   "action_name_occurrences": 1,
+   "class_name": "WEe",
+   "class_extends": "ue",
+   "class_offset": 2857070,
+   "action_summary": "获取文件集 ID",
+   "action_description": null,
+   "payload_schema": {
+    "source_expr": "HEe",
+    "schema_var": "HEe",
+    "schema_var_defined_at": 2856997,
+    "type": "Object",
+    "description": null,
+    "fields": [
+     {
+      "name": "share_code",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "分享码或分享链接"
+     }
+    ]
+   },
+   "payload_fields": [
+    {
+     "name": "share_code",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "分享码或分享链接"
+    }
+   ],
+   "return_schema": {
+    "source_expr": "p.Object({ fileset_id: p.String({ description: \"文件集 ID\" }) })",
+    "schema_var": null,
+    "type": "Object",
+    "description": null,
+    "fields": [
+     {
+      "name": "fileset_id",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "文件集 ID"
+     }
+    ]
+   },
+   "return_fields": [
+    {
+     "name": "fileset_id",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "文件集 ID"
+    }
+   ],
+   "return_description": null,
+   "payload_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{ share_code: \"123456\" }",
+    "keys": [
+     "share_code"
+    ]
+   },
+   "return_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{ fileset_id: \"set_123\" }",
+    "keys": [
+     "fileset_id"
+    ]
+   },
+   "handler_field_accesses": [
+    "share_code"
+   ],
+   "notes": []
+  },
+  "send_online_file": {
+   "action": "send_online_file",
+   "found": true,
+   "registry_key": "SendOnlineFile",
+   "action_name_occurrences": 1,
+   "class_name": "BEe",
+   "class_extends": "ue",
+   "class_offset": 2853340,
+   "action_summary": "发送在线文件",
+   "action_description": null,
+   "payload_schema": {
+    "source_expr": "MEe",
+    "schema_var": "MEe",
+    "schema_var_defined_at": 2853159,
+    "type": "Object",
+    "description": null,
+    "fields": [
+     {
+      "name": "user_id",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "用户 QQ"
+     },
+     {
+      "name": "file_path",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "本地文件路径"
+     },
+     {
+      "name": "file_name",
+      "type": "String",
+      "optional": true,
+      "has_default": false,
+      "default": null,
+      "description": "文件名 (可选)"
+     }
+    ]
+   },
+   "payload_fields": [
+    {
+     "name": "user_id",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "用户 QQ"
+    },
+    {
+     "name": "file_path",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "本地文件路径"
+    },
+    {
+     "name": "file_name",
+     "type": "String",
+     "optional": true,
+     "has_default": false,
+     "default": null,
+     "description": "文件名 (可选)"
+    }
+   ],
+   "return_schema": {
+    "source_expr": "p.Any({ description: \"发送结果\" })",
+    "schema_var": null,
+    "type": "Any",
+    "description": "发送结果"
+   },
+   "return_fields": [],
+   "return_description": "发送结果",
+   "payload_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{ user_id: \"123456789\", file_path: \"C:\\\\path\\\\to\\\\file.txt\", file_name: \"test.txt\" }",
+    "keys": [
+     "user_id",
+     "file_path",
+     "file_name"
+    ]
+   },
+   "return_example": {
+    "present": true,
+    "kind": "null",
+    "value": null
+   },
+   "handler_field_accesses": [
+    "user_id",
+    "file_name",
+    "file_path"
+   ],
+   "notes": []
+  },
+  "send_online_folder": {
+   "action": "send_online_folder",
+   "found": true,
+   "registry_key": "SendOnlineFolder",
+   "action_name_occurrences": 1,
+   "class_name": "UEe",
+   "class_extends": "ue",
+   "class_offset": 2854170,
+   "action_summary": "发送在线文件夹",
+   "action_description": null,
+   "payload_schema": {
+    "source_expr": "REe",
+    "schema_var": "REe",
+    "schema_var_defined_at": 2853982,
+    "type": "Object",
+    "description": null,
+    "fields": [
+     {
+      "name": "user_id",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "用户 QQ"
+     },
+     {
+      "name": "folder_path",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "本地文件夹路径"
+     },
+     {
+      "name": "folder_name",
+      "type": "String",
+      "optional": true,
+      "has_default": false,
+      "default": null,
+      "description": "文件夹名称 (可选)"
+     }
+    ]
+   },
+   "payload_fields": [
+    {
+     "name": "user_id",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "用户 QQ"
+    },
+    {
+     "name": "folder_path",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "本地文件夹路径"
+    },
+    {
+     "name": "folder_name",
+     "type": "String",
+     "optional": true,
+     "has_default": false,
+     "default": null,
+     "description": "文件夹名称 (可选)"
+    }
+   ],
+   "return_schema": {
+    "source_expr": "p.Any({ description: \"发送结果\" })",
+    "schema_var": null,
+    "type": "Any",
+    "description": "发送结果"
+   },
+   "return_fields": [],
+   "return_description": "发送结果",
+   "payload_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{ user_id: \"123456789\", folder_path: \"C:\\\\path\\\\to\\\\folder\" }",
+    "keys": [
+     "user_id",
+     "folder_path"
+    ]
+   },
+   "return_example": {
+    "present": true,
+    "kind": "null",
+    "value": null
+   },
+   "handler_field_accesses": [
+    "user_id",
+    "folder_path",
+    "folder_name"
+   ],
+   "notes": [
+    "payloadExample 未覆盖字段：['folder_name']"
+   ]
+  },
+  "get_online_file_msg": {
+   "action": "get_online_file_msg",
+   "found": true,
+   "registry_key": "GetOnlineFileMessages",
+   "action_name_occurrences": 1,
+   "class_name": "OEe",
+   "class_extends": "ue",
+   "class_offset": 2852611,
+   "action_summary": "获取在线文件消息",
+   "action_description": null,
+   "payload_schema": {
+    "source_expr": "FEe",
+    "schema_var": "FEe",
+    "schema_var_defined_at": 2852544,
+    "type": "Object",
+    "description": null,
+    "fields": [
+     {
+      "name": "user_id",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "用户 QQ"
+     }
+    ]
+   },
+   "payload_fields": [
+    {
+     "name": "user_id",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "用户 QQ"
+    }
+   ],
+   "return_schema": {
+    "source_expr": "p.Any({ description: \"在线文件消息列表\" })",
+    "schema_var": null,
+    "type": "Any",
+    "description": "在线文件消息列表"
+   },
+   "return_fields": [],
+   "return_description": "在线文件消息列表",
+   "payload_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{ user_id: \"123456789\" }",
+    "keys": [
+     "user_id"
+    ]
+   },
+   "return_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "[]",
+    "keys": []
+   },
+   "handler_field_accesses": [
+    "user_id"
+   ],
+   "notes": []
+  },
+  "receive_online_file": {
+   "action": "receive_online_file",
+   "found": true,
+   "registry_key": "ReceiveOnlineFile",
+   "action_name_occurrences": 1,
+   "class_name": "GEe",
+   "class_extends": "ue",
+   "class_offset": 2855630,
+   "action_summary": "接收在线文件",
+   "action_description": null,
+   "payload_schema": {
+    "source_expr": "QEe",
+    "schema_var": "QEe",
+    "schema_var_defined_at": 2855467,
+    "type": "Object",
+    "description": null,
+    "fields": [
+     {
+      "name": "user_id",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "用户 QQ"
+     },
+     {
+      "name": "msg_id",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "消息 ID"
+     },
+     {
+      "name": "element_id",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "元素 ID"
+     }
+    ]
+   },
+   "payload_fields": [
+    {
+     "name": "user_id",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "用户 QQ"
+    },
+    {
+     "name": "msg_id",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "消息 ID"
+    },
+    {
+     "name": "element_id",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "元素 ID"
+    }
+   ],
+   "return_schema": {
+    "source_expr": "p.Any({ description: \"接收结果\" })",
+    "schema_var": null,
+    "type": "Any",
+    "description": "接收结果"
+   },
+   "return_fields": [],
+   "return_description": "接收结果",
+   "payload_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{ user_id: \"123456789\", msg_id: \"123\", save_path: \"C:\\\\save\" }",
+    "keys": [
+     "user_id",
+     "msg_id",
+     "save_path"
+    ]
+   },
+   "return_example": {
+    "present": true,
+    "kind": "null",
+    "value": null
+   },
+   "handler_field_accesses": [
+    "user_id",
+    "msg_id",
+    "element_id"
+   ],
+   "notes": [
+    "payloadExample 含 payload schema 外字段：['save_path']",
+    "payloadExample 未覆盖字段：['element_id']"
+   ]
+  },
+  "refuse_online_file": {
+   "action": "refuse_online_file",
+   "found": true,
+   "registry_key": "RefuseOnlineFile",
+   "action_name_occurrences": 1,
+   "class_name": "qEe",
+   "class_extends": "ue",
+   "class_offset": 2856412,
+   "action_summary": "拒绝在线文件",
+   "action_description": null,
+   "payload_schema": {
+    "source_expr": "$Ee",
+    "schema_var": "$Ee",
+    "schema_var_defined_at": 2856249,
+    "type": "Object",
+    "description": null,
+    "fields": [
+     {
+      "name": "user_id",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "用户 QQ"
+     },
+     {
+      "name": "msg_id",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "消息 ID"
+     },
+     {
+      "name": "element_id",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "元素 ID"
+     }
+    ]
+   },
+   "payload_fields": [
+    {
+     "name": "user_id",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "用户 QQ"
+    },
+    {
+     "name": "msg_id",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "消息 ID"
+    },
+    {
+     "name": "element_id",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "元素 ID"
+    }
+   ],
+   "return_schema": {
+    "source_expr": "p.Any({ description: \"拒绝结果\" })",
+    "schema_var": null,
+    "type": "Any",
+    "description": "拒绝结果"
+   },
+   "return_fields": [],
+   "return_description": "拒绝结果",
+   "payload_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{ user_id: \"123456789\", msg_id: \"123\" }",
+    "keys": [
+     "user_id",
+     "msg_id"
+    ]
+   },
+   "return_example": {
+    "present": true,
+    "kind": "null",
+    "value": null
+   },
+   "handler_field_accesses": [
+    "user_id",
+    "msg_id",
+    "element_id"
+   ],
+   "notes": [
+    "payloadExample 未覆盖字段：['element_id']"
+   ]
+  },
+  "cancel_online_file": {
+   "action": "cancel_online_file",
+   "found": true,
+   "registry_key": "CancelOnlineFile",
+   "action_name_occurrences": 1,
+   "class_name": "jEe",
+   "class_extends": "ue",
+   "class_offset": 2854894,
+   "action_summary": "取消在线文件",
+   "action_description": null,
+   "payload_schema": {
+    "source_expr": "LEe",
+    "schema_var": "LEe",
+    "schema_var_defined_at": 2854781,
+    "type": "Object",
+    "description": null,
+    "fields": [
+     {
+      "name": "user_id",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "用户 QQ"
+     },
+     {
+      "name": "msg_id",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "消息 ID"
+     }
+    ]
+   },
+   "payload_fields": [
+    {
+     "name": "user_id",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "用户 QQ"
+    },
+    {
+     "name": "msg_id",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "消息 ID"
+    }
+   ],
+   "return_schema": {
+    "source_expr": "p.Any({ description: \"取消结果\" })",
+    "schema_var": null,
+    "type": "Any",
+    "description": "取消结果"
+   },
+   "return_fields": [],
+   "return_description": "取消结果",
+   "payload_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{ user_id: \"123456789\", msg_id: \"123\" }",
+    "keys": [
+     "user_id",
+     "msg_id"
+    ]
+   },
+   "return_example": {
+    "present": true,
+    "kind": "null",
+    "value": null
+   },
+   "handler_field_accesses": [
+    "user_id",
+    "msg_id"
+   ],
+   "notes": []
+  },
+  "upload_file_stream": {
+   "action": "upload_file_stream",
+   "found": true,
+   "registry_key": "UploadFileStream",
+   "action_name_occurrences": 1,
+   "class_name": "Wi",
+   "class_extends": "ue",
+   "class_offset": 2840864,
+   "action_summary": "上传文件流",
+   "action_description": "以流式方式上传文件数据到机器人",
+   "payload_schema": {
+    "source_expr": "yEe",
+    "schema_var": "yEe",
+    "schema_var_defined_at": 2840122,
+    "type": "Object",
+    "description": null,
+    "fields": [
+     {
+      "name": "stream_id",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "流 ID"
+     },
+     {
+      "name": "chunk_data",
+      "type": "String",
+      "optional": true,
+      "has_default": false,
+      "default": null,
+      "description": "分块数据 (Base64)"
+     },
+     {
+      "name": "chunk_index",
+      "type": "Number",
+      "optional": true,
+      "has_default": false,
+      "default": null,
+      "description": "分块索引"
+     },
+     {
+      "name": "total_chunks",
+      "type": "Number",
+      "optional": true,
+      "has_default": false,
+      "default": null,
+      "description": "总分块数"
+     },
+     {
+      "name": "file_size",
+      "type": "Number",
+      "optional": true,
+      "has_default": false,
+      "default": null,
+      "description": "文件总大小"
+     },
+     {
+      "name": "expected_sha256",
+      "type": "String",
+      "optional": true,
+      "has_default": false,
+      "default": null,
+      "description": "期望的 SHA256"
+     },
+     {
+      "name": "is_complete",
+      "type": "Boolean",
+      "optional": true,
+      "has_default": false,
+      "default": null,
+      "description": "是否完成"
+     },
+     {
+      "name": "filename",
+      "type": "String",
+      "optional": true,
+      "has_default": false,
+      "default": null,
+      "description": "文件名"
+     },
+     {
+      "name": "reset",
+      "type": "Boolean",
+      "optional": true,
+      "has_default": false,
+      "default": null,
+      "description": "是否重置"
+     },
+     {
+      "name": "verify_only",
+      "type": "Boolean",
+      "optional": true,
+      "has_default": false,
+      "default": null,
+      "description": "是否仅验证"
+     },
+     {
+      "name": "file_retention",
+      "type": "Number",
+      "optional": false,
+      "has_default": true,
+      "default": "300 * 1e3",
+      "description": "文件保留时间 (毫秒)"
+     }
+    ]
+   },
+   "payload_fields": [
+    {
+     "name": "stream_id",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "流 ID"
+    },
+    {
+     "name": "chunk_data",
+     "type": "String",
+     "optional": true,
+     "has_default": false,
+     "default": null,
+     "description": "分块数据 (Base64)"
+    },
+    {
+     "name": "chunk_index",
+     "type": "Number",
+     "optional": true,
+     "has_default": false,
+     "default": null,
+     "description": "分块索引"
+    },
+    {
+     "name": "total_chunks",
+     "type": "Number",
+     "optional": true,
+     "has_default": false,
+     "default": null,
+     "description": "总分块数"
+    },
+    {
+     "name": "file_size",
+     "type": "Number",
+     "optional": true,
+     "has_default": false,
+     "default": null,
+     "description": "文件总大小"
+    },
+    {
+     "name": "expected_sha256",
+     "type": "String",
+     "optional": true,
+     "has_default": false,
+     "default": null,
+     "description": "期望的 SHA256"
+    },
+    {
+     "name": "is_complete",
+     "type": "Boolean",
+     "optional": true,
+     "has_default": false,
+     "default": null,
+     "description": "是否完成"
+    },
+    {
+     "name": "filename",
+     "type": "String",
+     "optional": true,
+     "has_default": false,
+     "default": null,
+     "description": "文件名"
+    },
+    {
+     "name": "reset",
+     "type": "Boolean",
+     "optional": true,
+     "has_default": false,
+     "default": null,
+     "description": "是否重置"
+    },
+    {
+     "name": "verify_only",
+     "type": "Boolean",
+     "optional": true,
+     "has_default": false,
+     "default": null,
+     "description": "是否仅验证"
+    },
+    {
+     "name": "file_retention",
+     "type": "Number",
+     "optional": false,
+     "has_default": true,
+     "default": "300 * 1e3",
+     "description": "文件保留时间 (毫秒)"
+    }
+   ],
+   "return_schema": {
+    "source_expr": "p.Any({ description: \"上传结果 (流式)\" })",
+    "schema_var": null,
+    "type": "Any",
+    "description": "上传结果 (流式)"
+   },
+   "return_fields": [],
+   "return_description": "上传结果 (流式)",
+   "payload_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{ stream_id: \"uuid-1234-5678\", chunk_data: \"SGVsbG8gV29ybGQ=\", chunk_index: 0, total_chunks: 1, file_size: 11 }",
+    "keys": [
+     "stream_id",
+     "chunk_data",
+     "chunk_index",
+     "total_chunks",
+     "file_size"
+    ]
+   },
+   "return_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{ type: \"stream\", stream_id: \"uuid-1234-5678\", status: \"chunk_received\", received_chunks: 1, total_chunks: 1 }",
+    "keys": [
+     "type",
+     "stream_id",
+     "status",
+     "received_chunks",
+     "total_chunks"
+    ]
+   },
+   "handler_field_accesses": [
+    "chunk_data",
+    "chunk_index",
+    "is_complete"
+   ],
+   "notes": [
+    "payloadExample 未覆盖字段：['expected_sha256', 'is_complete', 'filename', 'reset', 'verify_only', 'file_retention']"
+   ]
+  },
+  "download_file_stream": {
+   "action": "download_file_stream",
+   "found": true,
+   "registry_key": "DownloadFileStream",
+   "action_name_occurrences": 1,
+   "class_name": "uEe",
+   "class_extends": "cI",
+   "class_offset": 2834681,
+   "action_summary": "下载文件流",
+   "action_description": "以流式方式从网络或本地下载文件",
+   "payload_schema": {
+    "source_expr": "cEe",
+    "schema_var": "cEe",
+    "schema_var_defined_at": 2834442,
+    "type": "Object",
+    "description": null,
+    "fields": [
+     {
+      "name": "file",
+      "type": "String",
+      "optional": true,
+      "has_default": false,
+      "default": null,
+      "description": "文件路径或 URL"
+     },
+     {
+      "name": "file_id",
+      "type": "String",
+      "optional": true,
+      "has_default": false,
+      "default": null,
+      "description": "文件 ID"
+     },
+     {
+      "name": "chunk_size",
+      "type": "Number",
+      "optional": true,
+      "has_default": true,
+      "default": "64 * 1024",
+      "description": "分块大小 (字节)"
+     }
+    ]
+   },
+   "payload_fields": [
+    {
+     "name": "file",
+     "type": "String",
+     "optional": true,
+     "has_default": false,
+     "default": null,
+     "description": "文件路径或 URL"
+    },
+    {
+     "name": "file_id",
+     "type": "String",
+     "optional": true,
+     "has_default": false,
+     "default": null,
+     "description": "文件 ID"
+    },
+    {
+     "name": "chunk_size",
+     "type": "Number",
+     "optional": true,
+     "has_default": true,
+     "default": "64 * 1024",
+     "description": "分块大小 (字节)"
+    }
+   ],
+   "return_schema": {
+    "source_expr": "p.Any({ description: \"下载结果 (流式)\" })",
+    "schema_var": null,
+    "type": "Any",
+    "description": "下载结果 (流式)"
+   },
+   "return_fields": [],
+   "return_description": "下载结果 (流式)",
+   "payload_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{ file: \"http://example.com/file.png\" }",
+    "keys": [
+     "file"
+    ]
+   },
+   "return_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{ type: \"stream\", data_type: \"file_info\", file_name: \"file.png\", file_size: 1024 }",
+    "keys": [
+     "type",
+     "data_type",
+     "file_name",
+     "file_size"
+    ]
+   },
+   "handler_field_accesses": [
+    "file",
+    "file_id",
+    "chunk_size"
+   ],
+   "notes": [
+    "payloadExample 未覆盖字段：['file_id', 'chunk_size']"
+   ]
+  },
+  "download_file_image_stream": {
+   "action": "download_file_image_stream",
+   "found": true,
+   "registry_key": "DownloadFileImageStream",
+   "action_name_occurrences": 1,
+   "class_name": "hEe",
+   "class_extends": "cI",
+   "class_offset": 2838005,
+   "action_summary": "下载图片文件流",
+   "action_description": null,
+   "payload_schema": {
+    "source_expr": "fEe",
+    "schema_var": "fEe",
+    "schema_var_defined_at": 2837766,
+    "type": "Object",
+    "description": null,
+    "fields": [
+     {
+      "name": "file",
+      "type": "String",
+      "optional": true,
+      "has_default": false,
+      "default": null,
+      "description": "文件路径或 URL"
+     },
+     {
+      "name": "file_id",
+      "type": "String",
+      "optional": true,
+      "has_default": false,
+      "default": null,
+      "description": "文件 ID"
+     },
+     {
+      "name": "chunk_size",
+      "type": "Number",
+      "optional": true,
+      "has_default": true,
+      "default": "64 * 1024",
+      "description": "分块大小 (字节)"
+     }
+    ]
+   },
+   "payload_fields": [
+    {
+     "name": "file",
+     "type": "String",
+     "optional": true,
+     "has_default": false,
+     "default": null,
+     "description": "文件路径或 URL"
+    },
+    {
+     "name": "file_id",
+     "type": "String",
+     "optional": true,
+     "has_default": false,
+     "default": null,
+     "description": "文件 ID"
+    },
+    {
+     "name": "chunk_size",
+     "type": "Number",
+     "optional": true,
+     "has_default": true,
+     "default": "64 * 1024",
+     "description": "分块大小 (字节)"
+    }
+   ],
+   "return_schema": {
+    "source_expr": "p.Any({ description: \"下载结果 (流式)\" })",
+    "schema_var": null,
+    "type": "Any",
+    "description": "下载结果 (流式)"
+   },
+   "return_fields": [],
+   "return_description": "下载结果 (流式)",
+   "payload_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{ file: \"image_file_id\" }",
+    "keys": [
+     "file"
+    ]
+   },
+   "return_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{ file: \"temp_image_path\" }",
+    "keys": [
+     "file"
+    ]
+   },
+   "handler_field_accesses": [
+    "file",
+    "file_id",
+    "chunk_size"
+   ],
+   "notes": [
+    "payloadExample 未覆盖字段：['file_id', 'chunk_size']"
+   ]
+  },
+  "download_file_record_stream": {
+   "action": "download_file_record_stream",
+   "found": true,
+   "registry_key": "DownloadFileRecordStream",
+   "action_name_occurrences": 1,
+   "class_name": "dEe",
+   "class_extends": "cI",
+   "class_offset": 2836250,
+   "action_summary": "下载语音文件流",
+   "action_description": null,
+   "payload_schema": {
+    "source_expr": "pEe",
+    "schema_var": "pEe",
+    "schema_var_defined_at": 2835950,
+    "type": "Object",
+    "description": null,
+    "fields": [
+     {
+      "name": "file",
+      "type": "String",
+      "optional": true,
+      "has_default": false,
+      "default": null,
+      "description": "文件路径或 URL"
+     },
+     {
+      "name": "file_id",
+      "type": "String",
+      "optional": true,
+      "has_default": false,
+      "default": null,
+      "description": "文件 ID"
+     },
+     {
+      "name": "chunk_size",
+      "type": "Number",
+      "optional": true,
+      "has_default": true,
+      "default": "64 * 1024",
+      "description": "分块大小 (字节)"
+     },
+     {
+      "name": "out_format",
+      "type": "String",
+      "optional": true,
+      "has_default": false,
+      "default": null,
+      "description": "输出格式"
+     }
+    ]
+   },
+   "payload_fields": [
+    {
+     "name": "file",
+     "type": "String",
+     "optional": true,
+     "has_default": false,
+     "default": null,
+     "description": "文件路径或 URL"
+    },
+    {
+     "name": "file_id",
+     "type": "String",
+     "optional": true,
+     "has_default": false,
+     "default": null,
+     "description": "文件 ID"
+    },
+    {
+     "name": "chunk_size",
+     "type": "Number",
+     "optional": true,
+     "has_default": true,
+     "default": "64 * 1024",
+     "description": "分块大小 (字节)"
+    },
+    {
+     "name": "out_format",
+     "type": "String",
+     "optional": true,
+     "has_default": false,
+     "default": null,
+     "description": "输出格式"
+    }
+   ],
+   "return_schema": {
+    "source_expr": "p.Any({ description: \"下载结果 (流式)\" })",
+    "schema_var": null,
+    "type": "Any",
+    "description": "下载结果 (流式)"
+   },
+   "return_fields": [],
+   "return_description": "下载结果 (流式)",
+   "payload_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{ file: \"record_file_id\" }",
+    "keys": [
+     "file"
+    ]
+   },
+   "return_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{ file: \"temp_record_path\" }",
+    "keys": [
+     "file"
+    ]
+   },
+   "handler_field_accesses": [
+    "file",
+    "file_id",
+    "chunk_size",
+    "out_format"
+   ],
+   "notes": [
+    "payloadExample 未覆盖字段：['file_id', 'chunk_size', 'out_format']"
+   ]
+  },
+  "test_download_stream": {
+   "action": "test_download_stream",
+   "found": true,
+   "registry_key": "TestDownloadStream",
+   "action_name_occurrences": 1,
+   "class_name": "gEe",
+   "class_extends": "ue",
+   "class_offset": 2839266,
+   "action_summary": "测试下载流",
+   "action_description": null,
+   "payload_schema": {
+    "source_expr": "mEe",
+    "schema_var": "mEe",
+    "schema_var_defined_at": 2839172,
+    "type": "Object",
+    "description": null,
+    "fields": [
+     {
+      "name": "error",
+      "type": "Boolean",
+      "optional": true,
+      "has_default": true,
+      "default": "!1",
+      "description": "是否触发测试错误"
+     }
+    ]
+   },
+   "payload_fields": [
+    {
+     "name": "error",
+     "type": "Boolean",
+     "optional": true,
+     "has_default": true,
+     "default": "!1",
+     "description": "是否触发测试错误"
+    }
+   ],
+   "return_schema": {
+    "source_expr": "p.Any({ description: \"测试流数据\" })",
+    "schema_var": null,
+    "type": "Any",
+    "description": "测试流数据"
+   },
+   "return_fields": [],
+   "return_description": "测试流数据",
+   "payload_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{ url: \"http://example.com/file\" }",
+    "keys": [
+     "url"
+    ]
+   },
+   "return_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{ success: !0 }",
+    "keys": [
+     "success"
+    ]
+   },
+   "handler_field_accesses": [
+    "error"
+   ],
+   "notes": [
+    "payloadExample 含 payload schema 外字段：['url']",
+    "payloadExample 未覆盖字段：['error']"
+   ]
+  },
+  "upload_image_to_qun_album": {
+   "action": "upload_image_to_qun_album",
+   "found": true,
+   "registry_key": "UploadImageToQunAlbum",
+   "action_name_occurrences": 1,
+   "class_name": "q_e",
+   "class_extends": "ue",
+   "class_offset": 2825115,
+   "action_summary": "上传图片到群相册",
+   "action_description": null,
+   "payload_schema": {
+    "source_expr": "G_e",
+    "schema_var": "G_e",
+    "schema_var_defined_at": 2824862,
+    "type": "Object",
+    "description": null,
+    "fields": [
+     {
+      "name": "group_id",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "群号"
+     },
+     {
+      "name": "album_id",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "相册ID"
+     },
+     {
+      "name": "album_name",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "相册名称"
+     },
+     {
+      "name": "file",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "图片路径、URL或Base64"
+     }
+    ]
+   },
+   "payload_fields": [
+    {
+     "name": "group_id",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "群号"
+    },
+    {
+     "name": "album_id",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "相册ID"
+    },
+    {
+     "name": "album_name",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "相册名称"
+    },
+    {
+     "name": "file",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "图片路径、URL或Base64"
+    }
+   ],
+   "return_schema": {
+    "source_expr": "$_e",
+    "schema_var": "$_e",
+    "schema_var_defined_at": 2825077,
+    "type": "Any",
+    "description": "上传结果"
+   },
+   "return_fields": [],
+   "return_description": "上传结果",
+   "payload_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{ group_id: \"123456\", album_id: \"album_id_1\", album_name: \"相册1\", file: \"/path/to/image.jpg\" }",
+    "keys": [
+     "group_id",
+     "album_id",
+     "album_name",
+     "file"
+    ]
+   },
+   "return_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{ result: null }",
+    "keys": [
+     "result"
+    ]
+   },
+   "handler_field_accesses": [
+    "file",
+    "group_id",
+    "album_id",
+    "album_name"
+   ],
+   "notes": []
+  },
+  "upload_images_to_qun_album": {
+   "action": "upload_images_to_qun_album",
+   "found": true,
+   "registry_key": "UploadImagesToQunAlbum",
+   "action_name_occurrences": 1,
+   "class_name": "z_e",
+   "class_extends": "ue",
+   "class_offset": 2826023,
+   "action_summary": "上传多张图片到群相册",
+   "action_description": "一次上传多张图片，这些图片在群相册里显示为同一条上传",
+   "payload_schema": {
+    "source_expr": "H_e",
+    "schema_var": "H_e",
+    "schema_var_defined_at": 2825748,
+    "type": "Object",
+    "description": null,
+    "fields": [
+     {
+      "name": "group_id",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "群号"
+     },
+     {
+      "name": "album_id",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "相册ID"
+     },
+     {
+      "name": "album_name",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "相册名称"
+     },
+     {
+      "name": "files",
+      "type": "Array",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "图片路径、URL或Base64 数组，一次上传多张",
+      "item_type": "String"
+     }
+    ]
+   },
+   "payload_fields": [
+    {
+     "name": "group_id",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "群号"
+    },
+    {
+     "name": "album_id",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "相册ID"
+    },
+    {
+     "name": "album_name",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "相册名称"
+    },
+    {
+     "name": "files",
+     "type": "Array",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "图片路径、URL或Base64 数组，一次上传多张",
+     "item_type": "String"
+    }
+   ],
+   "return_schema": {
+    "source_expr": "W_e",
+    "schema_var": "W_e",
+    "schema_var_defined_at": 2825985,
+    "type": "Any",
+    "description": "上传结果"
+   },
+   "return_fields": [],
+   "return_description": "上传结果",
+   "payload_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{ group_id: \"123456\", album_id: \"album_id_1\", album_name: \"相册1\", files: [\"/path/to/1.jpg\", \"/path/to/2.jpg\"] }",
+    "keys": [
+     "group_id",
+     "album_id",
+     "album_name",
+     "files"
+    ]
+   },
+   "return_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{ result: null }",
+    "keys": [
+     "result"
+    ]
+   },
+   "handler_field_accesses": [
+    "files",
+    "group_id",
+    "album_id",
+    "album_name"
+   ],
+   "notes": []
+  },
+  "upload_video_to_qun_album": {
+   "action": "upload_video_to_qun_album",
+   "found": true,
+   "registry_key": "UploadVideoToQunAlbum",
+   "action_name_occurrences": 1,
+   "class_name": "Y_e",
+   "class_extends": "ue",
+   "class_offset": 2827196,
+   "action_summary": "上传视频到群相册",
+   "action_description": "上传视频到群相册，封面自动抽取首帧（失败时使用内置默认封面）",
+   "payload_schema": {
+    "source_expr": "K_e",
+    "schema_var": "K_e",
+    "schema_var_defined_at": 2826943,
+    "type": "Object",
+    "description": null,
+    "fields": [
+     {
+      "name": "group_id",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "群号"
+     },
+     {
+      "name": "album_id",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "相册ID"
+     },
+     {
+      "name": "album_name",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "相册名称"
+     },
+     {
+      "name": "file",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "视频路径、URL或Base64"
+     }
+    ]
+   },
+   "payload_fields": [
+    {
+     "name": "group_id",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "群号"
+    },
+    {
+     "name": "album_id",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "相册ID"
+    },
+    {
+     "name": "album_name",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "相册名称"
+    },
+    {
+     "name": "file",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "视频路径、URL或Base64"
+    }
+   ],
+   "return_schema": {
+    "source_expr": "V_e",
+    "schema_var": "V_e",
+    "schema_var_defined_at": 2827158,
+    "type": "Any",
+    "description": "上传结果"
+   },
+   "return_fields": [],
+   "return_description": "上传结果",
+   "payload_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{ group_id: \"123456\", album_id: \"album_id_1\", album_name: \"相册1\", file: \"/path/to/video.mp4\" }",
+    "keys": [
+     "group_id",
+     "album_id",
+     "album_name",
+     "file"
+    ]
+   },
+   "return_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{ result: null }",
+    "keys": [
+     "result"
+    ]
+   },
+   "handler_field_accesses": [
+    "file",
+    "group_id",
+    "album_id",
+    "album_name"
+   ],
+   "notes": []
+  },
+  "set_group_album_media_like": {
+   "action": "set_group_album_media_like",
+   "found": true,
+   "registry_key": "SetGroupAlbumMediaLike",
+   "action_name_occurrences": 1,
+   "class_name": "nEe",
+   "class_extends": "ue",
+   "class_offset": 2830131,
+   "action_summary": "点赞群相册媒体",
+   "action_description": null,
+   "payload_schema": {
+    "source_expr": "NL",
+    "schema_var": "NL",
+    "schema_var_defined_at": 2829865,
+    "type": "Object",
+    "description": null,
+    "fields": [
+     {
+      "name": "group_id",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "群号"
+     },
+     {
+      "name": "album_id",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "相册ID"
+     },
+     {
+      "name": "batch_id",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "batch_id"
+     },
+     {
+      "name": "lloc",
+      "type": "String",
+      "optional": true,
+      "has_default": false,
+      "default": null,
+      "description": "lloc，若对整个上传操作则不填"
+     }
+    ]
+   },
+   "payload_fields": [
+    {
+     "name": "group_id",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "群号"
+    },
+    {
+     "name": "album_id",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "相册ID"
+    },
+    {
+     "name": "batch_id",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "batch_id"
+    },
+    {
+     "name": "lloc",
+     "type": "String",
+     "optional": true,
+     "has_default": false,
+     "default": null,
+     "description": "lloc，若对整个上传操作则不填"
+    }
+   ],
+   "return_schema": {
+    "source_expr": "PL",
+    "schema_var": "PL",
+    "schema_var_defined_at": 2830094,
+    "type": "Any",
+    "description": "操作结果"
+   },
+   "return_fields": [],
+   "return_description": "操作结果",
+   "payload_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{ group_id: \"123456\", album_id: \"album_id_123\", batch_id: \"112233\", lloc: \"aabbcc12213123\" }",
+    "keys": [
+     "group_id",
+     "album_id",
+     "batch_id",
+     "lloc"
+    ]
+   },
+   "return_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{ result: {} }",
+    "keys": [
+     "result"
+    ]
+   },
+   "handler_field_accesses": [
+    "group_id",
+    "album_id",
+    "batch_id",
+    "lloc"
+   ],
+   "notes": []
+  },
+  "cancel_group_album_media_like": {
+   "action": "cancel_group_album_media_like",
+   "found": true,
+   "registry_key": "CancelGroupAlbumMediaLike",
+   "action_name_occurrences": 1,
+   "class_name": "rEe",
+   "class_extends": "ue",
+   "class_offset": 2830661,
+   "action_summary": "取消点赞群相册媒体",
+   "action_description": null,
+   "payload_schema": {
+    "source_expr": "NL",
+    "schema_var": "NL",
+    "schema_var_defined_at": 2829865,
+    "type": "Object",
+    "description": null,
+    "fields": [
+     {
+      "name": "group_id",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "群号"
+     },
+     {
+      "name": "album_id",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "相册ID"
+     },
+     {
+      "name": "batch_id",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "batch_id"
+     },
+     {
+      "name": "lloc",
+      "type": "String",
+      "optional": true,
+      "has_default": false,
+      "default": null,
+      "description": "lloc，若对整个上传操作则不填"
+     }
+    ]
+   },
+   "payload_fields": [
+    {
+     "name": "group_id",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "群号"
+    },
+    {
+     "name": "album_id",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "相册ID"
+    },
+    {
+     "name": "batch_id",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "batch_id"
+    },
+    {
+     "name": "lloc",
+     "type": "String",
+     "optional": true,
+     "has_default": false,
+     "default": null,
+     "description": "lloc，若对整个上传操作则不填"
+    }
+   ],
+   "return_schema": {
+    "source_expr": "PL",
+    "schema_var": "PL",
+    "schema_var_defined_at": 2830094,
+    "type": "Any",
+    "description": "操作结果"
+   },
+   "return_fields": [],
+   "return_description": "操作结果",
+   "payload_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{ group_id: \"123456\", album_id: \"album_id\", batch_id: \"112233\", lloc: \"aabbcc\" }",
+    "keys": [
+     "group_id",
+     "album_id",
+     "batch_id",
+     "lloc"
+    ]
+   },
+   "return_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{ result: {} }",
+    "keys": [
+     "result"
+    ]
+   },
+   "handler_field_accesses": [
+    "group_id",
+    "album_id",
+    "batch_id",
+    "lloc"
+   ],
+   "notes": []
+  },
+  "del_group_album_media": {
+   "action": "del_group_album_media",
+   "found": true,
+   "registry_key": "DelGroupAlbumMedia",
+   "action_name_occurrences": 1,
+   "class_name": "sEe",
+   "class_extends": "ue",
+   "class_offset": 2831417,
+   "action_summary": "删除群相册媒体",
+   "action_description": null,
+   "payload_schema": {
+    "source_expr": "iEe",
+    "schema_var": "iEe",
+    "schema_var_defined_at": 2831217,
+    "type": "Object",
+    "description": null,
+    "fields": [
+     {
+      "name": "group_id",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "群号"
+     },
+     {
+      "name": "album_id",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "相册ID"
+     },
+     {
+      "name": "lloc",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "媒体ID (lloc)"
+     }
+    ]
+   },
+   "payload_fields": [
+    {
+     "name": "group_id",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "群号"
+    },
+    {
+     "name": "album_id",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "相册ID"
+    },
+    {
+     "name": "lloc",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "媒体ID (lloc)"
+    }
+   ],
+   "return_schema": {
+    "source_expr": "oEe",
+    "schema_var": "oEe",
+    "schema_var_defined_at": 2831379,
+    "type": "Any",
+    "description": "删除结果"
+   },
+   "return_fields": [],
+   "return_description": "删除结果",
+   "payload_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{ group_id: \"123456\", album_id: \"album_id_1\", lloc: \"media_id_1\" }",
+    "keys": [
+     "group_id",
+     "album_id",
+     "lloc"
+    ]
+   },
+   "return_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{ result: {} }",
+    "keys": [
+     "result"
+    ]
+   },
+   "handler_field_accesses": [
+    "group_id",
+    "album_id",
+    "lloc"
+   ],
+   "notes": []
+  },
+  "do_group_album_comment": {
+   "action": "do_group_album_comment",
+   "found": true,
+   "registry_key": "DoGroupAlbumComment",
+   "action_name_occurrences": 1,
+   "class_name": "J_e",
+   "class_extends": "ue",
+   "class_offset": 2828301,
+   "action_summary": "发表群相册评论",
+   "action_description": "lloc 与 batch_id 至少提供一项。传入 lloc 时评论单张图片；仅传 batch_id 时评论整个上传批次。",
+   "payload_schema": {
+    "source_expr": "X_e",
+    "schema_var": "X_e",
+    "schema_var_defined_at": 2827925,
+    "type": "Object",
+    "description": null,
+    "fields": [
+     {
+      "name": "group_id",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "群号"
+     },
+     {
+      "name": "album_id",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "相册 ID"
+     },
+     {
+      "name": "lloc",
+      "type": "String",
+      "optional": true,
+      "has_default": false,
+      "default": null,
+      "description": "图片 ID；不传或为空时评论整个上传批次，此时必须提供 batch_id"
+     },
+     {
+      "name": "batch_id",
+      "type": "String",
+      "optional": true,
+      "has_default": false,
+      "default": null,
+      "description": "上传批次 ID，可取自 get_group_album_media_list 返回的 batch.link_id 或 media[].batch_id"
+     },
+     {
+      "name": "content",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "评论内容"
+     }
+    ]
+   },
+   "payload_fields": [
+    {
+     "name": "group_id",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "群号"
+    },
+    {
+     "name": "album_id",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "相册 ID"
+    },
+    {
+     "name": "lloc",
+     "type": "String",
+     "optional": true,
+     "has_default": false,
+     "default": null,
+     "description": "图片 ID；不传或为空时评论整个上传批次，此时必须提供 batch_id"
+    },
+    {
+     "name": "batch_id",
+     "type": "String",
+     "optional": true,
+     "has_default": false,
+     "default": null,
+     "description": "上传批次 ID，可取自 get_group_album_media_list 返回的 batch.link_id 或 media[].batch_id"
+    },
+    {
+     "name": "content",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "评论内容"
+    }
+   ],
+   "return_schema": {
+    "source_expr": "p.Any({ description: \"评论结果\" })",
+    "schema_var": null,
+    "type": "Any",
+    "description": "评论结果"
+   },
+   "return_fields": [],
+   "return_description": "评论结果",
+   "payload_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{ group_id: \"123456\", album_id: \"album_id_1\", batch_id: \"2147483658\", content: \"很有意思\" }",
+    "keys": [
+     "group_id",
+     "album_id",
+     "batch_id",
+     "content"
+    ]
+   },
+   "return_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{ result: {} }",
+    "keys": [
+     "result"
+    ]
+   },
+   "handler_field_accesses": [
+    "group_id",
+    "album_id",
+    "lloc",
+    "content",
+    "batch_id"
+   ],
+   "check_excerpt": "{ const n = await super.check(e); return n.valid ? !e.lloc && !e.batch_id ? { valid: !1, message: \"lloc 或 batch_id 至少需要提供一个\" } : { valid: !0 } : n; }",
+   "notes": [
+    "payloadExample 未覆盖字段：['lloc']"
+   ]
+  },
+  "get_qun_album_list": {
+   "action": "get_qun_album_list",
+   "found": true,
+   "registry_key": "GetQunAlbumList",
+   "action_name_occurrences": 1,
+   "class_name": "Q_e",
+   "class_extends": "ue",
+   "class_offset": 2824145,
+   "action_summary": "获取群相册列表",
+   "action_description": null,
+   "payload_schema": {
+    "source_expr": "L_e",
+    "schema_var": "L_e",
+    "schema_var_defined_at": 2823763,
+    "type": "Object",
+    "description": null,
+    "fields": [
+     {
+      "name": "group_id",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "群号"
+     },
+     {
+      "name": "attach_info",
+      "type": "String",
+      "optional": true,
+      "has_default": true,
+      "default": "\"\"",
+      "description": "附加信息（用于分页，从上一次返回结果中获取）"
+     }
+    ]
+   },
+   "payload_fields": [
+    {
+     "name": "group_id",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "群号"
+    },
+    {
+     "name": "attach_info",
+     "type": "String",
+     "optional": true,
+     "has_default": true,
+     "default": "\"\"",
+     "description": "附加信息（用于分页，从上一次返回结果中获取）"
+    }
+   ],
+   "return_schema": {
+    "source_expr": "j_e",
+    "schema_var": "j_e",
+    "schema_var_defined_at": 2823921,
+    "type": "Object",
+    "description": "群相册列表响应",
+    "fields": [
+     {
+      "name": "album_list",
+      "type": "Array",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "群相册列表",
+      "item_type": "Any"
+     },
+     {
+      "name": "attach_info",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "分页附加信息，传入下一次请求以获取更多数据"
+     },
+     {
+      "name": "has_more",
+      "type": "Boolean",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "是否有更多数据"
+     }
+    ]
+   },
+   "return_fields": [
+    {
+     "name": "album_list",
+     "type": "Array",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "群相册列表",
+     "item_type": "Any"
+    },
+    {
+     "name": "attach_info",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "分页附加信息，传入下一次请求以获取更多数据"
+    },
+    {
+     "name": "has_more",
+     "type": "Boolean",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "是否有更多数据"
+    }
+   ],
+   "return_description": "群相册列表响应",
+   "payload_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{ group_id: \"123456\", attach_info: \"\" }",
+    "keys": [
+     "group_id",
+     "attach_info"
+    ]
+   },
+   "return_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{ album_list: [ { album_id: \"album_1\", album_name: \"测试相册\", cover_url: \"http://example.com/cover.jpg\", create_time: 1734567890 } ], attach_info: \"\", has_more: !1 }",
+    "keys": [
+     "album_list",
+     "attach_info",
+     "has_more"
+    ]
+   },
+   "handler_field_accesses": [
+    "group_id",
+    "attach_info"
+   ],
+   "notes": []
+  },
+  "get_group_album_media_list": {
+   "action": "get_group_album_media_list",
+   "found": true,
+   "registry_key": "GetGroupAlbumMediaList",
+   "action_name_occurrences": 1,
+   "class_name": "tEe",
+   "class_extends": "ue",
+   "class_offset": 2829347,
+   "action_summary": "获取群相册媒体列表",
+   "action_description": null,
+   "payload_schema": {
+    "source_expr": "Z_e",
+    "schema_var": "Z_e",
+    "schema_var_defined_at": 2829114,
+    "type": "Object",
+    "description": null,
+    "fields": [
+     {
+      "name": "group_id",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "群号"
+     },
+     {
+      "name": "album_id",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "相册ID"
+     },
+     {
+      "name": "attach_info",
+      "type": "String",
+      "optional": true,
+      "has_default": true,
+      "default": "\"\"",
+      "description": "附加信息（用于分页）"
+     }
+    ]
+   },
+   "payload_fields": [
+    {
+     "name": "group_id",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "群号"
+    },
+    {
+     "name": "album_id",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "相册ID"
+    },
+    {
+     "name": "attach_info",
+     "type": "String",
+     "optional": true,
+     "has_default": true,
+     "default": "\"\"",
+     "description": "附加信息（用于分页）"
+    }
+   ],
+   "return_schema": {
+    "source_expr": "eEe",
+    "schema_var": "eEe",
+    "schema_var_defined_at": 2829307,
+    "type": "Any",
+    "description": "相册媒体列表"
+   },
+   "return_fields": [],
+   "return_description": "相册媒体列表",
+   "payload_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{ group_id: \"123456\", album_id: \"album_id_1\" }",
+    "keys": [
+     "group_id",
+     "album_id"
+    ]
+   },
+   "return_example": {
+    "present": true,
+    "kind": "literal",
+    "raw": "{ media_list: [ { media_id: \"media_id_1\", url: \"http://example.com/1.jpg\" } ] }",
+    "keys": [
+     "media_list"
+    ]
+   },
+   "handler_field_accesses": [
+    "group_id",
+    "album_id",
+    "attach_info"
+   ],
+   "notes": [
+    "payloadExample 未覆盖字段：['attach_info']"
+   ]
+  },
+  "ocr_image": {
+   "action": "ocr_image",
+   "found": true,
+   "registry_key": "OCRImage",
+   "action_name_occurrences": 1,
+   "inherited_from": [
+    "IL"
+   ],
+   "class_name": "Dbe",
+   "class_extends": "IL",
+   "class_offset": 2739532,
+   "action_summary": "图片 OCR 识别",
+   "action_description": "识别图片中的文字内容(仅Windows端支持)",
+   "payload_schema": {
+    "source_expr": "Nbe",
+    "schema_var": "Nbe",
+    "schema_var_defined_at": 2738654,
+    "type": "Object",
+    "description": null,
+    "fields": [
+     {
+      "name": "image",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "图片路径、URL或Base64"
+     }
+    ]
+   },
+   "payload_fields": [
+    {
+     "name": "image",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "图片路径、URL或Base64"
+    }
+   ],
+   "return_schema": {
+    "source_expr": "Pbe",
+    "schema_var": "Pbe",
+    "schema_var_defined_at": 2738729,
+    "type": "Any",
+    "description": "OCR结果"
+   },
+   "return_fields": [],
+   "return_description": "OCR结果",
+   "payload_example": {
+    "present": true,
+    "kind": "reference",
+    "ref": "In.OCRImage.payload"
+   },
+   "return_example": {
+    "present": true,
+    "kind": "reference",
+    "ref": "In.OCRImage.response"
+   },
+   "handler_field_accesses": [
+    "image"
+   ],
+   "handler_inherited_from": "IL",
+   "notes": [
+    "schema 或 _handle 继承自父类：IL"
+   ]
+  },
+  "get_private_file_url": {
+   "action": "get_private_file_url",
+   "found": true,
+   "registry_key": "NapCat_GetPrivateFileUrl",
+   "action_name_occurrences": 1,
+   "class_name": "MSe",
+   "class_extends": "tr",
+   "class_offset": 2797807,
+   "action_summary": "获取私聊文件URL",
+   "action_description": "获取指定私聊文件的下载链接",
+   "payload_schema": {
+    "source_expr": "FSe",
+    "schema_var": "FSe",
+    "schema_var_defined_at": 2797635,
+    "type": "Object",
+    "description": null,
+    "fields": [
+     {
+      "name": "file_id",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "文件ID"
+     }
+    ]
+   },
+   "payload_fields": [
+    {
+     "name": "file_id",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "文件ID"
+    }
+   ],
+   "return_schema": {
+    "source_expr": "OSe",
+    "schema_var": "OSe",
+    "schema_var_defined_at": 2797701,
+    "type": "Object",
+    "description": "私聊文件URL信息",
+    "fields": [
+     {
+      "name": "url",
+      "type": "String",
+      "optional": true,
+      "has_default": false,
+      "default": null,
+      "description": "文件下载链接"
+     }
+    ]
+   },
+   "return_fields": [
+    {
+     "name": "url",
+     "type": "String",
+     "optional": true,
+     "has_default": false,
+     "default": null,
+     "description": "文件下载链接"
+    }
+   ],
+   "return_description": "私聊文件URL信息",
+   "payload_example": {
+    "present": true,
+    "kind": "reference",
+    "ref": "Qo.GetPrivateFileUrl.payload"
+   },
+   "return_example": {
+    "present": true,
+    "kind": "reference",
+    "ref": "Qo.GetPrivateFileUrl.response"
+   },
+   "handler_field_accesses": [
+    "file_id"
+   ],
+   "notes": []
+  },
+  "get_group_files_by_folder": {
+   "action": "get_group_files_by_folder",
+   "found": true,
+   "registry_key": "GoCQHTTP_GetGroupFilesByFolder",
+   "action_name_occurrences": 1,
+   "class_name": "mwe",
+   "class_extends": "ue",
+   "class_offset": 2771319,
+   "action_summary": "获取群文件夹文件列表",
+   "action_description": "获取指定群文件夹下的文件及子文件夹列表",
+   "payload_schema": {
+    "source_expr": "fwe",
+    "schema_var": "fwe",
+    "schema_var_defined_at": 2770884,
+    "type": "Object",
+    "description": null,
+    "fields": [
+     {
+      "name": "group_id",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "群号"
+     },
+     {
+      "name": "folder_id",
+      "type": "String",
+      "optional": true,
+      "has_default": false,
+      "default": null,
+      "description": "文件夹ID"
+     },
+     {
+      "name": "folder",
+      "type": "String",
+      "optional": true,
+      "has_default": false,
+      "default": null,
+      "description": "文件夹ID"
+     },
+     {
+      "name": "file_count",
+      "type": "Union",
+      "optional": false,
+      "has_default": true,
+      "default": "50",
+      "description": "文件数量",
+      "member_types": [
+       "Number",
+       "String"
+      ],
+      "members": [
+       {
+        "type": "Number",
+        "optional": false,
+        "has_default": false,
+        "default": null,
+        "description": null
+       },
+       {
+        "type": "String",
+        "optional": false,
+        "has_default": false,
+        "default": null,
+        "description": null
+       }
+      ]
+     }
+    ]
+   },
+   "payload_fields": [
+    {
+     "name": "group_id",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "群号"
+    },
+    {
+     "name": "folder_id",
+     "type": "String",
+     "optional": true,
+     "has_default": false,
+     "default": null,
+     "description": "文件夹ID"
+    },
+    {
+     "name": "folder",
+     "type": "String",
+     "optional": true,
+     "has_default": false,
+     "default": null,
+     "description": "文件夹ID"
+    },
+    {
+     "name": "file_count",
+     "type": "Union",
+     "optional": false,
+     "has_default": true,
+     "default": "50",
+     "description": "文件数量",
+     "member_types": [
+      "Number",
+      "String"
+     ],
+     "members": [
+      {
+       "type": "Number",
+       "optional": false,
+       "has_default": false,
+       "default": null,
+       "description": null
+      },
+      {
+       "type": "String",
+       "optional": false,
+       "has_default": false,
+       "default": null,
+       "description": null
+      }
+     ]
+    }
+   ],
+   "return_schema": {
+    "source_expr": "hwe",
+    "schema_var": "hwe",
+    "schema_var_defined_at": 2771155,
+    "type": "Object",
+    "description": "群文件夹文件列表",
+    "fields": [
+     {
+      "name": "files",
+      "type": "Array",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "文件列表",
+      "item_type": "Unknown"
+     },
+     {
+      "name": "folders",
+      "type": "Array",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "文件夹列表",
+      "item_type": "Unknown"
+     }
+    ]
+   },
+   "return_fields": [
+    {
+     "name": "files",
+     "type": "Array",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "文件列表",
+     "item_type": "Unknown"
+    },
+    {
+     "name": "folders",
+     "type": "Array",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "文件夹列表",
+     "item_type": "Unknown"
+    }
+   ],
+   "return_description": "群文件夹文件列表",
+   "payload_example": {
+    "present": true,
+    "kind": "reference",
+    "ref": "et.GetGroupFilesByFolder.payload"
+   },
+   "return_example": {
+    "present": true,
+    "kind": "reference",
+    "ref": "et.GetGroupFilesByFolder.response"
+   },
+   "handler_field_accesses": [
+    "group_id",
+    "file_count",
+    "folder",
+    "folder_id"
+   ],
+   "notes": []
+  }
+ },
+ "segment_evidence": {
+  "note": "段类型以 bundle 的 ze 枚举与段 schema $id 为准；任务口径的 online_file 在 bundle 中无此字面量段类型，实际段类型为 onlinefile（无下划线），online_file 仅出现在动作名/事件名中。",
+  "ze_enum": {
+   "flashtransfer": "t.flashtransfer = \"flashtransfer\"",
+   "onlinefile": "t.onlinefile = \"onlinefile\""
+  },
+  "online_file_literal_found": false,
+  "flashtransfer": {
+   "segment_type": "flashtransfer",
+   "schema_id": "OB11MessageFlashTransfer",
+   "found": true,
+   "schema_id_in_bundle": "OB11MessageFlashTransfer",
+   "data_fields": [
+    {
+     "name": "fileSetId",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "文件集ID"
+    }
+   ]
+  },
+  "online_file": {
+   "requested_name": "online_file",
+   "found_as_literal_segment_type": false,
+   "actual_segment_type": "onlinefile",
+   "evidence": {
+    "segment_type": "onlinefile",
+    "schema_id": "OB11MessageOnlineFile",
+    "found": true,
+    "schema_id_in_bundle": "OB11MessageOnlineFile",
+    "data_fields": [
+     {
+      "name": "msgId",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "消息ID"
+     },
+     {
+      "name": "elementId",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "元素ID"
+     },
+     {
+      "name": "fileName",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "文件名"
+     },
+     {
+      "name": "fileSize",
+      "type": "String",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "文件大小"
+     },
+     {
+      "name": "isDir",
+      "type": "Boolean",
+      "optional": false,
+      "has_default": false,
+      "default": null,
+      "description": "是否为目录"
+     }
+    ]
+   }
+  },
+  "onlinefile": {
+   "segment_type": "onlinefile",
+   "schema_id": "OB11MessageOnlineFile",
+   "found": true,
+   "schema_id_in_bundle": "OB11MessageOnlineFile",
+   "data_fields": [
+    {
+     "name": "msgId",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "消息ID"
+    },
+    {
+     "name": "elementId",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "元素ID"
+    },
+    {
+     "name": "fileName",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "文件名"
+    },
+    {
+     "name": "fileSize",
+     "type": "String",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "文件大小"
+    },
+    {
+     "name": "isDir",
+     "type": "Boolean",
+     "optional": false,
+     "has_default": false,
+     "default": null,
+     "description": "是否为目录"
+    }
+   ]
+  },
+  "raw_to_ob11_converters": {
+   "flashtransfer_raw_to_ob11": "ist )), a; }, arkElement: async (e) => ({ type: ze.json, data: { data: e.bytesData } }), markdownElement: async (e) => e?.mdExtInfo?.flashTransferInfo?.filesetId ? { type: ze.flashtransfer, data: { fileSetId: e.mdExtInfo.flashTransferInfo.filesetId } } : { type: ze.markdown, data: { content: e.content } } }; ob11ToRawConverter",
+   "onlinefile_raw_to_ob11": "his.core.context.logger.logError(\"获取图片url失败\", o.stack), null; } }, fileElement: async (e, n, r, { disableGetUrl: i }) => { if (+r.elementType == 23 || +r.elementType == 30) return { type: ze.onlinefile, data: { msgId: n.msgId, elementId: r.elementId, fileName: e.fileName, fileSize: e.fileSize, isDir: r.elementType === 30 } }; const o = { chatType: n.chatType, peerUid: n.peerUid, gu"
+  },
+  "ob11_to_raw_converters": {
+   "onlinefile": "e: ze.json }, r); } }, // 不需要支持发送 [ze.onlinefile]: async () => { }",
+   "flashtransfer": "// 不需要支持发送 [ze.onlinefile]: async () => { }, [ze.flashtransfer]: async () => { }"
+  }
+ },
+ "summary": {
+  "requested": 40,
+  "found": 40,
+  "not_found": [],
+  "with_payload_fields": 40
+ },
+ "test_download_stream_analysis": {
+  "action": "test_download_stream",
+  "payload_fields": [
+   {
+    "name": "error",
+    "type": "Boolean",
+    "optional": true,
+    "has_default": true,
+    "default": "!1",
+    "description": "是否触发测试错误"
+   }
+  ],
+  "payload_example": {
+   "present": true,
+   "kind": "literal",
+   "raw": "{ url: \"http://example.com/file\" }",
+   "keys": [
+    "url"
+   ]
+  },
+  "handler_excerpt": "{ for (let o = 0; o < 10; o++) await i.send({ type: $r.Stream, data: `Index-> ${o + 1}`, data_type: \"data_chunk\" }), await new Promise((s) => setTimeout(s, 100)); if (e.error) throw new Error(\"This is a test error\"); return { type: $r.Response, data_type: \"data_complete\", data: \"Stream transmission complete\" }; }",
+  "mechanical_facts": {
+   "handler_field_accesses": [
+    "error"
+   ],
+   "uses_url_param": false,
+   "calls_core_apis": false,
+   "calls_network_or_file_io": false,
+   "sends_synthetic_index_chunks": true,
+   "stream_send_calls": 1,
+   "throws_test_error_literal": true,
+   "loop_iterations_literal_10": true
+  },
+  "qualitative_conclusion": "测试专用（合成流）：_handle 不调用 this.core.apis、不读 url 参数、不做任何网络/文件下载，只是循环 10 次每 100ms 经流通道发送 合成文本 `Index-> n`，且当入参 error 为真时抛字面量 `This is a test error`；payload schema 仅有一个可选字段 error，payloadExample 中的 url 字段不在 schema 内。定性依据均为上方 handler 摘录与机械判定位，不依赖动作名望文生义。"
+ }
+}

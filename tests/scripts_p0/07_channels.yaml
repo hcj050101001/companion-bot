@@ -1,0 +1,17 @@
+scenarios:
+  - id: media_only_fixed_reply
+    group: channels
+    kind: media_only
+    description: 纯媒体（图片）私聊只回固定文案单条，不调用模型。（该场景图片段无可取引用 url，视觉无从取图，仍回固定文案）
+    user_id: "10001"
+    expect_reply: "我暂时无法处理图片、语音等非文字消息，请用文字告诉我。"
+    expect_send_count: 1
+    expect_llm_calls: 0
+  - id: group_message_silent
+    group: channels
+    kind: group_silent
+    description: 群聊消息一律静默丢弃，不发送任何回复。
+    user_id: "10001"
+    group_id: "20001"
+    message: "大家好"
+    expect_send_count: 0

@@ -1,0 +1,16 @@
+{
+  "id": "malformed_json_array_body",
+  "category": "malformed",
+  "description": "JSON 数组（非对象）：v4 应走 Ignore(malformed) 路径",
+  "payload": null,
+  "raw_body": "[1, 2, 3]",
+  "send_twice": false,
+  "followup_payload": null,
+  "expected": {
+    "http_status": 204,
+    "disposition": "ignored",
+    "sends": 0,
+    "log_event_type": "ignored"
+  },
+  "note": null
+}

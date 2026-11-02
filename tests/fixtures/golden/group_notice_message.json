@@ -1,0 +1,35 @@
+{
+  "id": "group_notice_message",
+  "category": "group",
+  "description": "群系统提示型消息（sub_type=notice）：N3 起只观察登记为 group_message（reason_code=registered_only）",
+  "payload": {
+    "time": 1767225600,
+    "self_id": "900000001",
+    "post_type": "message",
+    "message_type": "group",
+    "sub_type": "notice",
+    "message_id": "golden-g04",
+    "group_id": 80001,
+    "user_id": "90001",
+    "message": "群系统提示消息",
+    "raw_message": "群系统提示消息",
+    "sender": {
+      "user_id": 90001,
+      "nickname": "fake-user",
+      "card": ""
+    },
+    "font": 0
+  },
+  "raw_body": null,
+  "send_twice": false,
+  "followup_payload": null,
+  "expected": {
+    "http_status": 204,
+    "disposition": "registered",
+    "sends": 0,
+    "log_event_type": "group_message"
+  },
+  "known_difference": null,
+  "difference_note": null,
+  "note": null
+}

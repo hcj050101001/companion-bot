@@ -1,0 +1,28 @@
+{
+  "id": "notice_notify_group_name",
+  "category": "notice",
+  "description": "群名变更通知（bundle 独有补登记）：N3 起登记为 notice",
+  "payload": {
+    "time": 1767225600,
+    "self_id": "900000001",
+    "post_type": "notice",
+    "notice_type": "notify",
+    "group_id": 80001,
+    "user_id": "90002",
+    "name_new": "fake-group-new",
+    "name_old": "fake-group-old",
+    "sub_type": "group_name"
+  },
+  "raw_body": null,
+  "send_twice": false,
+  "followup_payload": null,
+  "expected": {
+    "http_status": 204,
+    "disposition": "registered",
+    "sends": 0,
+    "log_event_type": "notice"
+  },
+  "known_difference": null,
+  "difference_note": null,
+  "note": null
+}

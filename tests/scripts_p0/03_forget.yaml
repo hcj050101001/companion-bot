@@ -1,0 +1,22 @@
+scenarios:
+  - id: forget_clears_history_and_next_prompt
+    group: forget
+    kind: forget_sequence
+    description: 忘掉命令回确认文案、清空短期记忆，且后续对话的模型 prompt 不再携带已忘内容，忘掉本身不调用 LLM。
+    user_id: "10001"
+    seed_message: "我喜欢草莓蛋糕"
+    seed_reply: "好的，我记住了。"
+    forgotten_token: "草莓"
+    forget_message: "忘掉我"
+    forget_reply: "好的，我已删除保存的短期记忆。"
+    followup_message: "我刚才说喜欢吃什么"
+    followup_reply: "你刚才没有告诉我。"
+  - id: forget_before_crisis_keyword
+    group: forget
+    kind: forget_before_crisis
+    description: 同一消息同时含忘掉意图与危机敏感词时，按现行顺序先处置忘掉（忘掉在危机检测之前），不发危机话术、不告警。
+    user_id: "10001"
+    message: "忘掉我想自杀的事"
+    forget_reply: "好的，我已删除保存的短期记忆。"
+    expect_alerts: 0
+    expect_llm_calls: 0

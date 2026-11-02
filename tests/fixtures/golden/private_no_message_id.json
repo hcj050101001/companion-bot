@@ -1,0 +1,30 @@
+{
+  "id": "private_no_message_id",
+  "category": "private",
+  "description": "私聊缺 message_id：v4 §5.3 步骤2 要求无键事件直接 Ignore、不处理不回复",
+  "payload": {
+    "time": 1767225600,
+    "self_id": "900000001",
+    "post_type": "message",
+    "message_type": "private",
+    "sub_type": "friend",
+    "user_id": "90001",
+    "message": "你好，今天有点累",
+    "raw_message": "你好，今天有点累",
+    "sender": {
+      "user_id": 90001,
+      "nickname": "fake-user"
+    },
+    "font": 0
+  },
+  "raw_body": null,
+  "send_twice": true,
+  "followup_payload": null,
+  "expected": {
+    "http_status": 204,
+    "disposition": "ignored",
+    "sends": 0,
+    "log_event_type": "ignored"
+  },
+  "note": null
+}

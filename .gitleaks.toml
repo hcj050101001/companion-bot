@@ -1,0 +1,120 @@
+[extend]
+useDefault = true
+
+[[rules]]
+id = "qq-account-number"
+description = "Potential QQ account number"
+regex = '''\b[0-9]{8,11}\b'''
+keywords = ["qq", "user_id", "white", "allow"]
+
+# Path-scoped allowlist for this rule only (no rule is disabled globally):
+# tests/fixtures/ and the test modules contain synthetic IDs by design
+# (fake accounts and fixed timestamps used throughout the fixtures), which the
+# 8-11 digit pattern cannot distinguish from real QQ numbers. Real code
+# outside tests/ is still scanned by this rule.
+[[rules.allowlists]]
+description = "Synthetic test/demo IDs in fixtures, test modules and examples (fake accounts/timestamps, not real QQ numbers)"
+paths = [
+    '''tests/fixtures/.*''',
+    '''tests/test_[^/]*[.]py''',
+    '''tests/fake_[^/]*[.]py''',
+    '''tests/conftest[.]py''',
+    '''examples/.*''',
+]
+
+# Value-scoped allowlist (release rehearsal 2026-11-01): the only 8-digit
+# values this rule matches in production code and config examples are
+# byte-count constants — 10485760 (10 MiB, media.vision.max_image_bytes
+# default) and 52428800 (50 MiB, its upper bound) — sizes, not account
+# numbers. Only these exact values are exempted; every other 8-11 digit
+# value is still reported everywhere.
+[[rules.allowlists]]
+description = "10485760 / 52428800 are byte-count constants (10 MiB default / 50 MiB cap for max_image_bytes), not QQ numbers"
+regexes = [
+    '''^10485760$''',
+    '''^52428800$''',
+]
+
+# Value-scoped allowlist (forward-port rehearsal 2026-11-01, base
+# 5892d34): the WHATWG IPv4 literal parser in
+# companion/adapters/resources.py legitimately contains digit-alphabet
+# constants ('01234567' octal alphabet, '0123456789' decimal alphabet)
+# and 2130706433, the canonical decimal encoding of 127.0.0.1 used as a
+# parser example. None of these are account numbers; only these exact
+# values are exempted.
+[[rules.allowlists]]
+description = "Digit alphabets and the 127.0.0.1 decimal encoding in the WHATWG IPv4 parser (resources.py), not QQ numbers"
+regexes = [
+    '''^01234567$''',
+    '''^0123456789$''',
+    '''^2130706433$''',
+]
+
+# Value-scoped allowlist (release decision 2026-11-02, option 1,
+# approved by the repo owner): the only place these 14 values occur
+# in this tree is uv.lock lines 435-450, as the `size = <bytes>`
+# fields of the ruff 0.17.3 wheel entries — PyPI file byte counts
+# for the pinned dev-only linter, not account numbers. Exactly these
+# 14 byte-count values are exempted (same treatment as the other
+# value-scoped groups above); any other 8-11 digit value anywhere,
+# including any new value appearing in uv.lock, is still reported.
+# (The paths entry below additionally scopes the intent to uv.lock;
+# gitleaks allowlist conditions are OR-matched, so the value list is
+# the binding constraint.)
+[[rules.allowlists]]
+description = "ruff 0.17.3 wheel byte-count `size` values in uv.lock (dependency metadata, not QQ numbers) — owner decision 2026-11-02 option 1"
+paths = [
+    '''uv[.]lock''',
+]
+regexes = [
+    '''^10022431$''',
+    '''^10022543$''',
+    '''^10075057$''',
+    '''^10094281$''',
+    '''^10216522$''',
+    '''^10217786$''',
+    '''^10341333$''',
+    '''^10394903$''',
+    '''^10577491$''',
+    '''^10608748$''',
+    '''^10683921$''',
+    '''^10799780$''',
+    '''^10977469$''',
+    '''^11373408$''',
+]
+
+[[rules]]
+id = "email-address"
+description = "Email address"
+regex = '''(?i)\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b'''
+
+# Value-scoped allowlist: @example.invalid is the RFC-reserved synthetic
+# domain used by test fixtures; only addresses under it are exempted.
+[[rules.allowlists]]
+description = "Synthetic @example.invalid addresses in tests/docs (RFC-reserved, never real mailboxes)"
+regexes = [
+    '''(?i)@example[.]invalid$''',
+]
+
+# Global allowlist scoped to test modules only (release rehearsal
+# 2026-11-01): default rules (e.g. generic-api-key) match the synthetic
+# fake keys and sentinel credential strings the test suite uses by design.
+# Real secrets in tests are banned by CONTRIBUTING; production code and
+# docs remain fully scanned by every rule.
+[[allowlists]]
+description = "Synthetic fake keys/sentinels in test modules only"
+paths = [
+    '''tests/test_[^/]*[.]py''',
+    '''tests/fake_[^/]*[.]py''',
+    '''tests/conftest[.]py''',
+]
+
+[[rules]]
+id = "known-webhook-host"
+description = "Webhook host"
+regex = '''api2\.cursor\.sh'''
+
+[[rules]]
+id = "local-user-path"
+description = "Local machine path"
+regex = '''[/]home[/]box'''

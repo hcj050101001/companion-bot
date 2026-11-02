@@ -1,0 +1,24 @@
+scenarios:
+  - id: rate_limit_seventh_message_silent
+    group: rate_limit
+    kind: rate_limit
+    description: 入站限流 6 条/分钟/用户，前 6 条普通私聊正常回复，第 7 条静默不发且不再调用模型。
+    user_id: "10001"
+    messages:
+      - "第一条普通消息"
+      - "第二条普通消息"
+      - "第三条普通消息"
+      - "第四条普通消息"
+      - "第五条普通消息"
+      - "第六条普通消息"
+      - "第七条普通消息"
+    replies:
+      - "回复一。"
+      - "回复二。"
+      - "回复三。"
+      - "回复四。"
+      - "回复五。"
+      - "回复六。"
+      - "回复七。"
+    expect_sent_count: 6
+    expect_llm_calls: 6

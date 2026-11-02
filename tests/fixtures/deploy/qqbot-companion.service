@@ -1,0 +1,18 @@
+[Unit]
+Description=QQBot companion
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+WorkingDirectory=<deploy-root>
+ExecStart=/usr/bin/python3 <deploy-root>/runtime-24h/companion-launch.py
+Restart=always
+RestartSec=0.1
+TimeoutStopSec=30
+UMask=0077
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
