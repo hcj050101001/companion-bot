@@ -9,11 +9,6 @@ version = "0.10.0"
 description = "Safety-first QQ companion bot and lightweight framework on NapCat / OneBot v11: all 167 canonical actions behind a tiered authorization gateway, crisis replies that are never LLM-generated, and delivery semantics owned by a dedicated service."
 # 许可证 MIT（决策 D3 已定案）；与仓库现行 LICENSE 一致。
 license = { text = "MIT" }
-
-[project.urls]
-Homepage = "https://github.com/hcj050101001/companion-bot"
-Repository = "https://github.com/hcj050101001/companion-bot"
-Issues = "https://github.com/hcj050101001/companion-bot/issues"
 keywords = ["qq", "napcat", "onebot", "chatbot", "companion", "llm"]
 classifiers = [
   "Development Status :: 4 - Beta",
@@ -32,6 +27,11 @@ dependencies = [
   "python-dotenv>=1,<2",
   "pydantic>=2,<3",
 ]
+
+[project.urls]
+Homepage = "https://github.com/hcj050101001/companion-bot"
+Repository = "https://github.com/hcj050101001/companion-bot"
+Issues = "https://github.com/hcj050101001/companion-bot/issues"
 
 [tool.hatch.build.targets.wheel]
 packages = ["companion"]
