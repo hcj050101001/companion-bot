@@ -1,5 +1,7 @@
 # Companion Bot (W1)
 
+[![CI](https://github.com/hcj050101001/companion-bot/actions/workflows/ci.yml/badge.svg)](https://github.com/hcj050101001/companion-bot/actions/workflows/ci.yml)
+
 A Python and FastAPI OneBot v11 private-message companion bot skeleton, released under the MIT License. Crisis replies always use fixed safety-file copy and never use generated text.
 
 Public name: **阿年**. Default reply model: DeepSeek (third-party). Crisis scheme 2 does not promise notifying a human. Short-term memory can be deleted with “忘掉我”. See `config/onboarding.md` and `config/persona.md`.

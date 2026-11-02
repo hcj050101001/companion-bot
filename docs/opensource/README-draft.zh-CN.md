@@ -68,7 +68,7 @@ TransportGate → Normalize → Admission → SafetyJudge → InboundRateLimit
 ## 测试
 
 - `scripts/test.sh`（或 `uv run pytest -q --timeout=10`）+ `uv run ruff check .`
-- 测试资产：1618 个测试函数、55 个 golden 报文契约夹具、对话剧本测试、流水线顺序/饱和测试、注册表三方对账测试；全量套件实测 3025 passed / 4 skipped、总覆盖率 90.3%（门槛 `fail_under`=85）。
+- 测试资产：1618 个测试函数、55 个 golden 报文契约夹具、对话剧本测试、流水线顺序/饱和测试、注册表三方对账测试；全量套件实测 3025 passed / 4 skipped、总覆盖率 89.6%（公开仓 CI 首跑实测；本机同树实测 90.3%；门槛 `fail_under`=85）。
 - CI 在每次 push / PR 运行测试、ruff 与 gitleaks 扫描。
 
 ## 文档索引

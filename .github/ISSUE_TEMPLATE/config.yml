@@ -1,3 +1,7 @@
 blank_issues_enabled: true
-# 公开仓建立后在此补 contact_links，把安全漏洞报告指向仓库的
-# Security Advisories 页面（须填仓库绝对 URL）；报告口径见 SECURITY.md。
+# 安全漏洞报告走仓库的 Security Advisories 私有渠道（报告口径见
+# SECURITY.md），不要用公开 Issue 报告安全漏洞。
+contact_links:
+  - name: 安全漏洞报告（Security Advisories，私有）
+    url: https://github.com/hcj050101001/companion-bot/security/advisories/new
+    about: 报告安全漏洞请走此私有渠道，请勿公开披露细节

@@ -68,7 +68,7 @@ Prerequisites: Python 3.12+, `uv`, a QQ account that can sign in by QR code, and
 ## Testing
 
 - `scripts/test.sh` (or `uv run pytest -q --timeout=10`) plus `uv run ruff check .`
-- Test assets: 1618 test functions, 55 golden payload contract fixtures, dialogue-script tests, pipeline order/saturation tests, and registry three-way reconciliation tests; the full suite measures 3025 passed / 4 skipped with 90.3% total coverage (`fail_under`=85).
+- Test assets: 1618 test functions, 55 golden payload contract fixtures, dialogue-script tests, pipeline order/saturation tests, and registry three-way reconciliation tests; the full suite measures 3025 passed / 4 skipped with 89.6% total coverage (public-repo CI first run; 90.3% measured locally on the same tree; `fail_under`=85).
 - CI runs tests, ruff and a gitleaks scan on every push / PR.
 
 ## Documentation index

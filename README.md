@@ -1,5 +1,7 @@
 # 阿年 Companion Bot
 
+[![CI](https://github.com/hcj050101001/companion-bot/actions/workflows/ci.yml/badge.svg)](https://github.com/hcj050101001/companion-bot/actions/workflows/ci.yml)
+
 Python + FastAPI 的 OneBot v11 私聊陪伴机器人骨架，使用 MIT 协议。危机回复固定来自安全配置，不交给模型生成。
 
 对外名字：**阿年**（AI 陪伴助手）。默认回复模型 DeepSeek，对话经第三方模型处理。危机默认方案 2：不承诺通知真人，只给热线/110/120。短期记忆可按用户「忘掉这件事 / 忘掉我」删除。首次对话告知见 `config/onboarding.md`，人设见 `config/persona.md`，安全边界见 `docs/persona-safety-v1.md`。
@@ -47,7 +49,7 @@ uv run uvicorn main:app --host 127.0.0.1 --port 8090
 
 ## 开发与扩展
 
-- 跑全套测试：`bash scripts/test.sh`（PATH 需含 `~/.local/bin`，或直接 `uv run pytest -q --timeout=10`）；测试一律走 fake OneBot / FakeAdapter，不连真实 QQ。lint：`uv run ruff check .`。
+- 跑全套测试：`bash scripts/test.sh`（PATH 需含 `~/.local/bin`，或直接 `uv run pytest -q --timeout=10`）；测试一律走 fake OneBot / FakeAdapter，不连真实 QQ。lint：`uv run ruff check .`。全量套件总覆盖率 89.6%（公开仓 CI 首跑实测，门槛 `fail_under`=85）。
 - 新增只读工具：实现 `ToolPlugin` 协议并注册即可，不改 brain/pipeline；最小示例见 [`examples/dummy_tool_plugin.py`](examples/dummy_tool_plugin.py)（骰子插件，契约测试证明注册即生效）。
 - 新增平台：实现 `PlatformAdapter` 协议（见 `companion/adapters/`，OneBot 为首个实现、FakeAdapter 为测试实现），业务层只见规范化事件。
 - 架构与契约口径以 [docs/architecture.md](docs/architecture.md) 与框架方案（部署根 `plans/2026-10-31-qqbot-framework-architecture.md`）为准；运行观测出口为 `/metrics` 与 `logs/events.jsonl`（含 `tool_step` 诊断记录）。
