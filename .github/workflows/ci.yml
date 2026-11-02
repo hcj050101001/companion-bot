@@ -42,9 +42,25 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - uses: gitleaks/gitleaks-action@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # 与发布彩排同口径：固定 gitleaks 8.28.0 官方二进制直跑仓库
+      # .gitleaks.toml。原先用的 gitleaks-action 捆绑版本与本地实测的
+      # 8.28.0 在全局 allowlist 判定上存在差异，2026-11-02 公开仓
+      # 首跑把 tests/ 内的合成假值（假 provider 凭证、日志脱敏测试
+      # 标记）误报为 2 条 generic-api-key 泄漏；本地 8.28.0 同配置
+      # dir/git 双扫均为 0。固定版本以消除该漂移。
+      - name: Install gitleaks 8.28.0 (pinned, checksum-verified)
+        run: |
+          set -euo pipefail
+          ver=8.28.0
+          asset="gitleaks_${ver}_linux_x64.tar.gz"
+          base="https://github.com/gitleaks/gitleaks/releases/download/v${ver}"
+          curl -sSfL -o "/tmp/${asset}" "${base}/${asset}"
+          curl -sSfL -o /tmp/gitleaks-checksums.txt "${base}/gitleaks_${ver}_checksums.txt"
+          (cd /tmp && grep "${asset}" gitleaks-checksums.txt | sha256sum -c -)
+          tar -xzf "/tmp/${asset}" -C /tmp gitleaks
+          /tmp/gitleaks version
+      - name: Run gitleaks (repo config, same invocation as release rehearsal)
+        run: /tmp/gitleaks git . --config .gitleaks.toml --no-banner
 
   docker:
     name: docker build
